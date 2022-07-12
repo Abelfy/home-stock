@@ -1,0 +1,15 @@
+.dot{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: inline-block;
+    &.draft {
+        background-color: rgb(235, 220, 11);
+    }
+    &.published {
+        background-color: rgb(23, 189, 31);
+    }
+    &.archived {
+        background-color: rgb(235, 11, 11);
+    }
+}

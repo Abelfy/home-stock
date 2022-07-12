@@ -1,0 +1,68 @@
+<ng-container *ngIf="form">
+  <form [formGroup]="form" (ngSubmit)="register()">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Créer mon compte.</mat-card-title>
+        <mat-card-subtitle
+          >Vous devez vous identifier afin de pouvoir gérer vos
+          stocks.</mat-card-subtitle
+        >
+      </mat-card-header>
+      <mat-card-content>
+        <div class="formulaire">
+            <div class="row">
+                <mat-form-field>
+                    <mat-label>Nom</mat-label>
+                    <input type="text" matInput formControlName="first_name"/>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <mat-label>Prenom</mat-label>
+                    <input type="text" matInput formControlName="last_name"/>
+                  </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field>
+                    <mat-label>Adresse E-mail</mat-label>
+                    <input type="text" matInput formControlName="email"/>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <mat-label>Langage</mat-label>
+                    <mat-select matNativeControl formControlName="language">
+                      <mat-option value="en-US">Anglais</mat-option>
+                      <mat-option value="fr-FR">Francais</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field>
+                    <mat-label>Mot de passe</mat-label>
+                    <input type="password" matInput formControlName="password"/>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <mat-label>Confirmer le mot de passe</mat-label>
+                    <input type="password" matInput formControlName="passwordConfirm"/>
+                  </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field>
+                    <mat-label>Emploie</mat-label>
+                    <input type="text" matInput formControlName="title"/>
+                  </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field>
+                    <mat-label>Biographie 😀</mat-label>
+                    <textarea type="text" matInput formControlName="description"></textarea>
+                </mat-form-field>
+            </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <button mat-raised-button color="accent" type="submit" [disabled]="!form.valid">Créer mon compte</button>
+        <button mat-raised-button color="primary" type="button" [routerLink]="['']">
+          J'ai déja un compte
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</ng-container>

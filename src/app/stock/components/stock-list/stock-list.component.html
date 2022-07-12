@@ -1,0 +1,68 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title> Mes stocks </mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <ng-container *ngIf="stock$ | async as stocks">
+      <mat-accordion>
+        <mat-expansion-panel *ngFor="let stock of stocks" hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{ stock.name }}
+            </mat-panel-title>
+            <mat-panel-description>
+              {{ stock.products.length }} produit(s) dans le
+              stock</mat-panel-description
+            >
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item *ngFor="let product of stock.products">
+              <div mat-line>{{ product.products_id.name }}</div>
+              <div mat-line>
+                {{ product.quantity }} {{ product.unit?.libelle }}
+              </div>
+              <div *ngIf="product.alertAt" mat-line>
+                Alerte à : {{ product.alertAt }}{{ product.unit?.abbr }}
+              </div>
+              <div
+                class="chips"
+                *ngIf="product.products_id.etiquette as etiquette"
+              >
+                <mat-chip-list>
+                  <mat-chip color="primary">
+                    {{ etiquette.Libelle }}</mat-chip
+                  >
+                </mat-chip-list>
+              </div>
+              <div class="created" *ngIf="product.user_created">
+                <span mat-line
+                  >Ajouté par : {{ product.user_created.first_name }}
+                  {{ product.user_created.last_name }} le
+                  {{ product.created_at | date: "dd/MM/yyyy HH:mm" }}</span
+                >
+              </div>
+              <div>
+                <button mat-icon-button #tooltip="matTooltip"
+                matTooltip="Ajouter à ma liste de course"
+                matTooltipPosition="above">
+                  <mat-icon>shopping_cart</mat-icon>
+                </button>
+                <button mat-icon-button #tooltip="matTooltip"
+                matTooltip="Editer les informations"
+                matTooltipPosition="above">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button #tooltip="matTooltip"
+                matTooltip="Supprimer le produit du stock"
+                matTooltipPosition="above">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div>
+            </mat-list-item>
+          </mat-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </ng-container>
+  </mat-card-content>
+</mat-card>

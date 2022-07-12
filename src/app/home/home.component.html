@@ -1,0 +1,44 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Bienvenue sur votre gestionnaire de stock pour la maison 🏠 !</mat-card-title>
+        <mat-card-subtitle>Gérer vos stocks de manière simple et intuitive !</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <pre>
+        Alertes sur mes stocks
+        
+        Témoignages.
+        </pre>
+    </mat-card-content>
+
+    <mat-card-actions align='end'>
+        <button mat-raised-button color="accent" [routerLink]="['login','register']">Créer un compte</button>
+    </mat-card-actions>
+</mat-card>
+<ng-container *ngIf="authSrv.isLoggedIn$ | async">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Alertes sur mes stocks !</mat-card-title>
+            <mat-card-subtitle>Vos alertes concernant les stocks s'affichent ici.</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            
+        </mat-card-content>
+        <mat-card-actions align='end'>
+            <button mat-raised-button color="primary">Gérer mes alertes</button>
+        </mat-card-actions>
+    </mat-card>
+    
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Visualisation des derniers produits ajoutés. </mat-card-title>
+            <mat-card-subtitle>Voici la liste des derniers produits ajoutés au catalogue !</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button mat-raised-button color="primary">Voir tous les produits</button>
+        </mat-card-actions>
+    </mat-card>
+</ng-container>

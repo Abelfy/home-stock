@@ -109,5 +109,8 @@
       }
     }
   },
-  "defaultProject": "home-stock"
+  "defaultProject": "home-stock",
+  "cli": {
+    "analytics": false
+  }
 }

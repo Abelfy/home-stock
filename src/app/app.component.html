@@ -15,7 +15,7 @@
       <span>Stocks</span>
     </button>
     <button mat-button [matMenuTriggerFor]="shoppingListMenu">
-      <mat-icon>shopping_cart</mat-icon>
+      <mat-icon [matBadge]="productInCart$ | async" matBadgePosition="after">shopping_cart</mat-icon>
       <span>Liste de course</span>
     </button>
     <button mat-button [matMenuTriggerFor]="recipesMenu">
@@ -84,11 +84,11 @@
 </mat-menu>
 
 <mat-menu #shoppingListMenu="matMenu">
-  <button mat-menu-item [routerLink]="['shopping_list']">
+  <button mat-menu-item [routerLink]="['cart']">
     <mat-icon>list</mat-icon>
     <span>Ma liste de courses</span>
   </button>
-  <button mat-menu-item [routerLink]="['shopping_list','new']">
+  <button mat-menu-item [routerLink]="['cart','new']">
     <mat-icon>add</mat-icon>
     <span>Générer ma liste de courses</span>
   </button>

@@ -25,7 +25,6 @@ export class SecurityInterceptor implements HttpInterceptor {
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         if(!req.url.includes('login') && !req.url.includes('logout') && !req.url.includes('refresh')){
-            console.log("On ajoute les headers");
             req = this.addAuthenticationToken(req);
         }
 

@@ -1,16 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProductsListComponent } from './components/products-list/products-list.component';
 import { ProductsRoutingModule } from './products-routing.module';
 import { SharedModule } from '../shared/shared.module';
+
+import { ProductCollectionComponent } from './components/product-collection/product-collection.component';
+import { ProductContainerComponent } from './components/product-container/product-container.component';
+
+import { ProductListComponent } from './components/product-list/product-list.component';
 import { StoreModule } from '@ngrx/store';
-import { productsReducer } from './store/products.reducer';
+import { productsReducer } from '../state/products/products.reducer';
 
 
 
 @NgModule({
   declarations: [
-    ProductsListComponent
+    ProductCollectionComponent,
+    ProductContainerComponent,
+    ProductListComponent
   ],
   imports: [
     CommonModule,

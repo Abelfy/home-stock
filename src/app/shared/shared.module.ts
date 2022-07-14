@@ -4,8 +4,8 @@ import { CustomMaterialModule } from './material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { GraphQLModule } from '../graphql.module';
-import { ToastrModule } from 'ngx-toastr';
 import { SecurityInterceptor } from './interceptors/SecurityInterceptor';
+import { AddInCartModalComponent } from './components/add-in-cart-modal/add-in-cart-modal.component';
 
 
 const modules = [
@@ -21,7 +21,9 @@ const services = [
   { provide: HTTP_INTERCEPTORS, useClass: SecurityInterceptor, multi: true }
 ]
 @NgModule({
-  declarations: [],
+  declarations: [
+    AddInCartModalComponent
+  ],
   imports: [
     ...modules
   ],

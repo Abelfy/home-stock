@@ -11,6 +11,8 @@ export class ProductsService {
   constructor(private http: HttpClient) {}
 
   getProducts() : Observable<any> {
-    return this.http.get(`${environment.api}/items/products`).pipe(map((envelopp: any) => envelopp.data));
+    return this.http
+    .get(`${environment.api}/items/products`)
+    .pipe(map((envelope: any) => envelope.data || []));
   }
 }

@@ -1,0 +1,24 @@
+
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Mon Panier</mat-card-title>
+    <mat-card-subtitle
+      >{{ products.length }} produits enregistrés</mat-card-subtitle
+    >
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item
+        *ngFor="let product of products"
+        (click)="remove.emit(product.id)"
+        data-test="remove-button"
+      >
+        <mat-icon mat-list-icon>shopping_cart</mat-icon>
+        <div mat-line>{{ product.name }}</div>
+        <!-- <div mat-line>{{ product.date_created | date: "fullDate" }}</div> -->
+        <!-- <div><span [ngClass]="['dot', product.status]"></span></div> -->
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

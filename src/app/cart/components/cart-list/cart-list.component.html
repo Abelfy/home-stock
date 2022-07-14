@@ -1,0 +1,11 @@
+<h2>Ma liste de course.</h2>
+
+<mat-list>
+    <h3 matSubheader>Folders</h3>
+    <mat-list-item *ngFor="let product of products">
+       <mat-icon matListIcon>folder</mat-icon>
+       <h4 matLine>{{product.name}}</h4>
+       <p matLine class="demo-2"> {{product.marque}} </p>
+    </mat-list-item>
+    
+ </mat-list>

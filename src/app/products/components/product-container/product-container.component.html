@@ -1,0 +1,12 @@
+
+  <app-product-list
+    class="book-list"
+    [products]="products$ | async"
+    (add)="onAdd($event)"
+  ></app-product-list>
+<!--   <app-product-collection
+    class="book-collection"
+    [products]="productCollection$ | async"
+    (remove)="onRemove($event)"
+  >
+  </app-product-collection> -->

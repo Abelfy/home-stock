@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../shared/services/auth.service';
 
@@ -9,7 +10,11 @@ import { AuthService } from '../shared/services/auth.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public authSrv : AuthService) { }
+  
+
+  constructor(
+    public authSrv : AuthService
+    ) { }
 
   ngOnInit(): void {
     

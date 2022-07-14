@@ -1,30 +1,75 @@
-<h2>{{products.length}} Produits connus</h2>
-<mat-grid-list cols="6" rowHeight="500px">
-  <mat-grid-tile *ngFor="let product of products">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>{{product.name}}</mat-card-title>
-        <mat-card-subtitle>{{product.marque}}</mat-card-subtitle>
-      </mat-card-header>
-        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-      <mat-card-content>
-        <p>
-          <span>
-            Produit connu habituellement stocké  dans : Placard N°1
-          </span>
-        </p>
-      </mat-card-content>
-      <mat-card-actions align="end">
-        <button mat-icon-button aria-label="Ajouter au panier" (click)="addToCart(product.id)">
-          <mat-icon>add</mat-icon>
-        </button>
-      </mat-card-actions>
-      <mat-card-footer>
-        <div class="row">
-        <span>Créé le : {{product.date_created | date}}</span>
-        <span>Dernière modification : {{product.date_created | date}}</span>
-        </div>
-      </mat-card-footer>
-    </mat-card>    
-  </mat-grid-tile>
-</mat-grid-list>
+<h2></h2>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1> Produits référencés.</h1>
+    </mat-card-title>
+    <mat-card-subtitle>
+      <h2>{{ products.length }} références.</h2>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-actions align="end">
+    <mat-form-field appearance="fill">
+      <mat-label>Rechercher un produit : </mat-label>
+      <input matInput (input)="onFilterValueChanged($event)" />
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="addProduct()">
+       Ajouter un produit
+     </button>
+   </mat-card-actions>
+  <mat-card-content>
+    <mat-grid-list cols="6" rowHeight="500px">
+      <mat-grid-tile *ngFor="let product of products">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{ product.name }}</mat-card-title>
+            <mat-card-subtitle>{{ product.marque }}</mat-card-subtitle>
+          </mat-card-header>
+          <ng-container *ngIf="product.picture">
+            <img
+            mat-card-image
+            src="{{url}}/assets/{{product.picture}}?key=thumbnail"
+            alt="Photo of a Shiba Inu"
+          />
+          </ng-container>
+
+          
+          <mat-card-content>
+            <p>
+              <span>
+                Produit connu habituellement stocké dans : Placard N°1
+              </span>
+            </p>
+          </mat-card-content>
+          <mat-card-actions align="end">
+            <button
+              mat-icon-button
+              color="primary"
+              aria-label="Ajouter au panier"
+              (click)="addToCart(product.id)"
+            >
+              <mat-icon>add</mat-icon>
+            </button>
+            <button
+              mat-icon-button
+              color="primary"
+              aria-label="Ajouter au panier"
+              (click)="addToCart(product.id)"
+            >
+              <mat-icon>edit</mat-icon>
+            </button>
+          </mat-card-actions>
+          <mat-card-footer>
+            <div class="row">
+              <span>Créé le : {{ product.date_created | date }}</span>
+              <span
+                >Dernière modification : {{ product.date_created | date }}</span
+              >
+            </div>
+          </mat-card-footer>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card-content>
+  
+</mat-card>

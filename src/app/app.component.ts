@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { tap } from 'rxjs';
 import { ProductsService } from './products/services/products.service';
 import { AuthService } from './shared/services/auth.service';
+import { retrieveLabels } from './state/labels/labels.actions';
 import { selectProductInCartCount } from './state/products/products.selectors';
 import { retrieveUnits } from './state/units/units.actions';
 
@@ -25,6 +26,7 @@ export class AppComponent implements OnInit {
   }
   ngOnInit(): void {
     this._productsService.getUnits().subscribe(units => this.store.dispatch(retrieveUnits({ units })));
+    this._productsService.getLabels().subscribe(labels => this.store.dispatch(retrieveLabels({ labels })));
   }
 
   logout() {

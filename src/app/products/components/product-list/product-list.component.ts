@@ -1,8 +1,11 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { AddInCartModalComponent } from 'src/app/shared/components/add-in-cart-modal/add-in-cart-modal.component';
 import { ProductInCart } from 'src/app/state/models/product-in-cart.model';
+import { environment } from 'src/environments/environment';
 import { Product } from '../../../state/models/product.model';
+import { CreateProductComponent } from '../modals/create-product/create-product.component';
 
 @Component({
   selector: 'app-product-list',
@@ -12,10 +15,17 @@ import { Product } from '../../../state/models/product.model';
 export class ProductListComponent {
   @Input() products: ReadonlyArray<Product> = [];
   @Output() add = new EventEmitter<ProductInCart>();
-  displayedColumns: string[] = ['status', 'name', 'marque', 'date_created', 'date_updated', 'etiquette', 'actions'];
+  @Output() create = new EventEmitter<Product>();
+  
+  filterControl : FormControl;
+  url : string = environment.api;
 
   constructor(private _matDialog : MatDialog) { }
 
+  onFilterValueChanged(event: Event) {
+    console.log((event.target as HTMLInputElement).value);
+  }
+  
   addToCart(productId : string) {
     const dialog = this._matDialog.open(AddInCartModalComponent,{
       data: {
@@ -25,5 +35,13 @@ export class ProductListComponent {
     dialog.afterClosed().subscribe(( data ) => { 
       this.add.emit(data);
     })
+  }
+  
+  addProduct() {
+    this._matDialog.open(CreateProductComponent)
+      .afterClosed()
+      .subscribe(( data ) => {
+        this.create.emit(data);
+      })
   }
 }

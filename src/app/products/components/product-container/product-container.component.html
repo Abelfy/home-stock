@@ -3,6 +3,7 @@
     class="book-list"
     [products]="products$ | async"
     (add)="onAdd($event)"
+    (create)="onCreate($event)"
   ></app-product-list>
 <!--   <app-product-collection
     class="book-collection"

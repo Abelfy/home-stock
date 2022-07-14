@@ -16,11 +16,13 @@ import { StoreModule } from '@ngrx/store';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
 import { EffectsModule } from '@ngrx/effects';
-import { StoreDevtools, StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
-import { productsReducer } from './state/products/products.reducer';
 import { cartReducer } from './state/cart/collection.reducer';
 import { unitsReducer } from './state/units/units.reducer';
+import { labelsReducer } from './state/labels/labels.reducer';
+import { ProductEffects } from './state/products/product.effects';
+import { productsReducer } from './state/products/products.reducer';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { unitsReducer } from './state/units/units.reducer';
     AppRoutingModule,
     SharedModule,
     ToastrModule.forRoot(),
-    StoreModule.forRoot({ cart : cartReducer, units : unitsReducer}),
+    StoreModule.forRoot({ cart : cartReducer, units : unitsReducer, labels : labelsReducer ,products: productsReducer }),
+    EffectsModule.forRoot([ProductEffects]),
     StoreDevtoolsModule.instrument({
       name: "Home-Stock App",
       logOnly : !environment.production

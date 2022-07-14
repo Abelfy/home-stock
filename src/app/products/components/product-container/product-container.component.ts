@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ProductInCart } from 'src/app/state/models/product-in-cart.model';
-import { addProduct, removeProduct, retrieveProductList } from 'src/app/state/products/products.actions';
+import { Product } from 'src/app/state/models/product.model';
+import { addProduct, createProduct, removeProduct, retrieveProductList } from 'src/app/state/products/products.actions';
 import { selectProductInCart, selectProducts } from 'src/app/state/products/products.selectors';
 import { ProductsService } from '../../services/products.service';
 
@@ -20,6 +21,10 @@ export class ProductContainerComponent implements OnInit {
 
   onRemove(productId : string) {
     this.store.dispatch(removeProduct({ productId }));
+  }
+
+  onCreate(product : Product) {
+    this.store.dispatch(createProduct({ product }));
   }
 
   constructor(

@@ -1,6 +1,6 @@
 import { ProductInCart } from "../models/product-in-cart.model";
 import { Product } from "../models/product.model";
-import { Unit } from "../models/units.model";
+import { Unit } from "../models/unit.model";
 
 
 export interface AppState {

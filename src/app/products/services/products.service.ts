@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
+import { Product } from 'src/app/state/models/product.model';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -10,15 +11,25 @@ export class ProductsService {
 
   constructor(private http: HttpClient) {}
 
-  getProducts() : Observable<any> {
+  getProducts() : Observable<Array<Product>> {
     return this.http
     .get(`${environment.api}/items/products`)
     .pipe(map((envelope: any) => envelope.data || []));
   }
 
+  createProduct(product: any) : Observable<Product> {
+    return this.http.post(`${environment.api}/items/products`, product).pipe(map((envelope: any) => envelope.data));
+  }
+
   getUnits() : Observable<any> {
     return this.http
     .get(`${environment.api}/items/units`)
+    .pipe(map((envelope: any) => envelope.data || []));
+  }
+
+  getLabels() : Observable<any> {
+    return this.http
+    .get(`${environment.api}/items/etiquette`)
     .pipe(map((envelope: any) => envelope.data || []));
   }
 }

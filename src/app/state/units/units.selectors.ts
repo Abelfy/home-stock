@@ -1,4 +1,4 @@
 import { createFeatureSelector } from "@ngrx/store";
-import { Unit } from "../models/units.model";
+import { Unit } from "../models/unit.model";
 
 export const selectUnits = createFeatureSelector<ReadonlyArray<Unit>>('units');

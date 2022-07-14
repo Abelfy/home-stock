@@ -10,7 +10,7 @@ import { selectProductInCart } from '../../../state/products/products.selectors'
 })
 export class CartListComponent implements OnInit {
 
-  @Input() products: ReadonlyArray<Product> = [];
+  @Input() productsInCart: ReadonlyArray<any> = [];
   
   constructor(
     private _store : Store

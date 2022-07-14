@@ -1,14 +1,15 @@
 import { createReducer, on } from '@ngrx/store';
+import { ProductInCart } from '../models/product-in-cart.model';
 import { addProduct, removeProduct } from '../products/products.actions';
  
-export const initialState: ReadonlyArray<string> = [];
+export const initialState: ReadonlyArray<ProductInCart> = [];
  
 export const cartReducer = createReducer(
   initialState,
-  on(removeProduct, (state, { productId }) => state.filter((id) => id !== productId)),
-  on(addProduct, (state, { productId }) => {
-    if (state.indexOf(productId) > -1) return state;
+  on(removeProduct, (state, { productId }) => state.filter((productInCart) => productInCart.productId !== productId)),
+  on(addProduct, (state, { productInCart }) => {
+    if (state.indexOf(productInCart) > -1) return state;
  
-    return [...state, productId];
+    return [...state, productInCart];
   })
 );

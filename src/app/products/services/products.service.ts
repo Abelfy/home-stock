@@ -15,4 +15,10 @@ export class ProductsService {
     .get(`${environment.api}/items/products`)
     .pipe(map((envelope: any) => envelope.data || []));
   }
+
+  getUnits() : Observable<any> {
+    return this.http
+    .get(`${environment.api}/items/units`)
+    .pipe(map((envelope: any) => envelope.data || []));
+  }
 }

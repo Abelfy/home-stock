@@ -20,6 +20,7 @@ import { StoreDevtools, StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
 import { productsReducer } from './state/products/products.reducer';
 import { cartReducer } from './state/cart/collection.reducer';
+import { unitsReducer } from './state/units/units.reducer';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { cartReducer } from './state/cart/collection.reducer';
     AppRoutingModule,
     SharedModule,
     ToastrModule.forRoot(),
-    StoreModule.forRoot({ cart : cartReducer }),
+    StoreModule.forRoot({ cart : cartReducer, units : unitsReducer}),
     StoreDevtoolsModule.instrument({
       name: "Home-Stock App",
       logOnly : !environment.production

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { ProductInCart } from 'src/app/state/models/product-in-cart.model';
 import { addProduct, removeProduct, retrieveProductList } from 'src/app/state/products/products.actions';
 import { selectProductInCart, selectProducts } from 'src/app/state/products/products.selectors';
 import { ProductsService } from '../../services/products.service';
@@ -13,8 +14,8 @@ export class ProductContainerComponent implements OnInit {
 
   products$ = this.store.select(selectProducts);
   
-  onAdd(productId : string) {
-    this.store.dispatch(addProduct({ productId }));
+  onAdd(productInCart : ProductInCart) {
+    this.store.dispatch(addProduct({ productInCart }));
   }
 
   onRemove(productId : string) {

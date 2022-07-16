@@ -47,15 +47,15 @@ export class SecurityInterceptor implements HttpInterceptor {
                     } else {
                         return this.refreshAccessToken().pipe(
                             switchMap((response)=> {
-                                localStorage.setItem('access_token',response.data.access_token);
-                                localStorage.setItem('refresh_token',response.data.refresh_token);
+                                localStorage.setItem('access_token',response.access_token);
+                                localStorage.setItem('refresh_token',response.refresh_token);
                                 return next.handle(this.addAuthenticationToken(req))
                             })
                         )
                     }
                 } else {
-                    this.toastr.error(error.message,'Erreur',{positionClass : 'toast-bottom-full-width', closeButton : true});
-                    return throwError(error);
+                    //this.toastr.error(error.message,'Erreur',{positionClass : 'toast-bottom-full-width', closeButton : true});
+                    return throwError(() => new HttpErrorResponse(error));
                 }
             })
         );
@@ -63,6 +63,7 @@ export class SecurityInterceptor implements HttpInterceptor {
 
     private addAuthenticationToken(req: HttpRequest<any>): HttpRequest<any> {
         const jwtToken = localStorage.getItem('access_token');
+        //console.log(`Using access token: ${jwtToken}`);
         if (jwtToken) {
             const cloned = req.clone({
                 headers: req.headers.set(this.AUTH_HEADER, 'Bearer ' + jwtToken)

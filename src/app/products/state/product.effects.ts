@@ -2,27 +2,25 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { ToastrService } from 'ngx-toastr';
 import { EMPTY } from 'rxjs';
-import { catchError, map, mergeMap } from 'rxjs/operators';
-import { ProductsService } from '../../products/services/products.service';
+import { catchError, concatMap, map, mergeMap } from 'rxjs/operators';
+import { ProductsService } from '../services/products.service';
+import { ProductActions } from './actions-types';
 import { createProduct, createProductSuccess } from './products.actions';
 
 @Injectable()
 export class ProductEffects {
   constructor(
-    private actions$: Actions,
-    private productsSrv: ProductsService,
-    private toastr: ToastrService
+    private _actions$: Actions,
+    private _productsSrv: ProductsService,
+    private _toastr: ToastrService
   ) {}
 
   loadProducts$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType('[Products] Fetch All'),
-      mergeMap(() =>
-        this.productsSrv.getProducts().pipe(
-          map((products) => ({
-            type: '[Products] Fetch All Success',
-            payload: products,
-          })),
+    this._actions$.pipe(
+      ofType(ProductActions.loadAllProducts),
+      concatMap(() =>
+        this._productsSrv.getProducts().pipe(
+          map((products) => ProductActions.allProductsLoaded({ products })),
           catchError(() => EMPTY)
         )
       )
@@ -30,18 +28,18 @@ export class ProductEffects {
   );
 
   createProduct$ = createEffect(() =>
-    this.actions$.pipe(
+    this._actions$.pipe(
       ofType(createProduct),
       mergeMap((action) => {
         console.log(action);
-        return this.productsSrv.createProduct(action.product).pipe(
+        return this._productsSrv.createProduct(action.product).pipe(
           map((newProduct) => {
             console.log(newProduct);
-            this.toastr.success('Produit créé avec succès');
+            this._toastr.success('Produit créé avec succès');
             return createProductSuccess({ product: newProduct });
           }),
           catchError((error) => {
-            this.toastr.error(error, 'Erreur lors de la création du produit');
+            this._toastr.error(error, 'Erreur lors de la création du produit');
             return EMPTY;
           })
         );

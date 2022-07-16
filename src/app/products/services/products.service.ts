@@ -13,7 +13,7 @@ export class ProductsService {
 
   getProducts() : Observable<Array<Product>> {
     return this.http
-    .get(`${environment.api}/items/products`)
+    .get(`${environment.api}/items/products?fields=*,etiquette.*`)
     .pipe(map((envelope: any) => envelope.data || []));
   }
 

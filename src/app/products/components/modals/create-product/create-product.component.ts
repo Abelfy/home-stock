@@ -7,6 +7,7 @@ import { Store } from '@ngrx/store';
 import { selectLabels } from 'src/app/state/labels/labels.selectors';
 import { MatDialogRef } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
+import { AppState } from 'src/app/state/app.state';
 
 @Component({
   selector: 'app-create-product',
@@ -29,7 +30,7 @@ export class CreateProductComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<CreateProductComponent>,
     private _formBuilder: FormBuilder,
-    private _store : Store,
+    private _store: Store<AppState>,
     private _uploadService: FileUploadService,
     private _toastrService : ToastrService
   ) { }

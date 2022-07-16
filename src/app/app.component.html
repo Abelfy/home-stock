@@ -1,11 +1,11 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button>
+<!--   <button mat-icon-button>
     <mat-icon>menu</mat-icon>
-  </button>
+  </button> -->
   <span>Home Stock</span>
   <span class="spacer"></span>
 
-  <ng-container *ngIf="authSrv.isLoggedIn$ | async; else loggedOf">
+  <ng-container *ngIf="isLoggedIn$ | async; else loggedOf">
     <button mat-button [matMenuTriggerFor]="productMenu">
       <mat-icon>category</mat-icon>
       <span>Produits</span>
@@ -30,8 +30,8 @@
       <mat-icon>share</mat-icon>
     </button>
     <button mat-button [matMenuTriggerFor]="menu">
-      <ng-container *ngIf="authSrv.currentUser | async as user">
-        <span>{{ user.first_name }} {{ user.last_name }}</span>
+      <ng-container *ngIf="user$ | async as user">
+         <span>{{ user.first_name }} {{ user.last_name }}</span> 
       </ng-container>
       <mat-icon>person</mat-icon>
     </button>

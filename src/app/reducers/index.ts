@@ -1,0 +1,34 @@
+import {
+  ActionReducer,
+  ActionReducerMap,
+  createFeatureSelector,
+  createSelector,
+  MetaReducer,
+} from '@ngrx/store';
+import { environment } from '../../environments/environment';
+import { routerReducer } from '@ngrx/router-store';
+import { cartReducer } from '../state/cart/collection.reducer';
+import { unitsReducer } from '../state/units/units.reducer';
+import { labelsReducer } from '../state/labels/labels.reducer';
+
+export interface AppState {}
+
+export const reducers: ActionReducerMap<AppState> = {
+  router: routerReducer,
+  cart: cartReducer,
+  units: unitsReducer,
+  labels: labelsReducer,
+};
+
+export function logger(reducer: ActionReducer<any>): ActionReducer<any> {
+  return (state, action) => {
+    console.log('state before: ', state);
+    console.log('action', action);
+
+    return reducer(state, action);
+  };
+}
+
+export const metaReducers: MetaReducer<AppState>[] = !!environment.production
+  ? [logger]
+  : [];

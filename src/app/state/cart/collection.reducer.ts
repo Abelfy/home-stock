@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { ProductInCart } from '../models/product-in-cart.model';
-import { addProduct, removeProduct } from '../products/products.actions';
+import { addProduct, removeProduct } from '../../products/state/products.actions';
  
 export const initialState: ReadonlyArray<ProductInCart> = [];
  

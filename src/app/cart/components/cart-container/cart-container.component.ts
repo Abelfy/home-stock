@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { selectProductInCart } from 'src/app/state/products/products.selectors';
+import { AppState } from 'src/app/state/app.state';
+//import { selectProductInCart } from 'src/app/products/state/products.selectors';
 
 @Component({
   selector: 'app-cart-container',
@@ -9,9 +10,9 @@ import { selectProductInCart } from 'src/app/state/products/products.selectors';
 })
 export class CartContainerComponent implements OnInit {
 
-  productsInCart$ = this._store.select(selectProductInCart);
+  //productsInCart$ = this._store.select(selectProductInCart);
 
-  constructor(private _store : Store) { }
+  constructor(private _store: Store<AppState>) { }
 
   ngOnInit(): void {
   }

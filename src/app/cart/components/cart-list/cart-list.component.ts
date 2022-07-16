@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Product } from 'src/app/state/models/product.model';
-import { selectProductInCart } from '../../../state/products/products.selectors';
+import { AppState } from 'src/app/state/app.state';
+
 
 @Component({
   selector: 'app-cart-list',
@@ -13,7 +13,7 @@ export class CartListComponent implements OnInit {
   @Input() productsInCart: ReadonlyArray<any> = [];
   
   constructor(
-    private _store : Store
+    private _store: Store<AppState>,
   ) { }
 
 

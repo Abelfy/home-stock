@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { tap } from 'rxjs';
+import { map, Observable, tap } from 'rxjs';
 import { ProductsService } from './products/services/products.service';
 import { AuthService } from './shared/services/auth.service';
+import { AppState } from './state/app.state';
+import { AuthActions, AuthSelectors } from './auth/state/action-types';
 import { retrieveLabels } from './state/labels/labels.actions';
-import { selectProductInCartCount } from './state/products/products.selectors';
+import { selectProductInCartCount } from './products/state/products.selectors';
 import { retrieveUnits } from './state/units/units.actions';
 
 @Component({
@@ -15,28 +17,25 @@ import { retrieveUnits } from './state/units/units.actions';
 })
 export class AppComponent implements OnInit {
   title = 'Home Stock';
-  productInCart$ = this.store.select(selectProductInCartCount);
+  productInCart$ = this._store.select(selectProductInCartCount);
+
+  isLoggedIn$ : Observable<boolean>;
+  isLoggedOut$ : Observable<boolean>;
+  user$ = this._store.select(AuthSelectors.user);	
+
 
   constructor(
     private router: Router,
     public authSrv: AuthService,
-    private _productsService : ProductsService,
-    private store : Store) {
+    private _store : Store<AppState>) {
     this.router.onSameUrlNavigation = 'reload';
   }
   ngOnInit(): void {
-    this._productsService.getUnits().subscribe(units => this.store.dispatch(retrieveUnits({ units })));
-    this._productsService.getLabels().subscribe(labels => this.store.dispatch(retrieveLabels({ labels })));
+    this.isLoggedIn$ = this._store.select(AuthSelectors.isLoggedIn)
+    this.isLoggedOut$ = this._store.select(AuthSelectors.isLoggedOut)
   }
 
   logout() {
-    this.authSrv
-      .logout()
-      .pipe(
-        tap(() => {
-          location.reload()
-        })
-      )
-      .subscribe();
+    this._store.dispatch(AuthActions.LogOut());
   }
 }

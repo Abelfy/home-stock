@@ -1,4 +1,5 @@
 import { AbstractModel } from "./abstract.model";
+import { Label } from "./label.model";
 
 export interface Product extends AbstractModel {
     id : string;
@@ -6,5 +7,5 @@ export interface Product extends AbstractModel {
     picture : string;
     name: string;
     marque: string;
-    etiquette: string;    
+    etiquette: Label;    
 }

@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { CustomMaterialModule } from './material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { GraphQLModule } from '../graphql.module';
 import { SecurityInterceptor } from './interceptors/SecurityInterceptor';
 import { AddInCartModalComponent } from './components/add-in-cart-modal/add-in-cart-modal.component';
 
@@ -13,8 +12,7 @@ const modules = [
   CustomMaterialModule,
   FormsModule,
   ReactiveFormsModule,
-  HttpClientModule,
-  GraphQLModule,
+  HttpClientModule
 ]
 
 const services = [

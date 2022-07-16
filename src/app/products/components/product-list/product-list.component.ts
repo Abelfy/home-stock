@@ -6,6 +6,9 @@ import { ProductInCart } from 'src/app/state/models/product-in-cart.model';
 import { environment } from 'src/environments/environment';
 import { Product } from '../../../state/models/product.model';
 import { CreateProductComponent } from '../modals/create-product/create-product.component';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/state/app.state';
+import { isAdmin } from 'src/app/auth/state/auth.selectors';
 
 @Component({
   selector: 'app-product-list',
@@ -16,11 +19,14 @@ export class ProductListComponent {
   @Input() products: ReadonlyArray<Product> = [];
   @Output() add = new EventEmitter<ProductInCart>();
   @Output() create = new EventEmitter<Product>();
+  @Output() filter = new EventEmitter<string>();
   
+  isAdmin$ = this._store.select(isAdmin);
   filterControl : FormControl;
   url : string = environment.api;
 
-  constructor(private _matDialog : MatDialog) { }
+  constructor(private _matDialog : MatDialog,private _store: Store<AppState>) {
+   }
 
   onFilterValueChanged(event: Event) {
     console.log((event.target as HTMLInputElement).value);
@@ -41,7 +47,10 @@ export class ProductListComponent {
     this._matDialog.open(CreateProductComponent)
       .afterClosed()
       .subscribe(( data ) => {
-        this.create.emit(data);
+        if(data){
+          this.create.emit(data);
+        }
+        
       })
   }
 }

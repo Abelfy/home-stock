@@ -6,16 +6,10 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Apollo, gql } from 'apollo-angular';
 import { ToastrService } from 'ngx-toastr';
 import { MismatchValidator } from 'src/app/shared/validators/MismatchValidator';
 import { AuthService } from '../../../shared/services/auth.service';
 
-const REGISTER = gql`
-  mutation create_users_item($data: create_directus_users_input!) {
-    create_users_item(data: $data)
-  }
-`;
 @Component({
   selector: 'app-register-form',
   templateUrl: './register-form.component.html',
@@ -39,7 +33,6 @@ export class RegisterFormComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private authSrv: AuthService,
-    private apollo: Apollo,
     private router: Router,
     private toastr: ToastrService
   ) {}

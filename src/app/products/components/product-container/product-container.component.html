@@ -4,6 +4,7 @@
     [products]="products$ | async"
     (add)="onAdd($event)"
     (create)="onCreate($event)"
+    (filter)="onFilter($event)"
   ></app-product-list>
 <!--   <app-product-collection
     class="book-collection"

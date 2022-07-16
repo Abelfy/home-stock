@@ -13,38 +13,45 @@ import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './home/home.component';
 import { ToastrModule } from 'ngx-toastr';
 import { StoreModule } from '@ngrx/store';
-import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
-import { cartReducer } from './state/cart/collection.reducer';
-import { unitsReducer } from './state/units/units.reducer';
-import { labelsReducer } from './state/labels/labels.reducer';
-import { ProductEffects } from './state/products/product.effects';
-import { productsReducer } from './state/products/products.reducer';
+import { AuthModule } from './auth/auth.module';
+import { RouterState, StoreRouterConnectingModule } from '@ngrx/router-store';
+import { reducers, metaReducers } from './reducers';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     SharedModule,
-    ToastrModule.forRoot(),
-    StoreModule.forRoot({ cart : cartReducer, units : unitsReducer, labels : labelsReducer ,products: productsReducer }),
-    EffectsModule.forRoot([ProductEffects]),
+    HttpClientModule,
+    ToastrModule.forRoot({positionClass : 'toast-bottom-full-width', closeButton : true}),
+    AuthModule.forRoot(),
+    StoreModule.forRoot( reducers , { metaReducers,
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true,
+        strictStateSerializability: true,
+        strictActionSerializability: true,
+       }
+    }),
+    EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({
       name: "Home-Stock App",
       logOnly : !environment.production
     }),
-    EffectsModule.forRoot([]),
-
-    GraphQLModule,
-    HttpClientModule,
+    StoreRouterConnectingModule.forRoot({
+      stateKey : 'router',
+      routerState: RouterState.Minimal,
+      
+    })
   ],
   providers: [ { provide: LOCALE_ID, useValue: "fr-FR" }],
   bootstrap: [AppComponent]

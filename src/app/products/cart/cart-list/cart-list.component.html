@@ -1,0 +1,29 @@
+<mat-card>
+  <ng-container *ngIf="shoppingList$ | async as shoppingList">
+    <mat-card-header>
+      <mat-card-title>
+        <h1>Ma liste de course</h1>
+      </mat-card-title>
+      <mat-card-subtitle>
+        <h2>{{ shoppingList.length }} produits dans la liste.</h2>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item *ngFor="let pic of shoppingList">
+         <img matListAvatar src="{{ url }}/assets/{{ pic.product.picture }}?key=thumbnail" alt="Photo de {{pic.product.name}}">
+          <h4 matLine>{{ pic.product.name }}  {{ pic.product.marque ? '- pic.product.marque' : '' }}</h4>
+          <p matLine>{{ pic.quantity }} {{ pic.unit.libelle }}</p>
+          <button mat-icon-button (click)="onRemove(pic.product.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="save()">
+        Enregister la liste de course
+      </button>
+    </mat-card-actions>
+  </ng-container>
+</mat-card>

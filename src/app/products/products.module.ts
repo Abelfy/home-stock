@@ -7,12 +7,13 @@ import { ProductContainerComponent } from './components/product-container/produc
 
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { StoreModule } from '@ngrx/store';
-import { productsReducer } from './state/products.reducer';
 import { CreateProductComponent } from './components/modals/create-product/create-product.component';
 import { EffectsModule } from '@ngrx/effects';
-import { AuthEffects } from '../auth/state/auth.effects';
+import { UpdateProductComponent } from './components/modals/update-product/update-product.component';
 import { ProductEffects } from './state/product.effects';
 import { ProductResolver } from './state/products.resolver';
+import { productsReducer } from './state/products.reducer';
+import { CartModule } from './cart/cart.module';
 
 
 
@@ -20,10 +21,12 @@ import { ProductResolver } from './state/products.resolver';
   declarations: [
     ProductContainerComponent,
     ProductListComponent,
-    CreateProductComponent
+    CreateProductComponent,
+    UpdateProductComponent,
   ],
   imports: [
     CommonModule,
+    CartModule,
     ProductsRoutingModule,
     StoreModule.forFeature('products', productsReducer),
     EffectsModule.forFeature([ProductEffects]),

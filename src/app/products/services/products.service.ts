@@ -18,7 +18,14 @@ export class ProductsService {
   }
 
   createProduct(product: any) : Observable<Product> {
-    return this.http.post(`${environment.api}/items/products`, product).pipe(map((envelope: any) => envelope.data));
+    return this.http.post(`${environment.api}/items/products`, product)
+    .pipe(map((envelope: any) => envelope.data));
+  }
+
+  updateProduct(product: any) : Observable<Product> {
+    console.log(product)
+    return this.http.patch<Product>(`${environment.api}/items/products/${product.id}`, product)
+    .pipe(map((envelope: any) => envelope.data));
   }
 
   getUnits() : Observable<any> {

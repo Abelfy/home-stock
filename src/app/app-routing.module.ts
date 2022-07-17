@@ -11,11 +11,15 @@ const routes: Routes = [
     path : 'products', loadChildren: () => import('./products/products.module').then(module => module.ProductsModule), canActivate : [AuthGuard]
   },
   {
-    path : 'stocks', loadChildren: () => import('./stock/stock.module').then(module => module.StockModule)
+    path : 'stocks', loadChildren: () => import('./stock/stock.module').then(module => module.StockModule), canActivate : [AuthGuard]
   },
+
   {
-    path : 'cart', loadChildren: () => import('./cart/cart.module').then(module => module.CartModule)
+    path : 'shopping-lists', loadChildren: () => import('./shopping-lists/shopping-lists.module').then(module => module.ShoppingListsModule), canActivate : [AuthGuard]
   },
+  /* {
+    path : 'cart', loadChildren: () => import('./products/cart/cart.module').then(module => module.CartModule)
+  }, */
 ];
 
 @NgModule({

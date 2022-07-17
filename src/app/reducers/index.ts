@@ -7,7 +7,6 @@ import {
 } from '@ngrx/store';
 import { environment } from '../../environments/environment';
 import { routerReducer } from '@ngrx/router-store';
-import { cartReducer } from '../state/cart/collection.reducer';
 import { unitsReducer } from '../state/units/units.reducer';
 import { labelsReducer } from '../state/labels/labels.reducer';
 
@@ -15,7 +14,6 @@ export interface AppState {}
 
 export const reducers: ActionReducerMap<AppState> = {
   router: routerReducer,
-  cart: cartReducer,
   units: unitsReducer,
   labels: labelsReducer,
 };

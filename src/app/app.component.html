@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-<!--   <button mat-icon-button>
+  <!--   <button mat-icon-button>
     <mat-icon>menu</mat-icon>
   </button> -->
   <span>Home Stock</span>
@@ -14,8 +14,14 @@
       <mat-icon>inventory_2</mat-icon>
       <span>Stocks</span>
     </button>
-    <button mat-button [matMenuTriggerFor]="shoppingListMenu">
-      <mat-icon [matBadge]="productInCart$ | async" matBadgeColor="accent" matBadgePosition="after">shopping_cart</mat-icon>
+    <button mat-button [routerLink]="['shopping-lists']">
+      <!-- [matBadge]="productInCart$ | async"
+        matBadgeColor="accent"
+        matBadgePosition="after" -->
+      <mat-icon
+        
+        >shopping_cart</mat-icon
+      >
       <span>Liste de course</span>
     </button>
     <button mat-button [matMenuTriggerFor]="recipesMenu">
@@ -31,7 +37,7 @@
     </button>
     <button mat-button [matMenuTriggerFor]="menu">
       <ng-container *ngIf="user$ | async as user">
-         <span>{{ user.first_name }} {{ user.last_name }}</span> 
+        <span>{{ user.first_name }} {{ user.last_name }}</span>
       </ng-container>
       <mat-icon>person</mat-icon>
     </button>
@@ -45,6 +51,12 @@
 </mat-toolbar>
 <div class="hs-parent">
   <div class="hs-container">
+    <div class="center">
+      <mat-progress-spinner diameter=150 
+                          mode="indeterminate" *ngIf="loading"
+                color="accent">
+    </mat-progress-spinner> 
+  </div>
     <router-outlet></router-outlet>
   </div>
 </div>
@@ -66,7 +78,7 @@
     <mat-icon>list</mat-icon>
     <span>Liste des produits</span>
   </button>
-  <button mat-menu-item [routerLink]="['products','new']">
+  <button mat-menu-item [routerLink]="['products', 'new']">
     <mat-icon>add</mat-icon>
     <span>Ajouter un produit</span>
   </button>
@@ -77,20 +89,9 @@
     <mat-icon>food_bank</mat-icon>
     <span>Mes stocks</span>
   </button>
-  <button mat-menu-item [routerLink]="['stocks','new']">
+  <button mat-menu-item [routerLink]="['stocks', 'new']">
     <mat-icon>add</mat-icon>
     <span>Créer un nouveau stock</span>
-  </button>
-</mat-menu>
-
-<mat-menu #shoppingListMenu="matMenu">
-  <button mat-menu-item [routerLink]="['cart']">
-    <mat-icon>list</mat-icon>
-    <span>Ma liste de courses</span>
-  </button>
-  <button mat-menu-item [routerLink]="['cart','new']">
-    <mat-icon>add</mat-icon>
-    <span>Générer ma liste de courses</span>
   </button>
 </mat-menu>
 
@@ -99,7 +100,7 @@
     <mat-icon>list</mat-icon>
     <span>Ma liste de courses</span>
   </button>
-  <button mat-menu-item [routerLink]="['recipes','new']">
+  <button mat-menu-item [routerLink]="['recipes', 'new']">
     <mat-icon>add</mat-icon>
     <span>Ajouter une recette</span>
   </button>

@@ -1,14 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { map, Observable, tap } from 'rxjs';
-import { ProductsService } from './products/services/products.service';
+import { Observable } from 'rxjs';
 import { AuthService } from './shared/services/auth.service';
 import { AppState } from './state/app.state';
 import { AuthActions, AuthSelectors } from './auth/state/action-types';
-import { retrieveLabels } from './state/labels/labels.actions';
-import { selectProductInCartCount } from './products/state/products.selectors';
-import { retrieveUnits } from './state/units/units.actions';
+//unt } from './products/state/products/products.selectors';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +14,7 @@ import { retrieveUnits } from './state/units/units.actions';
 })
 export class AppComponent implements OnInit {
   title = 'Home Stock';
-  productInCart$ = this._store.select(selectProductInCartCount);
+  loading = true;
 
   isLoggedIn$ : Observable<boolean>;
   isLoggedOut$ : Observable<boolean>;
@@ -31,6 +28,28 @@ export class AppComponent implements OnInit {
     this.router.onSameUrlNavigation = 'reload';
   }
   ngOnInit(): void {
+    const userProfile = localStorage.getItem('user');
+    if(userProfile) {
+      this._store.dispatch(AuthActions.LogInSuccess({ user: JSON.parse(userProfile) }));
+    }
+    
+    this.router.events.subscribe(event => {
+      switch(true){
+        case event instanceof NavigationStart:{
+          this.loading = true;
+          break;
+        }
+        case event  instanceof NavigationEnd:
+        case event instanceof NavigationCancel:
+        case event instanceof NavigationError : {
+          this.loading = false;
+          break
+        }
+        default: {
+          break;
+        }
+      }
+    })
     this.isLoggedIn$ = this._store.select(AuthSelectors.isLoggedIn)
     this.isLoggedOut$ = this._store.select(AuthSelectors.isLoggedOut)
   }

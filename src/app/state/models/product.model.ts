@@ -9,3 +9,7 @@ export interface Product extends AbstractModel {
     marque: string;
     etiquette: Label;    
 }
+
+export function compareProducts (a: Product, b: Product) {
+    return a.name.localeCompare(b.name);
+}

@@ -1,5 +1,8 @@
-export interface ProductInCart {
-    productId : string;
+import { Product } from "./product.model";
+import { Unit } from "./unit.model";
+
+export interface ProductInList {
+    product : Product;
     quantity : number;
-    unitId : string;
+    unit : Unit;
 }

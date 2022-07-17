@@ -27,6 +27,7 @@ export class AuthEffects {
             localStorage.setItem('refresh_token', data.refresh_token);
           }),
           switchMap(noop => this._authService.me().pipe(
+              tap(user => localStorage.setItem('user', JSON.stringify(user))),
               map(user => LogInSuccess({ user : user }) 
                 )),
             ),
@@ -46,6 +47,7 @@ export class AuthEffects {
       this._actions$.pipe(
         ofType(AuthActions.LogInSuccess),
         map((action) => {
+
           this._router.navigate(['/']);
         })
       ),

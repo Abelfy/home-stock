@@ -3,25 +3,22 @@ import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from "@angular/r
 import { select, Store } from "@ngrx/store";
 import { filter, finalize, first, Observable, tap } from "rxjs";
 import { AppState } from "src/app/reducers";
-import { ProductSelectors } from "./actions-types";
-import { loadAllProducts } from "./products.actions";
+import { ShoppingListsActions, ShoppingListsSelectors } from "./action-types";
 
 @Injectable()
-export class ProductResolver implements Resolve<any> {
-
+export class ShoppingListsResolver implements Resolve<any> {
     loading = false;
 
     resolve( route : ActivatedRouteSnapshot , state : RouterStateSnapshot) : Observable<any> {
         return this._store.pipe(
-            select(ProductSelectors.areProductsLoaded),
-            tap((productsLoaded) => {
-
-                if (!this.loading && !productsLoaded) {
+            select(ShoppingListsSelectors.areAllShoppingListsLoaded),
+            tap((shoppingListsLoaded) => {
+                if (!this.loading && !shoppingListsLoaded) {
                     this.loading = true;
-                    this._store.dispatch(loadAllProducts());
+                    this._store.dispatch(ShoppingListsActions.loadAllShoppingLists());
                 }
             }),
-            filter((productsLoaded) => productsLoaded),
+            filter((shoppingListsLoaded) => shoppingListsLoaded),
             first(),
             finalize(() => this.loading = false)
         )
@@ -29,5 +26,4 @@ export class ProductResolver implements Resolve<any> {
     
     
     constructor(private _store: Store<AppState>) {}
-
 }

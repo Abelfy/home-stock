@@ -2,9 +2,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  // height: calc(100vh - 64px);
   //background-color: rgb(26, 31, 100);
 }
 .hs-container {
+  padding: 12px;
     width: 75vw;
     //height: 93vh;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1000;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
 }

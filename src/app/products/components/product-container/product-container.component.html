@@ -1,14 +1,12 @@
-
+<div class="container">
   <app-product-list
-    class="book-list"
+    class="product-list"
     [products]="products$ | async"
     (add)="onAdd($event)"
     (create)="onCreate($event)"
     (filter)="onFilter($event)"
+    (update)="onUpdate($event)"
   ></app-product-list>
-<!--   <app-product-collection
-    class="book-collection"
-    [products]="productCollection$ | async"
-    (remove)="onRemove($event)"
-  >
-  </app-product-collection> -->
+  <app-cart-list class="shopping-list"></app-cart-list>
+</div>
+

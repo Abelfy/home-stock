@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/state/app.state';
 import { retrieveLabels } from 'src/app/state/labels/labels.actions';
-import { ProductInCart } from 'src/app/state/models/product-in-cart.model';
+import { ProductInList } from 'src/app/state/models/product-in-cart.model';
 import { Product } from 'src/app/state/models/product.model';
 import { retrieveUnits } from 'src/app/state/units/units.actions';
 import { ProductsService } from '../../services/products.service';
 import { ProductActions, ProductSelectors } from '../../state/actions-types';
+import { ShoppingListActions } from '../../cart/state/action-types';
 
 @Component({
   selector: 'app-product-container',
@@ -16,9 +17,9 @@ import { ProductActions, ProductSelectors } from '../../state/actions-types';
 export class ProductContainerComponent implements OnInit {
 
   products$ = this._store.select(ProductSelectors.selectAllProducts);
-  
-  onAdd(productInCart : ProductInCart) {
-    this._store.dispatch(ProductActions.addProduct({ productInCart }));
+  loading$ = true;
+  onAdd(productInCart : ProductInList) {
+    this._store.dispatch(ShoppingListActions.addProductToList({ product : productInCart }));
   }
 
   onRemove(productId : string) {
@@ -31,6 +32,10 @@ export class ProductContainerComponent implements OnInit {
 
   onFilter(filter : string) {
     //this.products$=this._store.select(selectFilterProducts(filter));
+  }
+
+  onUpdate(product : Product) {
+    this._store.dispatch(ProductActions.updateProduct({ product }));
   }
 
   constructor(

@@ -11,8 +11,7 @@ export class ShoppingListsService {
   constructor(private http : HttpClient) { }
 
   getShoppingLists(){
-    console.log("getShoppingLists");
-    return this.http.get(`${environment.api}/items/shopping_list?fields=*,products.*`)
+    return this.http.get(`${environment.api}/items/shopping_list?fields=*,product.*,product.products_id.*,product.unit.*`)
       .pipe(map((envelope : any) => envelope.data));
   }
 }

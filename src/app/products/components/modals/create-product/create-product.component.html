@@ -11,23 +11,16 @@
         <mat-label>Marque : </mat-label>
         <input matInput formControlName="marque" />
       </mat-form-field>
-      <div *ngFor="let progressInfo of progressInfos">
-        <span>{{ progressInfo.fileName }}</span>
-        <mat-toolbar class="progress-bar">
-          <mat-progress-bar
-            color="accent"
-            [value]="progressInfo.value"
-          ></mat-progress-bar>
-          <span class="progress">{{ progressInfo.value }}%</span>
-        </mat-toolbar>
+      <div>
+        <app-file-upload requiredTypeFiles="image/png" formControlName="picture"></app-file-upload>
+        <mat-error *ngIf="form.controls.picture.errors?.requiredTypeFiles">
+          Seulement les formats jpg, jpeg et png sont autorisés. 
+        </mat-error>
+        <mat-error *ngIf="form.controls.picture.errors?.fileUploadError">
+          L'upload du fichier à échoué.
+        </mat-error>
       </div>
-      <app-file-upload requiredTypeFiles="image/png" formControlName="picture"></app-file-upload>
-      <mat-error *ngIf="form.controls['picture'].errors['requiredTypeFiles']">
-        Seulement les formats jpg, jpeg et png sont autorisés. 
-      </mat-error>
-      <mat-error *ngIf="form.controls['picture'].errors['fileUploadError']">
-        L'upload à échoué.
-      </mat-error>
+      
       <mat-form-field appearance="fill">
         <mat-label> Etiquette : </mat-label>
         <mat-select formControlName="etiquette">

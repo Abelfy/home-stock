@@ -1,21 +1,28 @@
 <div>
-    <ng-container *ngFor="let list of shoppingLists$ | async ">
-        <mat-expansion-panel>
-            <mat-expansion-panel-header>
-                <mat-panel-title>
-                    {{ list.date_created | date }}
-                </mat-panel-title>
-                <mat-panel-description>
-                    <span [ngClass]="['dot', list.status]"></span>
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-            <mat-list>
-                <!-- <mat-list-item *ngFor="let product of list.products">
-                    <mat-icon matListIcon>shopping_cart</mat-icon>
-                    <h4 matLine>{{ product.name }}</h4>
-                    <p matLine>{{ product.description }}</p>
-                </mat-list-item> -->
-            </mat-list>
-        </mat-expansion-panel>
-    </ng-container>
+  <ng-container *ngFor="let list of shoppingLists$ | async; let index = index">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ list.date_created | date }}
+        </mat-panel-title>
+        <mat-panel-description>
+          <span [ngClass]="['dot', list.status]"></span>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-selection-list>
+        <mat-list-option *ngFor="let product of list.product">
+          <mat-icon matListIcon>shopping_cart</mat-icon>
+          <h4 matLine>
+            {{ product.products_id.name }}
+            {{
+              product.products_id.marque
+                ? " - " + product.products_id.marque
+                : ""
+            }}
+          </h4>
+          <p matLine>{{ product.quantity }} - {{ product.unit.libelle }}</p>
+        </mat-list-option>
+      </mat-selection-list>
+    </mat-expansion-panel>
+  </ng-container>
 </div>

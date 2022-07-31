@@ -11,8 +11,8 @@
     <mat-card-content>
       <mat-list>
         <mat-list-item *ngFor="let pic of shoppingList">
-         <img matListAvatar src="{{ url }}/assets/{{ pic.product.picture }}?key=thumbnail" alt="Photo de {{pic.product.name}}">
-          <h4 matLine>{{ pic.product.name }}  {{ pic.product.marque ? '- pic.product.marque' : '' }}</h4>
+         <img matListAvatar src="{{ url }}/assets/{{ pic.product.picture.id }}?key=thumbnail" alt="Photo de {{pic.product.name}}">
+          <h4 matLine>{{ pic.product.name }}  {{ pic.product.marque ? ' - '+ pic.product.marque : '' }}</h4>
           <p matLine>{{ pic.quantity }} {{ pic.unit.libelle }}</p>
           <button mat-icon-button (click)="onRemove(pic.product.id)">
             <mat-icon>delete</mat-icon>

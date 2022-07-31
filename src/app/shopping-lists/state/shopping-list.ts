@@ -7,5 +7,5 @@ export interface ShoppingList {
   date_created: Date;
   user_updated?: string;
   date_updated?: Date;
-  products: ProductInList[];
+  product: ProductInList[];
 }

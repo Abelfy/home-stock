@@ -42,7 +42,7 @@ export class UpdateProductComponent implements OnInit {
     this.form = this._formBuilder.group({
       name: [this.product.name,[Validators.required]],
       marque: [this.product.marque ? this.product.marque : null],
-      picture : [null],
+      picture : [this.product.picture ? this.product.picture : null],
       etiquette : [this.product.etiquette?.id,[Validators.required]],
       status: [this.product.status,[Validators.required]]
     });

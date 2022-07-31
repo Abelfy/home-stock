@@ -42,7 +42,7 @@ export class FileUploadComponent implements ControlValueAccessor, Validator {
   writeValue(value: AppFile): void {
     console.log('writeValue', value);
     if(value){
-      this.fileName = value.filename_disk;
+      this.fileName = value.filename_download;
     }    
     this.file = value;
   }

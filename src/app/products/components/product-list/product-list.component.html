@@ -12,8 +12,8 @@
       <mat-label>Rechercher un produit : </mat-label>
       <input matInput (input)="onFilterValueChanged($event)" />
     </mat-form-field>
-    <button mat-raised-button color="primary" (click)="addProduct()">
-      Ajouter un produit
+    <button mat-mini-fab color="primary" (click)="addProduct()">
+      <mat-icon>add</mat-icon>
     </button>
   </mat-card-actions>
   <mat-card-content>

@@ -5,6 +5,7 @@ import { ProductInList } from 'src/app/state/models/product-in-cart.model';
 import { Product } from 'src/app/state/models/product.model';
 import { ProductActions, ProductSelectors } from '../../state/actions-types';
 import { ShoppingListActions } from '../../cart/state/action-types';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-product-container',
@@ -29,7 +30,9 @@ export class ProductContainerComponent implements OnInit {
   }
 
   onFilter(filter : string) {
-    
+    this.products$ = this._store.select(ProductSelectors.selectAllProducts).pipe(
+      map((products) => products.filter((product) => product.name.toLowerCase().includes(filter.toLowerCase())))
+    );
   }
 
   onUpdate(product : Product) {

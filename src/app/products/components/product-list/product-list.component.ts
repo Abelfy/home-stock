@@ -43,7 +43,7 @@ export class ProductListComponent {
    }
 
   onFilterValueChanged(event: Event) {
-    console.log((event.target as HTMLInputElement).value);
+    this.filter.emit((event.target as HTMLInputElement).value);
   }
   
   addToCart(product : Product) {

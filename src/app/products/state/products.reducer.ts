@@ -36,6 +36,7 @@ export const unitsAdapter = createEntityAdapter<Unit>();
 export const initialState : FeatureState  = {
   products : productsAdapter.getInitialState({
     allProductsLoaded: false,
+    uiFilter: ''
   }),
   labels : labelsAdapter.getInitialState({
     allLabelsLoaded: false,

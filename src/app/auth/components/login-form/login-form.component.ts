@@ -11,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 import { map, switchMap } from 'rxjs';
 import { AppState } from 'src/app/state/app.state';
 import { LogIn } from 'src/app/auth/state/auth.actions';
-import { AuthService } from '../../../shared/services/auth.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login-form',
@@ -27,9 +27,6 @@ export class LoginFormComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private _store: Store<AppState>,
-    private authSrv: AuthService,
-    private toastr: ToastrService,
-    private router: Router
   ) {}
 
   ngOnInit(): void {}
@@ -41,23 +38,5 @@ export class LoginFormComponent implements OnInit {
         password: this.form.get('password')!.value,
       })
     );
-    /* this.authSrv
-      .login()
-        .pipe(map((data) => {
-          localStorage.setItem('access_token',data.data.access_token);
-          localStorage.setItem('expires',Date.now()+data.data.expires);
-          localStorage.setItem('refresh_token',data.data.refresh_token);
-        }),
-        switchMap(()=> {
-          return this.authSrv.me()
-        }))
-        .subscribe({
-          next: (response) => {
-            this.toastr.success('Vous êtes connecté(e) !', 'Succès !',{positionClass : 'toast-bottom-full-width', closeButton : true});
-            this.router.navigate(['']);
-          },
-          error: (e) => this.toastr.error(e.message, 'Erreur 😥'),
-          complete: () => {},
-        });*/
   }
 }

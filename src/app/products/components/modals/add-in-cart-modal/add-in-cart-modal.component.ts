@@ -2,11 +2,9 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { ProductSelectors } from 'src/app/products/state/actions-types';
+import { ProductSelectors  } from 'src/app/products/state/actions-types';
 import { AppState } from 'src/app/state/app.state';
-import { Product } from 'src/app/state/models/product.model';
-import { selectUnits } from 'src/app/state/units/units.selectors';
+
 
 @Component({
   selector: 'app-add-in-cart-modal',
@@ -17,7 +15,7 @@ export class AddInCartModalComponent implements OnInit {
 
   form : FormGroup;
   products$ = this._store.select(ProductSelectors.selectAllProducts);
-  units$ = this._store.select(selectUnits);
+  units$ = this._store.select(ProductSelectors.selectAllUnits);
 
   constructor(
     public dialogRef: MatDialogRef<AddInCartModalComponent>,

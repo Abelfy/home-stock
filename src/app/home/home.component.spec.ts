@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { StoreModule } from '@ngrx/store';
+import { reducers , metaReducers} from '../reducers';
 
 import { HomeComponent } from './home.component';
 
@@ -8,7 +10,17 @@ describe('HomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      declarations: [ HomeComponent ],
+      imports : [
+        StoreModule.forRoot(reducers , { metaReducers,
+          runtimeChecks: {
+            strictStateImmutability: true,
+            strictActionImmutability: true,
+            strictStateSerializability: true,
+            strictActionSerializability: true,
+           }
+        }),
+      ]
     })
     .compileComponents();
   });

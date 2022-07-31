@@ -1,5 +1,6 @@
 <h1 mat-dialog-title>Ajouter une référence de produit.</h1>
 <div mat-dialog-content>
+  <!-- {{ labels$ | async | json}} -->
   <form [formGroup]="form">
     <div class="row">
       <mat-form-field appearance="fill">
@@ -20,32 +21,13 @@
           <span class="progress">{{ progressInfo.value }}%</span>
         </mat-toolbar>
       </div>
-      <mat-form-field>
-        <div>
-          <mat-toolbar>
-            <input matInput [value]="selectedFileNames.length ? selectedFileNames : 'Choisir une image'" />
-          </mat-toolbar>
-      
-          <input
-            type="file"
-            id="fileInput"
-            name="fileInput"
-            accept="image/*" 
-            (change)="selectFiles($event)"
-          />
-        </div>
-      </mat-form-field>
-      <div class="row">
-        <img *ngFor='let preview of previews' [src]="preview" class="preview">
-        <button
-              mat-flat-button
-              color="primary"
-              [disabled]="!selectedFiles"
-              (click)="uploadFiles()"
-            >
-              Enregistrer l'image
-            </button>
-      </div>
+      <app-file-upload requiredTypeFiles="image/png" formControlName="picture"></app-file-upload>
+      <mat-error *ngIf="form.controls['picture'].errors['requiredTypeFiles']">
+        Seulement les formats jpg, jpeg et png sont autorisés. 
+      </mat-error>
+      <mat-error *ngIf="form.controls['picture'].errors['fileUploadError']">
+        L'upload à échoué.
+      </mat-error>
       <mat-form-field appearance="fill">
         <mat-label> Etiquette : </mat-label>
         <mat-select formControlName="etiquette">

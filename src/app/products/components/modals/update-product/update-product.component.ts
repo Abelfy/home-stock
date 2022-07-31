@@ -6,8 +6,8 @@ import { Store } from '@ngrx/store';
 import { ToastrService } from 'ngx-toastr';
 import { catchError, EMPTY, map } from 'rxjs';
 import { FileUploadService } from 'src/app/products/services/file-upload.service';
+import { ProductSelectors } from 'src/app/products/state/actions-types';
 import { AppState } from 'src/app/reducers';
-import { selectLabels } from 'src/app/state/labels/labels.selectors';
 import { Product } from 'src/app/state/models/product.model';
 
 @Component({
@@ -17,7 +17,7 @@ import { Product } from 'src/app/state/models/product.model';
 })
 export class UpdateProductComponent implements OnInit {
 
-  labels$ = this._store.select(selectLabels);
+  labels$ = this._store.select(ProductSelectors.selectAllLabels);
 
   form : FormGroup;
 

@@ -5,7 +5,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SecurityInterceptor } from './interceptors/SecurityInterceptor';
 import { AddInCartModalComponent } from '../products/components/modals/add-in-cart-modal/add-in-cart-modal.component';
+import { FileUploadComponent } from './components/file-upload/file-upload.component';
 
+const components = [
+  AddInCartModalComponent,
+  FileUploadComponent
+]
 
 const modules = [
   CommonModule,
@@ -20,12 +25,12 @@ const services = [
 ]
 @NgModule({
   declarations: [
-    AddInCartModalComponent
+    ...components
   ],
   imports: [
     ...modules
   ],
   providers: [...services],
-  exports: [...modules ]
+  exports: [...modules,...components ]
 })
 export class SharedModule { }

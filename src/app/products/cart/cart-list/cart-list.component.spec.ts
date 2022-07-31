@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { StoreModule } from '@ngrx/store';
 
 import { CartListComponent } from './cart-list.component';
 
@@ -8,7 +9,8 @@ describe('CartListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CartListComponent ]
+      declarations: [ CartListComponent,],
+      imports : [ StoreModule.forRoot({})]
     })
     .compileComponents();
 

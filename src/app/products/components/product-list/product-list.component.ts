@@ -25,7 +25,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
   ],
 })
 export class ProductListComponent {
-  @Input() products: ReadonlyArray<Product> = [];
+  @Input() products: Product[] = [];
   @Output() add = new EventEmitter<ProductInList>();
   @Output() create = new EventEmitter<Product>();
   @Output() update = new EventEmitter<Product>();
@@ -62,6 +62,7 @@ export class ProductListComponent {
       .afterClosed()
       .subscribe(( data ) => {
         if(data){
+          console.log(data);
           this.create.emit(data);
         }
         

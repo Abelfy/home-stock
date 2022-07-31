@@ -27,16 +27,4 @@ export class ProductsService {
     return this.http.patch<Product>(`${environment.api}/items/products/${product.id}`, product)
     .pipe(map((envelope: any) => envelope.data));
   }
-
-  getUnits() : Observable<any> {
-    return this.http
-    .get(`${environment.api}/items/units`)
-    .pipe(map((envelope: any) => envelope.data || []));
-  }
-
-  getLabels() : Observable<any> {
-    return this.http
-    .get(`${environment.api}/items/etiquette`)
-    .pipe(map((envelope: any) => envelope.data || []));
-  }
 }

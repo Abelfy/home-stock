@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { AuthService } from './shared/services/auth.service';
 import { AppState } from './state/app.state';
 import { AuthActions, AuthSelectors } from './auth/state/action-types';
+import { AuthService } from './auth/services/auth.service';
 //unt } from './products/state/products/products.selectors';
 
 @Component({

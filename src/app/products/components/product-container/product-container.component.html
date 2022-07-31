@@ -1,7 +1,7 @@
 <div class="container">
   <app-product-list
     class="product-list"
-    [products]="products$ | async"
+    [products]="(products$ | async) ?? []"
     (add)="onAdd($event)"
     (create)="onCreate($event)"
     (filter)="onFilter($event)"

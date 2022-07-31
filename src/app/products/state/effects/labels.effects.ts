@@ -2,25 +2,26 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { ToastrService } from 'ngx-toastr';
 import { catchError, exhaustMap, map, of, tap } from 'rxjs';
-import { UnitsService } from 'src/app/shared/services/units.service';
-import { UnitsActions } from './actions-types';
+import { LabelsService } from 'src/app/shared/services/labels.service';
+import { ProductActions } from '../actions-types';
+
 
 @Injectable()
-export class UnitsEffects {
+export class LabelsEffects {
   constructor(
     private _actions$: Actions,
-    private _unitsService: UnitsService,
+    private _labelsService: LabelsService,
     private _toastr: ToastrService
   ) {}
 
   loadAllUnits$ = createEffect(() =>
     this._actions$.pipe(
-      ofType(UnitsActions.loadAllUnits),
+      ofType(ProductActions.loadAllLabels),
       exhaustMap(() =>
-        this._unitsService.getAllUnits().pipe(
-          map((units) => UnitsActions.loadAllUnitsSuccess({ units })),
+        this._labelsService.getAllLabels().pipe(
+          map((labels) => ProductActions.loadAllLabelsSuccess({ labels })),
           catchError((error) => {
-            return of(UnitsActions.loadAllUnitsFailure());
+            return of(ProductActions.loadAllLabelsFailure());
           })
         )
       )
@@ -30,9 +31,9 @@ export class UnitsEffects {
   loadAllUnitsFailure$ = createEffect(
     () =>
       this._actions$.pipe(
-        ofType(UnitsActions.loadAllUnitsFailure),
+        ofType(ProductActions.loadAllLabelsFailure),
         tap(() =>
-          this._toastr.error('Erreur lors de la récupération des unités')
+          this._toastr.error('Erreur lors de la récupération des étiquettes')
         )
       ),
     { dispatch: false }

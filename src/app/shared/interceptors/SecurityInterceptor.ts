@@ -3,13 +3,10 @@ import {
     HttpEvent, HttpInterceptor, HttpHandler,
     HttpRequest, HttpErrorResponse
 } from '@angular/common/http';
-import { Router } from '@angular/router';
 import { throwError, Observable, BehaviorSubject } from 'rxjs';
 import { catchError, filter, take, switchMap, finalize } from 'rxjs/operators';
-
-import { environment } from 'src/environments/environment';
-import { AuthService } from '../services/auth.service';
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from 'src/app/auth/services/auth.service';
 
 
 @Injectable()

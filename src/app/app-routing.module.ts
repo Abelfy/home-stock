@@ -17,9 +17,6 @@ const routes: Routes = [
   {
     path : 'shopping-lists', loadChildren: () => import('./shopping-lists/shopping-lists.module').then(module => module.ShoppingListsModule), canActivate : [AuthGuard]
   },
-  /* {
-    path : 'cart', loadChildren: () => import('./products/cart/cart.module').then(module => module.CartModule)
-  }, */
 ];
 
 @NgModule({

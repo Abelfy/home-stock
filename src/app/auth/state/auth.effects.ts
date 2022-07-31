@@ -7,9 +7,9 @@ import { EMPTY, of } from 'rxjs';
 
 import { catchError, map, switchMap, tap } from 'rxjs/operators';
 
-import { AuthService } from '../../shared/services/auth.service';
 import { AppState } from '../../state/app.state';
 import { User } from '../../state/models/user.model';
+import { AuthService } from '../services/auth.service';
 import { AuthActions } from './action-types';
 import { LogIn, LogInFailure, LogInSuccess } from './auth.actions';
 

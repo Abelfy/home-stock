@@ -1,22 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpEventType, HttpResponse } from '@angular/common/http';
-import { catchError, EMPTY, map, Observable, of } from 'rxjs';
-import { FileUploadService } from 'src/app/products/services/file-upload.service';
-import { Store } from '@ngrx/store';
-import { selectLabels } from 'src/app/state/labels/labels.selectors';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { Store } from '@ngrx/store';
 import { ToastrService } from 'ngx-toastr';
+import { catchError, EMPTY, map } from 'rxjs';
+import { FileUploadService } from 'src/app/products/services/file-upload.service';
+import { ProductSelectors } from 'src/app/products/state/actions-types';
 import { AppState } from 'src/app/state/app.state';
 
 @Component({
   selector: 'app-create-product',
   templateUrl: './create-product.component.html',
-  styleUrls: ['./create-product.component.scss']
+  styleUrls: ['./create-product.component.scss'],
+
 })
 export class CreateProductComponent implements OnInit {
 
-  labels$ = this._store.select(selectLabels);
+  labels$ = this._store.select(ProductSelectors.selectAllLabels);
 
   form : FormGroup;
 
@@ -24,7 +25,7 @@ export class CreateProductComponent implements OnInit {
   selectedFileNames: string[] = [];
 
   progressInfos: any[] = [];
-
+  requiredTypeFiles : string[] = ['image/png', 'image/jpeg', 'image/jpg'];
   previews: string[] = [];
 
   constructor(
@@ -43,61 +44,6 @@ export class CreateProductComponent implements OnInit {
       etiquette : [null,[Validators.required]],
       status: [null,[Validators.required]]
     });
-  }
-
-  selectFiles(event: any): void {
-    this.progressInfos = [];
-    this.selectedFileNames = [];
-    this.selectedFiles = event.target.files;
-
-    this.previews = [];
-    if (this.selectedFiles && this.selectedFiles[0]) {
-      const numberOfFiles = this.selectedFiles.length;
-      for (let i = 0; i < numberOfFiles; i++) {
-        const reader = new FileReader();
-
-        reader.onload = (e: any) => {
-          this.previews.push(e.target.result);
-        };
-
-        reader.readAsDataURL(this.selectedFiles[i]);
-
-        this.selectedFileNames.push(this.selectedFiles[i].name);
-      }
-    }
-  }
-
-  upload(idx: number, file: File): void {
-    event.preventDefault();
-    this.progressInfos[idx] = { value: 0, fileName: file.name };
-
-    if (file) {
-      this._uploadService.upload(this.form.value.name ? this.form.value.name :  'produit',file).pipe(
-        map(event => {
-          if (event.type === HttpEventType.UploadProgress) {
-            this.progressInfos[idx].value = Math.round(
-              (100 * event.loaded) / event.total
-            );
-          } else if (event instanceof HttpResponse) {
-            this.form.patchValue({picture: event.body.data.id});
-            this._toastrService.success('Image enregistrée.', 'Success');
-          }
-        }),
-        catchError((error) => {
-          this.progressInfos[idx].value = 0;
-          this._toastrService.error(`Impossible d\'envoyer le fichier. ${error}`, 'Erreur');
-          return EMPTY;
-        })
-      ).subscribe();
-    }
-  }
-
-  uploadFiles(): void {
-    if (this.selectedFiles) {
-      for (let i = 0; i < this.selectedFiles.length; i++) {
-        this.upload(i, this.selectedFiles[i]);
-      }
-    }
   }
 
   onNoClick() : void {

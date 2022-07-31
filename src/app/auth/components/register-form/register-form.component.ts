@@ -8,7 +8,8 @@ import {
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { MismatchValidator } from 'src/app/shared/validators/MismatchValidator';
-import { AuthService } from '../../../shared/services/auth.service';
+import { AuthService } from '../../services/auth.service';
+
 
 @Component({
   selector: 'app-register-form',

@@ -5,11 +5,11 @@ import { SharedModule } from '../shared/shared.module';
 import { RegisterFormComponent } from './components/register-form/register-form.component';
 import { StoreModule } from '@ngrx/store';
 import { authReducer } from './state/auth.reducers';
-import { AuthService } from '../shared/services/auth.service';
 import { RouterModule } from '@angular/router';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from './state/auth.effects';
 import { AuthGuard } from './auth.guard';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [LoginFormComponent, RegisterFormComponent],

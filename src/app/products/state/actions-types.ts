@@ -1,4 +1,2 @@
-import * as ProductActions from './products.actions';
-import * as ProductSelectors from './products.selectors';
-
-export { ProductActions, ProductSelectors };
+export * as ProductActions from './products.actions';
+export * as ProductSelectors from './products.selectors';

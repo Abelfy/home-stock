@@ -8,7 +8,7 @@ const routes: Routes = [
   {
     path : '', component : ProductContainerComponent,
     resolve : {
-      products : ProductResolver
+      products : ProductResolver,
     }
   },
 ];

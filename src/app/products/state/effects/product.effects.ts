@@ -5,11 +5,11 @@ import { ToastrService } from 'ngx-toastr';
 import { EMPTY } from 'rxjs';
 import { catchError, concatMap, map, mergeMap } from 'rxjs/operators';
 import { Product } from 'src/app/state/models/product.model';
-import { ProductsService } from '../services/products.service';
+import { ProductsService } from '../../services/products.service';
 
 
-import { ProductActions } from './actions-types';
-import { createProduct, createProductSuccess } from './products.actions';
+import { ProductActions } from '../actions-types';
+import { createProduct, createProductSuccess } from '../products.actions';
 
 @Injectable()
 export class ProductEffects {

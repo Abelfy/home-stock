@@ -10,10 +10,12 @@ import { StoreModule } from '@ngrx/store';
 import { CreateProductComponent } from './components/modals/create-product/create-product.component';
 import { EffectsModule } from '@ngrx/effects';
 import { UpdateProductComponent } from './components/modals/update-product/update-product.component';
-import { ProductEffects } from './state/product.effects';
+import { ProductEffects } from './state/effects/product.effects';
 import { ProductResolver } from './state/products.resolver';
 import { productsReducer } from './state/products.reducer';
 import { CartModule } from './cart/cart.module';
+import { LabelsEffects } from './state/effects/labels.effects';
+import { UnitsEffects } from './state/effects/units.effects';
 
 
 
@@ -29,7 +31,7 @@ import { CartModule } from './cart/cart.module';
     CartModule,
     ProductsRoutingModule,
     StoreModule.forFeature('products', productsReducer),
-    EffectsModule.forFeature([ProductEffects]),
+    EffectsModule.forFeature([ProductEffects,LabelsEffects,UnitsEffects]),
     SharedModule
   ],
   providers : [

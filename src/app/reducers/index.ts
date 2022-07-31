@@ -1,21 +1,16 @@
 import {
   ActionReducer,
   ActionReducerMap,
-  createFeatureSelector,
-  createSelector,
   MetaReducer,
 } from '@ngrx/store';
 import { environment } from '../../environments/environment';
 import { routerReducer } from '@ngrx/router-store';
-import { unitsReducer } from '../state/units/units.reducer';
-import { labelsReducer } from '../state/labels/labels.reducer';
+
 
 export interface AppState {}
 
 export const reducers: ActionReducerMap<AppState> = {
   router: routerReducer,
-  units: unitsReducer,
-  labels: labelsReducer,
 };
 
 export function logger(reducer: ActionReducer<any>): ActionReducer<any> {

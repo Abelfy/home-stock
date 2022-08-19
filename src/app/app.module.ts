@@ -20,6 +20,7 @@ import { environment } from 'src/environments/environment';
 import { AuthModule } from './auth/auth.module';
 import { RouterState, StoreRouterConnectingModule } from '@ngrx/router-store';
 import { reducers, metaReducers } from './reducers';
+import { NgxJsonViewerModule } from 'ngx-json-viewer';
 
 @NgModule({
   declarations: [

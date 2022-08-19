@@ -6,4 +6,5 @@ export interface ProductInList {
     products_id : Product;
     quantity : number;
     unit : Unit;
+    bought : boolean;
 }

@@ -9,20 +9,7 @@
           <span [ngClass]="['dot', list.status]"></span>
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <mat-selection-list>
-        <mat-list-option *ngFor="let product of list.product">
-          <mat-icon matListIcon>shopping_cart</mat-icon>
-          <h4 matLine>
-            {{ product.products_id.name }}
-            {{
-              product.products_id.marque
-                ? " - " + product.products_id.marque
-                : ""
-            }}
-          </h4>
-          <p matLine>{{ product.quantity }} - {{ product.unit.libelle }}</p>
-        </mat-list-option>
-      </mat-selection-list>
+      <app-list-details [shoppingList]="list" (updateList)="onUpdateList($event)"></app-list-details>
     </mat-expansion-panel>
   </ng-container>
 </div>

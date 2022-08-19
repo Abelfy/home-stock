@@ -1,0 +1,70 @@
+<ng-container *ngIf="form">
+<mat-card [formGroup]="form">
+  <table mat-table [dataSource]="dataSource" formArrayName="array">
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr
+      mat-row
+      *matRowDef="let row; let i = index; columns: displayedColumns"
+    ></tr>
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef>No.</th>
+      <td
+        mat-cell
+        *matCellDef="let element; let index = index"
+        [formGroupName]="index"
+      >
+        <input matInput formControlName="position" (blur)="onTouched()"/>
+        <mat-error></mat-error>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td
+        mat-cell
+        *matCellDef="let element; let index = index"
+        [formGroupName]="index"
+      >
+        <input matInput formControlName="name" (blur)="onTouched()"/>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="weight">
+      <th mat-header-cell *matHeaderCellDef>Weight</th>
+      <td
+        mat-cell
+        *matCellDef="let element; let index = index"
+        [formGroupName]="index"
+      >
+        <input matInput formControlName="weight" (blur)="onTouched()"/>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="symbol">
+      <th mat-header-cell *matHeaderCellDef>Symbol</th>
+      <td
+        mat-cell
+        *matCellDef="let element; let index = index"
+        [formGroupName]="index"
+      >
+        <mat-form-field>
+          <mat-select formControlName="symbol" (blur)="onTouched()">
+            <mat-option value="Far">Far</mat-option>
+            <mat-option value="Too">Too</mat-option>
+            <mat-option value="Many">Many</mat-option>
+            <mat-option value="Options">Options</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </ng-container>
+  </table>
+  <button mat-raised-button (click)="addToTab()">Add to Tab</button>
+</mat-card>
+
+<mat-card>
+  <ngx-json-viewer [json]="form.value"></ngx-json-viewer>
+</mat-card>
+<mat-card>
+    {{ form.errors | json }}
+</mat-card>
+<mat-card>
+    {{ form.valid }}
+</mat-card>
+</ng-container>

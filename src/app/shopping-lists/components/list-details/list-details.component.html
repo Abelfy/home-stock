@@ -1,22 +1,14 @@
-<p>list-details works!</p>
 <div>
-    <ng-container *ngFor="let list of shoppingLists$ | async ">
-        <mat-expansion-panel>
-            <mat-expansion-panel-header>
-                <mat-panel-title>
-                    {{ list.id }}
-                </mat-panel-title>
-                <mat-panel-description>
-                    {{ list.status }}
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-            <mat-list>
-                <!-- <mat-list-item *ngFor="let product of list.product">
-                    <mat-icon matListIcon>shopping_cart</mat-icon>
-                    <h4 matLine>{{ product.products_id.name }}</h4>
-                    <p matLine>{{ product.products_id.unit.label }}</p>
-                </mat-list-item> -->
-            </mat-list>
-        </mat-expansion-panel>
-    </ng-container>
+  <mat-selection-list #myList  (selectionChange)="onSelectionChange($event)">
+    <mat-list-option *ngFor="let product of shoppingList.product" [value]="product" [selected]="product.bought">
+      <mat-icon matListIcon>shopping_cart</mat-icon>
+      <h4 matLine>
+        {{ product.products_id.name }}
+        {{
+          product.products_id.marque ? " - " + product.products_id.marque : ""
+        }}
+      </h4>
+      <p matLine>{{ product.quantity }} - {{ product.unit.libelle }}</p>
+    </mat-list-option>
+  </mat-selection-list>
 </div>

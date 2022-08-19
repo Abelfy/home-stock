@@ -17,5 +17,7 @@ export class ShoppingListsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  onUpdateList(event){
+    console.log(event);
+  }
 }

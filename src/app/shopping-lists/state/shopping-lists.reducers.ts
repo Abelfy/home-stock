@@ -14,7 +14,6 @@ export const initialShoppingListsState: ShoppingListsState = adapter.getInitialS
 export const shoppingListsReducer = createReducer(
     initialShoppingListsState,
     on(ShoppingListsActions.allShoppingListsLoaded, (state, action) => adapter.setAll(action.shoppingLists, {...state, allShoppingListsLoaded: true})),
-    
 )
 
-export const  { selectAll } = adapter.getSelectors();
+export const  { selectAll, } = adapter.getSelectors();

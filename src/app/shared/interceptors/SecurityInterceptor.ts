@@ -7,6 +7,7 @@ import { throwError, Observable, BehaviorSubject } from 'rxjs';
 import { catchError, filter, take, switchMap, finalize } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/auth/services/auth.service';
+import { Router } from '@angular/router';
 
 
 @Injectable()
@@ -18,7 +19,7 @@ export class SecurityInterceptor implements HttpInterceptor {
     private refreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
 
-    constructor(private authSrv: AuthService, private toastr : ToastrService) { }
+    constructor(private authSrv: AuthService, private _router: Router) { }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         if(!req.url.includes('login') && !req.url.includes('logout') && !req.url.includes('refresh')){
@@ -31,7 +32,11 @@ export class SecurityInterceptor implements HttpInterceptor {
                     if(req.url.search('/refresh') !== -1) {
                         this.refreshTokenSubject.next(null);
                         this.refreshTokenInProgress = false;
+                        
+                        //let navigation : Navigation = this._router.getCurrentNavigation();
+                        //this._router.
                         this.authSrv.logout().pipe().subscribe();
+                        this._router.navigate(['/login']);
                         return throwError(error);
                     }
 
@@ -51,7 +56,6 @@ export class SecurityInterceptor implements HttpInterceptor {
                         )
                     }
                 } else {
-                    //this.toastr.error(error.message,'Erreur',{positionClass : 'toast-bottom-full-width', closeButton : true});
                     return throwError(() => new HttpErrorResponse(error));
                 }
             })

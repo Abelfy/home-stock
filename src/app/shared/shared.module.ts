@@ -6,6 +6,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SecurityInterceptor } from './interceptors/SecurityInterceptor';
 import { AddInCartModalComponent } from '../products/components/modals/add-in-cart-modal/add-in-cart-modal.component';
 import { FileUploadComponent } from './components/file-upload/file-upload.component';
+import { NgxJsonViewerModule } from 'ngx-json-viewer';
 
 const components = [
   AddInCartModalComponent,
@@ -17,7 +18,8 @@ const modules = [
   CustomMaterialModule,
   FormsModule,
   ReactiveFormsModule,
-  HttpClientModule
+  HttpClientModule,
+  NgxJsonViewerModule,
 ]
 
 const services = [

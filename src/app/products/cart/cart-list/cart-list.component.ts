@@ -37,15 +37,8 @@ export class CartListComponent implements OnInit {
   }
 
   save(shoppingList : ShoppingList): void {
-    /* this._store
-      .select(ShoppingListSelectors.selectShoppingList)
-      .pipe(take(1))
-      .subscribe((shoppingList) =>
-        this._store.dispatch(
-          ShoppingListActions.checkOutList({ products: shoppingList })
-        )
-      ); */
-      //this._cartStore.saveList()
       this._cartStore.saveList(shoppingList)
   }
+
+
 }

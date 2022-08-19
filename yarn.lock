@@ -4844,6 +4844,13 @@ neo-async@^2.6.2:
   resolved "https://registry.npmjs.org/neo-async/-/neo-async-2.6.2.tgz"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
+ngx-json-viewer@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/ngx-json-viewer/-/ngx-json-viewer-3.1.0.tgz#af8404b930f3a7850f96b7ad16ad2ab7bc541334"
+  integrity sha512-+m90gQ/5TJNusqUgRlXU4e7ZwAKfK5jUV/zvvZYv4uiO/yQDM37cKTQ+YPgK/bC3a+03xDssCSpi0y+DrgUUpg==
+  dependencies:
+    tslib "^2.3.0"
+
 ngx-toastr@^15.0.0:
   version "15.0.0"
   resolved "https://registry.npmjs.org/ngx-toastr/-/ngx-toastr-15.0.0.tgz"

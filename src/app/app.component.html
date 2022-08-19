@@ -6,6 +6,10 @@
   <span class="spacer"></span>
 
   <ng-container *ngIf="isLoggedIn$ | async; else loggedOf">
+    <button mat-button [routerLink]="['sand-box']">
+      <mat-icon>bug_report</mat-icon>
+      <span>SandBox</span>
+    </button>
     <button mat-button [matMenuTriggerFor]="productMenu">
       <mat-icon>category</mat-icon>
       <span>Produits</span>

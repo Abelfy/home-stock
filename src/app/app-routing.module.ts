@@ -17,6 +17,9 @@ const routes: Routes = [
   {
     path : 'shopping-lists', loadChildren: () => import('./shopping-lists/shopping-lists.module').then(module => module.ShoppingListsModule), canActivate : [AuthGuard]
   },
+  {
+    path : 'sand-box', loadChildren: () => import('./sandbox/sandbox.module').then(module => module.SandboxModule), canActivate : [AuthGuard]
+  },
 ];
 
 @NgModule({

@@ -1,0 +1,30 @@
+<ng-container *ngIf="form">
+  <mat-card [formGroup]="form">
+    <mat-card-header>
+      <mat-card-title> Plusiers sous formulaire</mat-card-title>
+      <mat-card-subtitle
+        >Tests d'implementation de l'interface
+        ControlValueAccessor</mat-card-subtitle
+      >
+    </mat-card-header>
+    <mat-card-content>
+      <mat-slide-toggle (change)="disableArray($event)">
+        Activer formulaire
+      </mat-slide-toggle>
+      <app-sandbox-subform-a formControlName="subA"> </app-sandbox-subform-a>
+      <app-sandbox-subform-b formControlName="subB"> </app-sandbox-subform-b>
+      <app-array formControlName="array"></app-array>
+
+      <mat-card>
+        <ngx-json-viewer [json]="form.value"></ngx-json-viewer>
+      </mat-card>
+      <mat-card>
+        {{ form.errors }}
+      </mat-card>
+      <mat-card>
+        {{ form.valid }}
+      </mat-card>
+    </mat-card-content>
+    <button mat-raised-button color="primary" (click)="send()" [disabled]="form.invalid">Send !</button>
+  </mat-card>
+</ng-container>

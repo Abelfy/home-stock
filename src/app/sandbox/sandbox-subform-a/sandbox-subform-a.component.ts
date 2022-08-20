@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
+import { AbstractControl, ControlValueAccessor, FormBuilder, FormGroup, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidationErrors, Validator, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -11,22 +11,33 @@ import { Subscription } from 'rxjs';
       provide: NG_VALUE_ACCESSOR,
       useExisting : SandboxSubformAComponent,
       multi: true
-    }
+    },
+    {
+      provide: NG_VALIDATORS,
+      useExisting: SandboxSubformAComponent,
+      multi: true,
+    },
   ]
 })
-export class SandboxSubformAComponent implements ControlValueAccessor, OnDestroy
+export class SandboxSubformAComponent implements ControlValueAccessor, OnDestroy, Validator
 {
   onTouched = () => {};
 
   onChangeSub: Subscription;
   form: FormGroup = this._fb.group({
-    addressLine1: [null, [Validators.required]],
+    date: [new Date(), [Validators.required]],
     addressLine2: [null, [Validators.required]],
     zipCode: [null, [Validators.required]],
     city: [null, [Validators.required]],
   });
-
+  onValidatorChange: Function = () => {};
   constructor(private _fb: FormBuilder) {}
+  validate(control: AbstractControl<any, any>): ValidationErrors {
+    return this.form.errors;
+  }
+  registerOnValidatorChange?(fn: () => void): void {
+    this.onValidatorChange = fn;
+  }
 
   writeValue(value: any): void {
     if (value) {

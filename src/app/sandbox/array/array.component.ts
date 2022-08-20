@@ -1,4 +1,10 @@
-import { Component, OnDestroy } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnDestroy,
+  SimpleChanges,
+} from '@angular/core';
 import {
   AbstractControl,
   ControlValueAccessor,
@@ -12,6 +18,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { BehaviorSubject, Subscription, tap } from 'rxjs';
+import { FormCustomEvent } from '../types';
 
 @Component({
   selector: 'app-array',
@@ -23,7 +30,6 @@ import { BehaviorSubject, Subscription, tap } from 'rxjs';
       useExisting: ArrayComponent,
       multi: true,
     },
-
     {
       provide: NG_VALIDATORS,
       useExisting: ArrayComponent,
@@ -32,7 +38,7 @@ import { BehaviorSubject, Subscription, tap } from 'rxjs';
   ],
 })
 export class ArrayComponent
-  implements OnDestroy, ControlValueAccessor, Validator
+  implements OnDestroy, ControlValueAccessor, Validator, OnChanges
 {
   form: FormGroup = this._fb.group({
     array: this._fb.array([]),
@@ -41,15 +47,34 @@ export class ArrayComponent
   array!: FormArray;
   dataSource = new BehaviorSubject<AbstractControl[]>([]);
   formChange: Subscription;
-  onTouched: Function = () => {};
-  onValidatorChange: Function = () => {};
+  onTouched: Function = () => {
+  };
+  onValidatorChange: Function = () => {
+    console.log('onValidatorChange')
+  };
   data = [];
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
 
+  @Input()
+  public event: FormCustomEvent;
+
   constructor(private _fb: FormBuilder) {}
 
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.event?.currentValue) {
+        let { name , data } = changes.event.currentValue;
+        console.log(`Received ${name} with date : ${data}`);
+        switch (name) {
+          case 'date': {
+            this.array.clear();
+            
+          }
+        }
+    }
+  }
+
   validate(control: AbstractControl<any, any>): ValidationErrors {
-    return null;
+    return this.form.valid ? null : { invalid: true };
   }
 
   registerOnValidatorChange?(onValidatorChange: () => void): void {
@@ -79,6 +104,11 @@ export class ArrayComponent
     this.updateView();
   }
 
+  remove(index: number) {
+    this.array.removeAt(index);
+    this.updateView();
+  }
+
   createRow(obj: any): FormGroup {
     return this._fb.group({
       position: [obj.position, Validators.required],
@@ -89,31 +119,29 @@ export class ArrayComponent
   }
 
   updateView() {
+    this.form.markAllAsTouched();
     this.dataSource.next(this.array.controls);
   }
 
   registerOnChange(fn: any): void {
-    this.validate(this.form);
     this.formChange = this.form.valueChanges
-      .pipe(
+       .pipe(
         tap((value) => {
-          fn();
-          console.log('Form changed', value);
+          this.updateView();
         })
       )
-      .subscribe(fn);
+      .subscribe(fn());
   }
 
   registerOnTouched(fn: any): void {
-    this.form.markAllAsTouched();
     this.onTouched = fn;
   }
-  
+
   setDisabledState?(isDisabled: boolean): void {
     if (isDisabled) {
-      this.array.controls.forEach((control) => control.disable());
+      this.form.disable();
     } else {
-      this.array.controls.forEach((control) => control.enable());
+      this.form.enable();
     }
   }
 

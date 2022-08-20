@@ -4,9 +4,9 @@ import { AuthGuard } from './auth/auth.guard';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  {
+  /* {
     path : '', component : HomeComponent
-  },
+  }, */
   {
     path : 'products', loadChildren: () => import('./products/products.module').then(module => module.ProductsModule), canActivate : [AuthGuard]
   },

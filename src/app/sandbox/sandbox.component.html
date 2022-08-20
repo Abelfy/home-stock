@@ -12,19 +12,11 @@
         Activer formulaire
       </mat-slide-toggle>
       <app-sandbox-subform-a formControlName="subA"> </app-sandbox-subform-a>
-      <app-sandbox-subform-b formControlName="subB"> </app-sandbox-subform-b>
-      <app-array formControlName="array"></app-array>
-
-      <mat-card>
-        <ngx-json-viewer [json]="form.value"></ngx-json-viewer>
-      </mat-card>
-      <mat-card>
-        {{ form.errors }}
-      </mat-card>
-      <mat-card>
-        {{ form.valid }}
-      </mat-card>
+      <app-array formControlName="array" [event]="formCustomEvent"></app-array>
     </mat-card-content>
     <button mat-raised-button color="primary" (click)="send()" [disabled]="form.invalid">Send !</button>
+    {{ this.form.errors | json }}
+    invalid : {{ this.form.invalid}}
   </mat-card>
+  
 </ng-container>

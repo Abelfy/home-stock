@@ -1,4 +1,4 @@
-<mat-card [formGroup]="form">
+<mat-card [formGroup]="form" [ngClass]="form.invalid ? 'input-error' : 'input-success'">
   <mat-card-header>
     <mat-card-title> Commun </mat-card-title>
     <mat-card-subtitle>
@@ -48,5 +48,4 @@
       />
     </mat-form-field>
   </mat-card-content>
-  invalid : {{ form.invalid }}
 </mat-card>

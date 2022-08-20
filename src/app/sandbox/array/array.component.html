@@ -1,8 +1,8 @@
-<mat-card [formGroup]="form">
+<mat-card [formGroup]="form" [ngClass]="form.invalid ? 'input-error' : 'input-success'">
   <mat-card-header>
-    <mat-card-title> Plusiers sous formulaire</mat-card-title>
+    <mat-card-title> Tableau [FormArray] </mat-card-title>
     <mat-card-subtitle>
-      Tests d'implementation de l'interface ControlValueAccessor
+      Tests d'implementation de l'interface ControlValueAccessor - partie tableau
     </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
@@ -65,5 +65,4 @@
     <button mat-raised-button (click)="addColumn()">Add a new column</button>
     <button mat-raised-button (click)="addToTab()">Add to Tab</button>
   </mat-card-actions>
-  invalid : {{ form.invalid }}
 </mat-card>

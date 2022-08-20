@@ -1,22 +1,23 @@
-<ng-container *ngIf="form">
-  <mat-card [formGroup]="form">
+<ng-container *ngIf="form" >
+  <mat-card [formGroup]="form" [ngClass]="form.invalid ? 'input-error' : 'input-success'">
     <mat-card-header>
-      <mat-card-title> Plusiers sous formulaire</mat-card-title>
+      <mat-card-title> Plusieurs sous formulaire</mat-card-title>
       <mat-card-subtitle
         >Tests d'implementation de l'interface
         ControlValueAccessor</mat-card-subtitle
       >
-    </mat-card-header>
-    <mat-card-content>
       <mat-slide-toggle (change)="disableArray($event)">
         Activer formulaire
       </mat-slide-toggle>
+    </mat-card-header>
+    <mat-card-content>
+      
       <app-sandbox-subform-a formControlName="subA"> </app-sandbox-subform-a>
       <app-array formControlName="array" [cols]="cols" [event]="formCustomEvent"></app-array>
     </mat-card-content>
-    <button mat-raised-button color="primary" (click)="send()" [disabled]="form.invalid">Send !</button>
-    {{ this.form.errors | json }}
-    invalid : {{ this.form.invalid}}
+    <mat-card-actions align="end">
+      <button mat-raised-button color="primary" (click)="send()" [disabled]="form.invalid">Send !</button>
+    </mat-card-actions>
   </mat-card>
   
 </ng-container>

@@ -12,7 +12,7 @@
         Activer formulaire
       </mat-slide-toggle>
       <app-sandbox-subform-a formControlName="subA"> </app-sandbox-subform-a>
-      <app-array formControlName="array" [event]="formCustomEvent"></app-array>
+      <app-array formControlName="array" [cols]="cols" [event]="formCustomEvent"></app-array>
     </mat-card-content>
     <button mat-raised-button color="primary" (click)="send()" [disabled]="form.invalid">Send !</button>
     {{ this.form.errors | json }}

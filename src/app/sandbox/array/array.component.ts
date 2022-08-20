@@ -10,6 +10,7 @@ import {
   ControlValueAccessor,
   FormArray,
   FormBuilder,
+  FormControl,
   FormGroup,
   NG_VALIDATORS,
   NG_VALUE_ACCESSOR,
@@ -18,10 +19,10 @@ import {
   Validators,
 } from '@angular/forms';
 import { BehaviorSubject, Subscription, tap } from 'rxjs';
-import { FormCustomEvent } from '../types';
+import { Column, FormControlType, FormCustomEvent } from '../types/types.def';
 
 @Component({
-  selector: 'app-array',
+  selector: 'app-array[event][cols]',
   templateUrl: './array.component.html',
   styleUrls: ['./array.component.scss'],
   providers: [
@@ -40,6 +41,12 @@ import { FormCustomEvent } from '../types';
 export class ArrayComponent
   implements OnDestroy, ControlValueAccessor, Validator, OnChanges
 {
+
+  @Input()
+  public event: FormCustomEvent;
+  @Input()
+  public cols: Column[] = [];
+
   form: FormGroup = this._fb.group({
     array: this._fb.array([]),
   });
@@ -53,10 +60,9 @@ export class ArrayComponent
     console.log('onValidatorChange')
   };
   data = [];
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol','actions'];
 
-  @Input()
-  public event: FormCustomEvent;
+  
 
   constructor(private _fb: FormBuilder) {}
 
@@ -110,12 +116,16 @@ export class ArrayComponent
   }
 
   createRow(obj: any): FormGroup {
-    return this._fb.group({
-      position: [obj.position, Validators.required],
-      name: [obj.name, Validators.required],
-      weight: [obj.weight, Validators.required],
-      symbol: [obj.symbol, Validators.required],
+    let group = this._fb.group({});
+    this.cols.forEach((col) => {
+      let control = new FormControl(obj[col.name], {validators : col.validators});
+      if(col.isDisabled){
+        control.disable();
+      }
+      group.addControl(col.name, control);
     });
+    
+    return group;
   }
 
   updateView() {
@@ -135,6 +145,26 @@ export class ArrayComponent
 
   registerOnTouched(fn: any): void {
     this.onTouched = fn;
+  }
+
+  addColumn() {
+    if(this.displayedColumns.includes('added')){
+      alert('Column already added');
+      return;
+    }
+    this.cols.push({
+      name : 'added',
+      label : 'Added',
+      type : FormControlType.TEXT,
+      isDisabled : false,
+    });  
+    let values = this.array.value;
+    this.array.clear();
+    values.forEach((element) => {
+      this.addObjToArray(element);
+    })
+    this.updateView();
+    this.displayedColumns.push('added');
   }
 
   setDisabledState?(isDisabled: boolean): void {

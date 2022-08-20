@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { pairwise, Subscription } from 'rxjs';
-import { FormCustomEvent } from './types';
+import { Column, FormControlType, FormCustomEvent } from './types/types.def';
 
 @Component({
   selector: 'app-sandbox',
@@ -26,6 +26,49 @@ export class SandboxComponent implements OnInit, OnDestroy {
     subA: [null,Validators.required],
     array: [this.tab,Validators.required],
   });
+
+  cols: Column[] = [
+    {
+      name : 'position',
+      label : 'Position',
+      type : FormControlType.NUMBER,
+      isDisabled : false,
+      validators: [Validators.required],
+    },
+    {
+      name : 'name',
+      label : 'Name',
+      type : FormControlType.TEXT,
+      isDisabled : false,
+      validators: [Validators.required],
+    },
+    {
+      name : 'weight',
+      label : 'Weight',
+      type : FormControlType.NUMBER,
+      isDisabled : false,
+      validators: [Validators.required],
+    },
+    {
+      name : 'symbol',
+      label : 'Symbol',
+      type : FormControlType.SELECT,
+      isDisabled : false,
+      validators: [Validators.required],
+      options : [
+        { value : 'H', label : 'H' },
+        { value : 'He', label : 'He' },
+        { value : 'Li', label : 'Li' },
+        { value : 'Be', label : 'Be' },
+        { value : 'B', label : 'B' },
+        { value : 'C', label : 'C' },
+        { value : 'N', label : 'N' },
+        { value : 'O', label : 'O' },
+        { value : 'F', label : 'F' },
+        { value : 'Ne', label : 'Ne' },
+      ]
+    }
+  ]
 
   formCustomEvent: FormCustomEvent;
   previousData: any;

@@ -12,102 +12,42 @@
         mat-row
         *matRowDef="let row; let i = index; columns: displayedColumns"
       ></tr>
-      <ng-container matColumnDef="position">
-        <th mat-header-cell *matHeaderCellDef>No.</th>
-        <td
-          mat-cell
-          *matCellDef="let element; let index = index"
-          [formGroupName]="index"
-        >
-        <mat-form-field>
-          <input
-            matInput
-            formControlName="position"
-            placeholder="Position"
-            (blur)="onTouched()"
-          />
-          <mat-error 
-            *ngIf="array.at(index).get('position').hasError('required')"
-          >
-            Position est requis
-          </mat-error>
-        </mat-form-field>
-        </td>
+
+      <ng-container *ngFor="let col of cols">
+        <ng-container [matColumnDef]="col.name">
+          <th mat-header-cell *matHeaderCellDef>{{ col.label }}</th>
+          <td mat-cell *matCellDef="let row; let index = index" [formGroupName]="index">
+            <mat-form-field>
+              <ng-container *ngIf="col.type === 'select'; else default">
+                <mat-select [formControlName]="col.name" (blur)="onTouched()">
+                  <mat-option
+                    *ngFor="let option of col.options"
+                    [value]="option.value"
+                    >{{ option.label }}</mat-option
+                  >
+                </mat-select>
+              </ng-container>
+              <ng-template #default>
+                <input
+                  matInput
+                  [type]="col.type"
+                  [formControlName]="col.name"
+                  [placeholder]="col.label"
+                  (blur)="onTouched()"
+                />
+              </ng-template>
+            </mat-form-field>
+            <mat-error
+                  *ngIf="array.at(index).get(col.name).hasError('required')"
+                >
+                  {{ col.label }} est requis.
+                </mat-error>
+          </td>
+        </ng-container>
       </ng-container>
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef>Name</th>
-        <td
-          mat-cell
-          *matCellDef="let element; let index = index"
-          [formGroupName]="index"
-        >
-        <mat-form-field>
-          <input
-            matInput
-            formControlName="name"
-            placeholder="Name"
-            (blur)="onTouched()"
-          />
-          <mat-error 
-            *ngIf="array.at(index).get('name').hasError('required')"
-          >
-            Nom est requis
-          </mat-error>
-        </mat-form-field>
-        </td>
-      </ng-container>
-      <ng-container matColumnDef="weight">
-        <th mat-header-cell *matHeaderCellDef>Weight</th>
-        <td
-          mat-cell
-          *matCellDef="let element; let index = index"
-          [formGroupName]="index"
-        >
-        <mat-form-field>
-          <input
-            matInput
-            formControlName="weight"
-            placeholder="Weight"
-            (blur)="onTouched()"
-          />
-          <mat-error 
-            *ngIf="array.at(index).get('weight').hasError('required')"
-          >
-            Nom est requis
-          </mat-error>
-        </mat-form-field>
-        </td>
-      </ng-container>
-      <ng-container matColumnDef="symbol">
-        <th mat-header-cell *matHeaderCellDef>Symbol</th>
-        <td
-          mat-cell
-          *matCellDef="let element; let index = index"
-          [formGroupName]="index"
-        >
-          <mat-form-field>
-            <mat-select formControlName="symbol" (blur)="onTouched()">
-              <mat-option value="H">H</mat-option>
-              <mat-option value="He">He</mat-option>
-              <mat-option value="Li">Li</mat-option>
-              <mat-option value="Be">Be</mat-option>
-              <mat-option value="B">B</mat-option>
-              <mat-option value="C">C</mat-option>
-              <mat-option value="N">N</mat-option>
-              <mat-option value="O">O</mat-option>
-              <mat-option value="F">F</mat-option>
-              <mat-option value="Ne">Ne</mat-option>
-            </mat-select>
-            <mat-error 
-            *ngIf="array.at(index).get('symbol').hasError('required')"
-            >
-            Nom est requis
-          </mat-error>
-          </mat-form-field>
-        </td>
-      </ng-container>
+
       <ng-container matColumnDef="actions">
-        <th mat-header-cell *matHeaderCellDef>Symbol</th>
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
         <td
           mat-cell
           *matCellDef="let element; let index = index"
@@ -118,10 +58,12 @@
           </button>
         </td>
       </ng-container>
+
     </table>
   </mat-card-content>
   <mat-card-actions align="end">
+    <button mat-raised-button (click)="addColumn()">Add a new column</button>
     <button mat-raised-button (click)="addToTab()">Add to Tab</button>
   </mat-card-actions>
-   invalid : {{form.invalid}}
+  invalid : {{ form.invalid }}
 </mat-card>

@@ -62,8 +62,6 @@ export class ArrayComponent
   data = [];
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol','actions'];
 
-  
-
   constructor(private _fb: FormBuilder) {}
 
 
@@ -72,11 +70,12 @@ export class ArrayComponent
    */
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.event?.currentValue) {
-        let { name , data } = changes.event.currentValue;
-        console.log(`Received ${name} with date : ${data ?? null}`);
-        switch (name) {
+        let { event , data } = changes.event.currentValue;
+        console.warn(`ArrayComponent - Received ${event} with data : ${data ? data : 'no values'}`);
+        switch (event) {
           case 'date': {
             this.array.clear();
+            this.updateView();
           }
         }
     }
@@ -88,6 +87,9 @@ export class ArrayComponent
   * Validation custom du formulaire
   */
   validate(control: AbstractControl<any, any>): ValidationErrors {
+    if(this.array.value.length === 0){
+      return { empty: true };
+    }
     return this.form.valid ? null : { invalid: true };
   }
 

@@ -1,6 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { filter, map, pairwise, Subscription, tap } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { debounceTime, delay, filter, pairwise, Subscription, tap } from 'rxjs';
+import { SandboxActions, SandboxSelectors } from './state/actions.type';
+import { SandboxState } from './state/sandbox.reducer';
 import { Column, FormControlType, FormCustomEvent } from './types/types.def';
 
 @Component({
@@ -17,62 +20,70 @@ export class SandboxComponent implements OnInit, OnDestroy {
     { position: 5, name: 'Boron', weight: 10.811, symbol: 'B' },
     { position: 6, name: 'Carbon', weight: null, symbol: 'C' },
     { position: 7, name: null, weight: 14.0067, symbol: 'N' },
-    { position: null, name: 'Oxygen', weight: 15.9994, symbol: 'O' },
+    { position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O' },
     { position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' },
     { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
   ];
 
   public form: FormGroup = this._fb.group({
-    subA: [null,Validators.required],
-    array: [this.tab,Validators.required],
+    subA: [null, Validators.required],
+    array: [null, Validators.required],
   });
 
   cols: Column[] = [
     {
-      name : 'position',
-      label : 'Position',
-      type : FormControlType.NUMBER,
-      isDisabled : false,
+      name: 'position',
+      label: 'Position',
+      type: FormControlType.NUMBER,
+      isDisabled: false,
       validators: [Validators.required],
     },
     {
-      name : 'name',
-      label : 'Name',
-      type : FormControlType.TEXT,
-      isDisabled : false,
+      name: 'name',
+      label: 'Name',
+      type: FormControlType.TEXT,
+      isDisabled: false,
       validators: [Validators.required],
     },
     {
-      name : 'weight',
-      label : 'Weight',
-      type : FormControlType.NUMBER,
-      isDisabled : false,
+      name: 'weight',
+      label: 'Weight',
+      type: FormControlType.NUMBER,
+      isDisabled: false,
       validators: [Validators.required],
     },
     {
-      name : 'symbol',
-      label : 'Symbol',
-      type : FormControlType.SELECT,
-      isDisabled : false,
+      name: 'symbol',
+      label: 'Symbol',
+      type: FormControlType.SELECT,
+      isDisabled: false,
       validators: [Validators.required],
-      options : [
-        { value : 'H', label : 'H' },
-        { value : 'He', label : 'He' },
-        { value : 'Li', label : 'Li' },
-        { value : 'Be', label : 'Be' },
-        { value : 'B', label : 'B' },
-        { value : 'C', label : 'C' },
-        { value : 'N', label : 'N' },
-        { value : 'O', label : 'O' },
-        { value : 'F', label : 'F' },
-        { value : 'Ne', label : 'Ne' },
-      ]
-    }
-  ]
+      options: [
+        { value: 'H', label: 'H' },
+        { value: 'He', label: 'He' },
+        { value: 'Li', label: 'Li' },
+        { value: 'Be', label: 'Be' },
+        { value: 'B', label: 'B' },
+        { value: 'C', label: 'C' },
+        { value: 'N', label: 'N' },
+        { value: 'O', label: 'O' },
+        { value: 'F', label: 'F' },
+        { value: 'Ne', label: 'Ne' },
+      ],
+    },
+  ];
 
   formCustomEvent: FormCustomEvent;
   previousData: any;
   formSub: Subscription;
+  storeSub: Subscription = this._store
+    .select(SandboxSelectors.selectElements)
+    .subscribe((entities) => {
+      this.form.patchValue({
+        subA: {date : new Date(), addressLine2 : null, zipCode: null , city: null , resetWeight: false},
+        array: entities,
+      });
+    });
 
   disableArray(value: any) {
     if (value.checked) {
@@ -82,46 +93,57 @@ export class SandboxComponent implements OnInit, OnDestroy {
     }
   }
 
-  constructor(private _fb: FormBuilder) {}
+  constructor(private _fb: FormBuilder, private _store: Store<SandboxState>) {}
 
   ngOnInit(): void {
+    this._store.dispatch(SandboxActions.loadElements({ elements: this.tab }));
     this.formSub = this.form.valueChanges
       .pipe(
-        tap(currentValues => {
-          if(currentValues.resetWeight){
+        debounceTime(500),
+        tap((currentValues) => {
+          if (currentValues.subA?.resetWeight) {
             this.formCustomEvent = {
-              event: 'reset-weight',
-            }
+              event: 'reset-weight'
+            };
           }
         }),
         pairwise(),
-        filter(([previous, current]) => previous !== undefined),
+        filter(([previous, current]) => {
+          console.log(previous, current);
+          console.log(previous !== undefined)
+          console.log(previous !== current)
+          return true;
+        }),
         tap(([prev, next]: [any, any]) => {
+          console.log('second tap')
           if (prev.subA?.date && prev.subA?.date !== next.subA?.date) {
             this.formCustomEvent = {
               event: 'date',
               data: next.subA.date,
             };
           }
-        }))        
-      .subscribe(this.findInvalidControls);
+        }),
+        tap(() => this.findInvalidControls())
+      )
+      .subscribe();
   }
 
   public findInvalidControls() {
     const invalid = [];
     const controls = this.form.controls;
-      for (const name in controls) {
-          if (controls[name].invalid) {
-              invalid.push(name);
-          }
+    for (const name in controls) {
+      if (controls[name].invalid) {
+        invalid.push(name);
       }
-      console.log(invalid);
-      return invalid;
+    }
+    console.log(invalid);
+    return invalid;
   }
 
   send() {}
 
   ngOnDestroy(): void {
     this.formSub.unsubscribe();
+    this.storeSub.unsubscribe();
   }
 }

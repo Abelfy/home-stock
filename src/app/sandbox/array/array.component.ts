@@ -66,27 +66,39 @@ export class ArrayComponent
 
   constructor(private _fb: FormBuilder) {}
 
+
+  /**
+   * Ecouteur de changement d'event.
+   */
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.event?.currentValue) {
         let { name , data } = changes.event.currentValue;
-        console.log(`Received ${name} with date : ${data}`);
+        console.log(`Received ${name} with date : ${data ?? null}`);
         switch (name) {
           case 'date': {
             this.array.clear();
-            
           }
         }
     }
   }
 
+  //*********** Validator ***********//
+
+  /*
+  * Validation custom du formulaire
+  */
   validate(control: AbstractControl<any, any>): ValidationErrors {
     return this.form.valid ? null : { invalid: true };
   }
 
+  /*
+  * branchement de la callback de validation du formulaire
+  */
   registerOnValidatorChange?(onValidatorChange: () => void): void {
     this.onValidatorChange = onValidatorChange;
   }
 
+  /** ControlValueAccessor */
   writeValue(obj: any): void {
     if (obj) {
       obj.forEach((element) => {
@@ -95,6 +107,25 @@ export class ArrayComponent
     }
   }
 
+  registerOnChange(fn: any): void {
+    this.formChange = this.form.valueChanges.subscribe(fn);
+  }
+
+  registerOnTouched(fn: any): void {
+    this.onTouched = fn;
+  }
+
+  setDisabledState?(isDisabled: boolean): void {
+    if (isDisabled) {
+      this.form.disable();
+    } else {
+      this.form.enable();
+    }
+  }
+
+  /**
+   * Ajout d'une nouvelle ligne au tableau de données
+   */
   addToTab() {
     this.addObjToArray({
       position: null,
@@ -104,17 +135,30 @@ export class ArrayComponent
     });
   }
 
+  /**
+   * Ajout d'un formulaire à l'array & mise à jour de la vue
+   * @param obj donnée d'une ligne de formulaire
+   */
   addObjToArray(obj: any) {
     this.array = this.form.get('array') as FormArray;
     this.array.push(this.createRow(obj));
     this.updateView();
   }
 
+  /**
+   * Suppression d'une ligne du tableau de formulaires
+   * @param index index de la ligne à supprimer
+   */
   remove(index: number) {
     this.array.removeAt(index);
     this.updateView();
   }
 
+  /**
+   * Création d'une ligne de formulaire
+   * @param obj donnée d'une ligne de formulaire
+   * @returns 
+   */
   createRow(obj: any): FormGroup {
     let group = this._fb.group({});
     this.cols.forEach((col) => {
@@ -128,26 +172,19 @@ export class ArrayComponent
     return group;
   }
 
-  updateView() {
+  /**
+   * Mise à jour de la vue
+   */
+  updateView() : void  {
     this.form.markAllAsTouched();
     this.dataSource.next(this.array.controls);
   }
 
-  registerOnChange(fn: any): void {
-    this.formChange = this.form.valueChanges
-       .pipe(
-        tap((value) => {
-          this.updateView();
-        })
-      )
-      .subscribe(fn());
-  }
-
-  registerOnTouched(fn: any): void {
-    this.onTouched = fn;
-  }
-
-  addColumn() {
+  /**
+   * Ajoute une colonne à toutes les lignes du tableau de formulaire.
+   * @returns 
+   */
+  addColumn(): void {
     if(this.displayedColumns.includes('added')){
       alert('Column already added');
       return;
@@ -165,14 +202,6 @@ export class ArrayComponent
     })
     this.updateView();
     this.displayedColumns.push('added');
-  }
-
-  setDisabledState?(isDisabled: boolean): void {
-    if (isDisabled) {
-      this.form.disable();
-    } else {
-      this.form.enable();
-    }
   }
 
   ngOnDestroy(): void {

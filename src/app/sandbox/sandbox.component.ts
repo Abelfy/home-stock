@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { pairwise, Subscription } from 'rxjs';
+import { filter, map, pairwise, Subscription, tap } from 'rxjs';
 import { Column, FormControlType, FormCustomEvent } from './types/types.def';
 
 @Component({
@@ -76,9 +76,9 @@ export class SandboxComponent implements OnInit, OnDestroy {
 
   disableArray(value: any) {
     if (value.checked) {
-      this.form.get('array').disable();
+      this.form.disable();
     } else {
-      this.form.get('array').enable();
+      this.form.enable();
     }
   }
 
@@ -86,18 +86,37 @@ export class SandboxComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.formSub = this.form.valueChanges
-      .pipe(pairwise())
-      .subscribe(([prev, next]: [any, any]) => {
-        {
+      .pipe(
+        tap(currentValues => {
+          if(currentValues.resetWeight){
+            this.formCustomEvent = {
+              event: 'reset-weight',
+            }
+          }
+        }),
+        pairwise(),
+        filter(([previous, current]) => previous !== undefined),
+        tap(([prev, next]: [any, any]) => {
           if (prev.subA?.date && prev.subA?.date !== next.subA?.date) {
             this.formCustomEvent = {
               event: 'date',
               data: next.subA.date,
             };
           }
-          
-        }
-      });
+        }))        
+      .subscribe(this.findInvalidControls);
+  }
+
+  public findInvalidControls() {
+    const invalid = [];
+    const controls = this.form.controls;
+      for (const name in controls) {
+          if (controls[name].invalid) {
+              invalid.push(name);
+          }
+      }
+      console.log(invalid);
+      return invalid;
   }
 
   send() {}

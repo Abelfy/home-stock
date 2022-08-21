@@ -2,7 +2,7 @@ import { ValidatorFn } from "@angular/forms";
 
 export type FormCustomEvent = {
     event: string;
-    data: any;
+    data?: any;
 }
 
 export type Column ={

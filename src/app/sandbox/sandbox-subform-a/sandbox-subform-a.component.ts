@@ -21,20 +21,24 @@ import { Subscription } from 'rxjs';
 })
 export class SandboxSubformAComponent implements ControlValueAccessor, OnDestroy, Validator
 {
-  onTouched = () => {};
 
+  onTouched = () => {};
+  onValidatorChange: Function = () => {};
   onChangeSub: Subscription;
   form: FormGroup = this._fb.group({
     date: [new Date(), [Validators.required]],
     addressLine2: [null, [Validators.required]],
     zipCode: [null, [Validators.required]],
     city: [null, [Validators.required]],
+    resetWeight: [false, [Validators.required]],
   });
-  onValidatorChange: Function = () => {};
+  
   constructor(private _fb: FormBuilder) {}
+  
   validate(control: AbstractControl<any, any>): ValidationErrors {
     return this.form.errors;
   }
+
   registerOnValidatorChange?(fn: () => void): void {
     this.onValidatorChange = fn;
   }

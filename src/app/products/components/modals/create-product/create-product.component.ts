@@ -1,13 +1,12 @@
 import { HttpEventType, HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { ToastrService } from 'ngx-toastr';
-import { catchError, EMPTY, map } from 'rxjs';
 import { FileUploadService } from 'src/app/products/services/file-upload.service';
-import { ProductSelectors } from 'src/app/products/state/actions-types';
-import { AppState } from 'src/app/state/app.state';
+import * as LabelsSelectors from 'src/app/products/store/labels/labels.selectors';
+import { AppState } from 'src/app/store/app.state';
 
 @Component({
   selector: 'app-create-product',
@@ -17,7 +16,7 @@ import { AppState } from 'src/app/state/app.state';
 })
 export class CreateProductComponent implements OnInit {
 
-  labels$ = this._store.select(ProductSelectors.selectAllLabels);
+  labels$ = this._store.select(LabelsSelectors.selectAllLabels);
 
   form : FormGroup;
 

@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { AppState } from './state/app.state';
-import { AuthActions, AuthSelectors } from './auth/state/action-types';
+import { AppState } from './store/app.state';
+import { AuthActions, AuthSelectors } from './auth/state';
 import { AuthService } from './auth/services/auth.service';
+import { CartSelectors } from './cart/state';
 //unt } from './products/state/products/products.selectors';
 
 @Component({
@@ -19,6 +20,7 @@ export class AppComponent implements OnInit {
   isLoggedIn$ : Observable<boolean>;
   isLoggedOut$ : Observable<boolean>;
   user$ = this._store.select(AuthSelectors.user);	
+  cart$ = this._store.select(CartSelectors.selectCart);	
 
 
   constructor(
@@ -34,6 +36,7 @@ export class AppComponent implements OnInit {
     }
     
     this.router.events.subscribe(event => {
+      
       switch(true){
         case event instanceof NavigationStart:{
           this.loading = true;
@@ -42,6 +45,7 @@ export class AppComponent implements OnInit {
         case event  instanceof NavigationEnd:
         case event instanceof NavigationCancel:
         case event instanceof NavigationError : {
+          console.log('this.router.getCurrentNavigation() :>> ', this.router.getCurrentNavigation());
           this.loading = false;
           break
         }

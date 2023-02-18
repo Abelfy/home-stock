@@ -1,6 +1,6 @@
 import { Update } from "@ngrx/entity";
 import { createAction, props } from "@ngrx/store";
-import { ProductInList } from "src/app/state/models/product-in-cart.model";
+import { ProductInList } from "src/app/store/models/product-in-cart.model";
 import { ShoppingList } from "./shopping-list";
 
 export const loadAllShoppingLists = createAction('[Shopping Lists] Load All Shopping Lists');

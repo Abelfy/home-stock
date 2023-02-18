@@ -1,0 +1,36 @@
+<mat-card class="w-100">
+    <mat-card-header>
+      <mat-card-title>
+        <h1>Permissions</h1>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="example-container">
+        <h3>Disponibles</h3>
+      
+        <mat-list
+          cdkDropList
+          #availableList="cdkDropList"
+          [cdkDropListData]="permissions"
+          [cdkDropListConnectedTo]="[rolePermissionList]"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)">
+          <mat-list-item class="example-box" *ngFor="let item of permissions" cdkDrag>{{item.action}}</mat-list-item>
+        </mat-list>
+      </div>
+      
+      <div class="example-container">
+        <h3>Permissions du role</h3>
+      
+        <mat-list
+          cdkDropList
+          #rolePermissionList="cdkDropList"
+          [cdkDropListData]="assignedPermissions"
+          [cdkDropListConnectedTo]="[availableList]"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)">
+          <mat-list-item class="example-box" *ngFor="let item of assignedPermissions" cdkDrag>{{item.action}}</mat-list-item>
+        </mat-list>
+      </div>
+    </mat-card-content>
+    </mat-card>

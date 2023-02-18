@@ -1,0 +1,29 @@
+.dot {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+  &.draft {
+    background-color: rgb(235, 220, 11);
+  }
+  &.active {
+    background-color: rgb(23, 189, 31);
+  }
+  &.published {
+    background-color: rgb(23, 189, 31);
+  }
+  &.archived {
+    background-color: rgb(235, 11, 11);
+  }
+  &.inactive {
+    background-color: rgb(235, 11, 11);
+  }
+}
+
+table {
+  width: 100%;
+}
+
+.custom-dialog-container .mat-dialog-container {
+  margin-bottom: 0.7rem;
+}

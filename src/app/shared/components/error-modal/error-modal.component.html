@@ -1,0 +1,13 @@
+
+<h2 mat-dialog-title>
+    <mat-icon>error</mat-icon>
+    <span>Erreur : {{ data.message }}</span>
+</h2>
+<ng-container *ngIf="!env.production">
+    <mat-dialog-content>
+        <pre> {{ data.stack }} </pre>
+    </mat-dialog-content>
+</ng-container>
+<mat-dialog-actions align="end">
+  <button mat-button color="primary" (click)="close()" cdkFocusInitial> Fermer </button>
+</mat-dialog-actions>

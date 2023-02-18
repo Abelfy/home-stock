@@ -1,4 +1,4 @@
-import { ProductInList } from "src/app/state/models/product-in-cart.model";
+import { ProductInList } from "src/app/store/models/product-in-cart.model";
 
 export interface ShoppingList {
   id: string;

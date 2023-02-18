@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from "@angular/router";
 import { select, Store } from "@ngrx/store";
 import { filter, finalize, first, Observable, tap } from "rxjs";
-import { AppState } from "src/app/reducers";
+import { AppState } from "src/app/store/app.state";
 import { ShoppingListsActions, ShoppingListsSelectors } from "./action-types";
 
 @Injectable()

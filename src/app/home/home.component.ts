@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { User } from '../state/models/user.model';
+import { User } from '../store/models/user.model';
 import { Observable } from 'rxjs';
-import { AppState } from '../state/app.state';
-import { AuthSelectors } from '../auth/state/action-types';
+import { AppState } from '../store/app.state';
+import { AuthSelectors } from '../auth/state';
 
 @Component({
   selector: 'app-home',

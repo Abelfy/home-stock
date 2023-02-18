@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable, tap } from 'rxjs';
-import { User } from 'src/app/state/models/user.model';
+import { User } from 'src/app/store/models/user.model';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -16,25 +16,24 @@ export class AuthService {
 
   login(email: string, password: string): Observable<any> {
     return this.http
-      .post<any>(`${environment.api}/auth/login`, {
+      .post<any>(`${environment.api}/auth/local/signin`, {
         email,
         password,
-      })
-      .pipe(map((envelope) => envelope.data));
+      });
   }
 
   refresh(): Observable<any> {
     return this.http
-      .post<any>(`${environment.api}/auth/refresh`, {
-        refresh_token: localStorage.getItem('refresh_token'),
-      })
-      .pipe(map((envelope) => envelope.data));
+      .post<any>(`${environment.api}/auth/refresh`, {}).pipe(tap((response) => {
+        localStorage.setItem('access_token',response.access_token);
+        localStorage.setItem('refresh_token',response.refresh_token);
+      }));
   }
 
   logout(): Observable<any> {
     return this.http
       .post(`${environment.api}/auth/logout`, {
-        refresh_token: localStorage.getItem('refresh_token'),
+        id : JSON.parse(localStorage.getItem('user')).id,
       })
       .pipe(
         tap((response) => {
@@ -45,7 +44,6 @@ export class AuthService {
 
   me(): Observable<User> {
     return this.http
-      .get<User>(`${environment.api}/users/me?fields=*,role.name,role.id`)
-      .pipe(map((envelopp: any) => envelopp.data));
+      .get<User>(`${environment.api}/auth/me`)
   }
 }

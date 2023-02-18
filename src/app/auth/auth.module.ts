@@ -4,11 +4,11 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { SharedModule } from '../shared/shared.module';
 import { RegisterFormComponent } from './components/register-form/register-form.component';
 import { StoreModule } from '@ngrx/store';
-import { authReducer } from './state/auth.reducers';
+import { authReducer } from './state/auth.reducer';
 import { RouterModule } from '@angular/router';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from './state/auth.effects';
-import { AuthGuard } from './auth.guard';
+import { AuthGuard } from './guards/auth.guard';
 import { AuthService } from './services/auth.service';
 
 @NgModule({

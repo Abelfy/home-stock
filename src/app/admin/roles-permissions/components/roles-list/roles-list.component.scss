@@ -1,0 +1,39 @@
+.dot {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: inline-block;
+    &.draft {
+      background-color: rgb(235, 220, 11);
+    }
+    &.active {
+      background-color: rgb(23, 189, 31);
+    }
+    &.published {
+      background-color: rgb(23, 189, 31);
+    }
+    &.archived {
+      background-color: rgb(235, 11, 11);
+    }
+  }
+  
+  table {
+    width: 100%;
+  }
+
+  .w-100 {
+    width: 100%;
+  }
+
+  .detail-row {
+    height: 0;
+  }
+
+  .element-row td {
+    border-bottom-width: 0;
+  }
+
+  .element-detail {
+    overflow: hidden;
+    display: flex;
+  }

@@ -3,19 +3,21 @@ import { CommonModule } from '@angular/common';
 import { ProductsRoutingModule } from './products-routing.module';
 import { SharedModule } from '../shared/shared.module';
 
-import { ProductContainerComponent } from './components/product-container/product-container.component';
-
+import { ProductContainerComponent } from './containers/product-container/product-container.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { StoreModule } from '@ngrx/store';
 import { CreateProductComponent } from './components/modals/create-product/create-product.component';
 import { EffectsModule } from '@ngrx/effects';
 import { UpdateProductComponent } from './components/modals/update-product/update-product.component';
-import { ProductEffects } from './state/effects/product.effects';
-import { ProductResolver } from './state/products.resolver';
-import { productsReducer } from './state/products.reducer';
-import { CartModule } from './cart/cart.module';
-import { LabelsEffects } from './state/effects/labels.effects';
-import { UnitsEffects } from './state/effects/units.effects';
+import { ProductEffects } from './store/effects/product.effects';
+import { ProductResolver } from './resolvers/product.resolver';
+import { CartModule } from '../cart/cart.module';
+import { LabelsEffects } from './store/effects/labels.effects';
+import { UnitsEffects } from './store/effects/units.effects';
+import { reducers } from './store/feature.reducer';
+import { UnitResolver } from './resolvers/unit.resolver';
+import { LabelResolver } from './resolvers/label.resolver';
+
 
 
 
@@ -28,14 +30,16 @@ import { UnitsEffects } from './state/effects/units.effects';
   ],
   imports: [
     CommonModule,
-    CartModule,
     ProductsRoutingModule,
-    StoreModule.forFeature('products', productsReducer),
+    StoreModule.forFeature('products', reducers),
     EffectsModule.forFeature([ProductEffects,LabelsEffects,UnitsEffects]),
-    SharedModule
+    SharedModule,
+    CartModule
   ],
   providers : [
-    ProductResolver
+    ProductResolver,
+    UnitResolver,
+    LabelResolver
   ]
 })
 export class ProductsModule { }

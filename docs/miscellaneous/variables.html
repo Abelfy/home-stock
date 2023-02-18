@@ -1,0 +1,4131 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>home-stock documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">home-stock documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-variables">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Miscellaneous</li>
+  <li>Variables</li>
+</ol>
+
+<section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#adapter" title="src/app/cart/state/cart.reducer.ts" ><b>adapter</b>&nbsp;&nbsp;&nbsp;(src/.../cart.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#adapter" title="src/app/shopping-lists/state/shopping-lists.reducers.ts" ><b>adapter</b>&nbsp;&nbsp;&nbsp;(src/.../shopping-lists.reducers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#adapter" title="src/app/admin/users/store/users.reducer.ts" ><b>adapter</b>&nbsp;&nbsp;&nbsp;(src/.../users.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#adapter" title="src/app/products/store/labels/labels.reducer.ts" ><b>adapter</b>&nbsp;&nbsp;&nbsp;(src/.../labels.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#adapter" title="src/app/products/store/products/products.reducer.ts" ><b>adapter</b>&nbsp;&nbsp;&nbsp;(src/.../products.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#adapter" title="src/app/products/store/units/units.reducer.ts" ><b>adapter</b>&nbsp;&nbsp;&nbsp;(src/.../units.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#adapter" title="src/app/admin/roles-permissions/store/permissions/permissions.reducer.ts" ><b>adapter</b>&nbsp;&nbsp;&nbsp;(src/.../permissions.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#adapter" title="src/app/admin/roles-permissions/store/roles/roles.reducer.ts" ><b>adapter</b>&nbsp;&nbsp;&nbsp;(src/.../roles.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#addProductToCart" title="src/app/cart/state/cart.actions.ts" ><b>addProductToCart</b>&nbsp;&nbsp;&nbsp;(src/.../cart.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#allProductsLoaded" title="src/app/products/store/products/products.actions.ts" ><b>allProductsLoaded</b>&nbsp;&nbsp;&nbsp;(src/.../products.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#allShoppingListsLoaded" title="src/app/shopping-lists/state/shopping-lists.actions.ts" ><b>allShoppingListsLoaded</b>&nbsp;&nbsp;&nbsp;(src/.../shopping-lists.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#allShoppingListsLoadError" title="src/app/shopping-lists/state/shopping-lists.actions.ts" ><b>allShoppingListsLoadError</b>&nbsp;&nbsp;&nbsp;(src/.../shopping-lists.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#areAllShoppingListsLoaded" title="src/app/shopping-lists/state/shopping-lists.selectors.ts" ><b>areAllShoppingListsLoaded</b>&nbsp;&nbsp;&nbsp;(src/.../shopping-lists.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#areLabelsLoaded" title="src/app/products/store/labels/labels.selectors.ts" ><b>areLabelsLoaded</b>&nbsp;&nbsp;&nbsp;(src/.../labels.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#areProductsLoaded" title="src/app/admin/users/store/users.selectors.ts" ><b>areProductsLoaded</b>&nbsp;&nbsp;&nbsp;(src/.../users.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#areProductsLoaded" title="src/app/products/store/products/products.selectors.ts" ><b>areProductsLoaded</b>&nbsp;&nbsp;&nbsp;(src/.../products.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#areProductsLoaded" title="src/app/admin/roles-permissions/store/permissions/permissions.selectors.ts" ><b>areProductsLoaded</b>&nbsp;&nbsp;&nbsp;(src/.../permissions.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#areProductsLoaded" title="src/app/admin/roles-permissions/store/roles/roles.selectors.ts" ><b>areProductsLoaded</b>&nbsp;&nbsp;&nbsp;(src/.../roles.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#areUnitsLoaded" title="src/app/products/store/units/units.selectors.ts" ><b>areUnitsLoaded</b>&nbsp;&nbsp;&nbsp;(src/.../units.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#authReducer" title="src/app/auth/state/auth.reducer.ts" ><b>authReducer</b>&nbsp;&nbsp;&nbsp;(src/.../auth.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#checkOutCart" title="src/app/cart/state/cart.actions.ts" ><b>checkOutCart</b>&nbsp;&nbsp;&nbsp;(src/.../cart.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#checkOutCartSuccess" title="src/app/cart/state/cart.actions.ts" ><b>checkOutCartSuccess</b>&nbsp;&nbsp;&nbsp;(src/.../cart.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#components" title="src/app/shared/shared.module.ts" ><b>components</b>&nbsp;&nbsp;&nbsp;(src/.../shared.module.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#context" title="src/test.ts" ><b>context</b>&nbsp;&nbsp;&nbsp;(src/.../test.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#createPermission" title="src/app/admin/roles-permissions/store/permissions/permissions.actions.ts" ><b>createPermission</b>&nbsp;&nbsp;&nbsp;(src/.../permissions.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#createPermissionFailure" title="src/app/admin/roles-permissions/store/permissions/permissions.actions.ts" ><b>createPermissionFailure</b>&nbsp;&nbsp;&nbsp;(src/.../permissions.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#createPermissionSuccess" title="src/app/admin/roles-permissions/store/permissions/permissions.actions.ts" ><b>createPermissionSuccess</b>&nbsp;&nbsp;&nbsp;(src/.../permissions.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#createProduct" title="src/app/products/store/products/products.actions.ts" ><b>createProduct</b>&nbsp;&nbsp;&nbsp;(src/.../products.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#createProductSuccess" title="src/app/products/store/products/products.actions.ts" ><b>createProductSuccess</b>&nbsp;&nbsp;&nbsp;(src/.../products.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#createRole" title="src/app/admin/roles-permissions/store/roles/roles.actions.ts" ><b>createRole</b>&nbsp;&nbsp;&nbsp;(src/.../roles.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#createRoleFailure" title="src/app/admin/roles-permissions/store/roles/roles.actions.ts" ><b>createRoleFailure</b>&nbsp;&nbsp;&nbsp;(src/.../roles.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#createRoleSuccess" title="src/app/admin/roles-permissions/store/roles/roles.actions.ts" ><b>createRoleSuccess</b>&nbsp;&nbsp;&nbsp;(src/.../roles.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#createUser" title="src/app/admin/users/store/users.actions.ts" ><b>createUser</b>&nbsp;&nbsp;&nbsp;(src/.../users.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#createUserSuccess" title="src/app/admin/users/store/users.actions.ts" ><b>createUserSuccess</b>&nbsp;&nbsp;&nbsp;(src/.../users.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#deletePermission" title="src/app/admin/roles-permissions/store/permissions/permissions.actions.ts" ><b>deletePermission</b>&nbsp;&nbsp;&nbsp;(src/.../permissions.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#deletePermissionFailure" title="src/app/admin/roles-permissions/store/permissions/permissions.actions.ts" ><b>deletePermissionFailure</b>&nbsp;&nbsp;&nbsp;(src/.../permissions.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#deletePermissionSuccess" title="src/app/admin/roles-permissions/store/permissions/permissions.actions.ts" ><b>deletePermissionSuccess</b>&nbsp;&nbsp;&nbsp;(src/.../permissions.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#deleteRole" title="src/app/admin/roles-permissions/store/roles/roles.actions.ts" ><b>deleteRole</b>&nbsp;&nbsp;&nbsp;(src/.../roles.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#deleteRoleFailure" title="src/app/admin/roles-permissions/store/roles/roles.actions.ts" ><b>deleteRoleFailure</b>&nbsp;&nbsp;&nbsp;(src/.../roles.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#deleteRoleSuccess" title="src/app/admin/roles-permissions/store/roles/roles.actions.ts" ><b>deleteRoleSuccess</b>&nbsp;&nbsp;&nbsp;(src/.../roles.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#environment" title="src/environments/environment.prod.ts" ><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.prod.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#environment" title="src/environments/environment.ts" ><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#fakeActivatedRoute" title="src/app/admin/users/components/user-list/users.stories.ts" ><b>fakeActivatedRoute</b>&nbsp;&nbsp;&nbsp;(src/.../users.stories.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#featuresModules" title="src/app/app.module.ts" ><b>featuresModules</b>&nbsp;&nbsp;&nbsp;(src/.../app.module.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#filterPermissions" title="src/app/admin/roles-permissions/store/permissions/permissions.actions.ts" ><b>filterPermissions</b>&nbsp;&nbsp;&nbsp;(src/.../permissions.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#filterProducts" title="src/app/products/store/products/products.actions.ts" ><b>filterProducts</b>&nbsp;&nbsp;&nbsp;(src/.../products.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#filterRoles" title="src/app/admin/roles-permissions/store/roles/roles.actions.ts" ><b>filterRoles</b>&nbsp;&nbsp;&nbsp;(src/.../roles.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#filterUsers" title="src/app/admin/users/store/users.actions.ts" ><b>filterUsers</b>&nbsp;&nbsp;&nbsp;(src/.../users.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Hydrated" title="src/app/admin/users/components/user-list/users.stories.ts" ><b>Hydrated</b>&nbsp;&nbsp;&nbsp;(src/.../users.stories.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#initialAuthState" title="src/app/auth/state/auth.reducer.ts" ><b>initialAuthState</b>&nbsp;&nbsp;&nbsp;(src/.../auth.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#initialCartState" title="src/app/cart/state/cart.reducer.ts" ><b>initialCartState</b>&nbsp;&nbsp;&nbsp;(src/.../cart.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#initialShoppingListsState" title="src/app/shopping-lists/state/shopping-lists.reducers.ts" ><b>initialShoppingListsState</b>&nbsp;&nbsp;&nbsp;(src/.../shopping-lists.reducers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#initialState" title="src/app/products/store/units/units.reducer.ts" ><b>initialState</b>&nbsp;&nbsp;&nbsp;(src/.../units.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#isAdmin" title="src/app/auth/state/auth.selectors.ts" ><b>isAdmin</b>&nbsp;&nbsp;&nbsp;(src/.../auth.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#isLoggedIn" title="src/app/auth/state/auth.selectors.ts" ><b>isLoggedIn</b>&nbsp;&nbsp;&nbsp;(src/.../auth.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#isLoggedOut" title="src/app/auth/state/auth.selectors.ts" ><b>isLoggedOut</b>&nbsp;&nbsp;&nbsp;(src/.../auth.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Large" title="src/stories/Button.stories.ts" ><b>Large</b>&nbsp;&nbsp;&nbsp;(src/.../Button.stories.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#loadAllLabels" title="src/app/products/store/labels/labels.actions.ts" ><b>loadAllLabels</b>&nbsp;&nbsp;&nbsp;(src/.../labels.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#loadAllLabelsFailure" title="src/app/products/store/labels/labels.actions.ts" ><b>loadAllLabelsFailure</b>&nbsp;&nbsp;&nbsp;(src/.../labels.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#loadAllLabelsSuccess" title="src/app/products/store/labels/labels.actions.ts" ><b>loadAllLabelsSuccess</b>&nbsp;&nbsp;&nbsp;(src/.../labels.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#loadAllPermissions" title="src/app/admin/roles-permissions/store/permissions/permissions.actions.ts" ><b>loadAllPermissions</b>&nbsp;&nbsp;&nbsp;(src/.../permissions.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#loadAllPermissionsFailure" title="src/app/admin/roles-permissions/store/permissions/permissions.actions.ts" ><b>loadAllPermissionsFailure</b>&nbsp;&nbsp;&nbsp;(src/.../permissions.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#loadAllPermissionsSuccess" title="src/app/admin/roles-permissions/store/permissions/permissions.actions.ts" ><b>loadAllPermissionsSuccess</b>&nbsp;&nbsp;&nbsp;(src/.../permissions.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#loadAllProducts" title="src/app/products/store/products/products.actions.ts" ><b>loadAllProducts</b>&nbsp;&nbsp;&nbsp;(src/.../products.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#loadAllRoles" title="src/app/admin/roles-permissions/store/roles/roles.actions.ts" ><b>loadAllRoles</b>&nbsp;&nbsp;&nbsp;(src/.../roles.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#loadAllRolesFailure" title="src/app/admin/roles-permissions/store/roles/roles.actions.ts" ><b>loadAllRolesFailure</b>&nbsp;&nbsp;&nbsp;(src/.../roles.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#loadAllRolesSuccess" title="src/app/admin/roles-permissions/store/roles/roles.actions.ts" ><b>loadAllRolesSuccess</b>&nbsp;&nbsp;&nbsp;(src/.../roles.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#loadAllShoppingLists" title="src/app/shopping-lists/state/shopping-lists.actions.ts" ><b>loadAllShoppingLists</b>&nbsp;&nbsp;&nbsp;(src/.../shopping-lists.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#loadAllUnits" title="src/app/products/store/units/units.actions.ts" ><b>loadAllUnits</b>&nbsp;&nbsp;&nbsp;(src/.../units.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#loadAllUnitsFailure" title="src/app/products/store/units/units.actions.ts" ><b>loadAllUnitsFailure</b>&nbsp;&nbsp;&nbsp;(src/.../units.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#loadAllUnitsSuccess" title="src/app/products/store/units/units.actions.ts" ><b>loadAllUnitsSuccess</b>&nbsp;&nbsp;&nbsp;(src/.../units.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#loadAllUsers" title="src/app/admin/users/store/users.actions.ts" ><b>loadAllUsers</b>&nbsp;&nbsp;&nbsp;(src/.../users.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#loadAllUsersFailure" title="src/app/admin/users/store/users.actions.ts" ><b>loadAllUsersFailure</b>&nbsp;&nbsp;&nbsp;(src/.../users.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#loadAllUsersSuccess" title="src/app/admin/users/store/users.actions.ts" ><b>loadAllUsersSuccess</b>&nbsp;&nbsp;&nbsp;(src/.../users.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#LoggedIn" title="src/stories/Header.stories.ts" ><b>LoggedIn</b>&nbsp;&nbsp;&nbsp;(src/.../Header.stories.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#LoggedIn" title="src/stories/Page.stories.ts" ><b>LoggedIn</b>&nbsp;&nbsp;&nbsp;(src/.../Page.stories.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#LoggedOut" title="src/stories/Header.stories.ts" ><b>LoggedOut</b>&nbsp;&nbsp;&nbsp;(src/.../Header.stories.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#LoggedOut" title="src/stories/Page.stories.ts" ><b>LoggedOut</b>&nbsp;&nbsp;&nbsp;(src/.../Page.stories.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#LogIn" title="src/app/auth/state/auth.actions.ts" ><b>LogIn</b>&nbsp;&nbsp;&nbsp;(src/.../auth.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#LogInFailure" title="src/app/auth/state/auth.actions.ts" ><b>LogInFailure</b>&nbsp;&nbsp;&nbsp;(src/.../auth.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#LogInSuccess" title="src/app/auth/state/auth.actions.ts" ><b>LogInSuccess</b>&nbsp;&nbsp;&nbsp;(src/.../auth.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#LogOut" title="src/app/auth/state/auth.actions.ts" ><b>LogOut</b>&nbsp;&nbsp;&nbsp;(src/.../auth.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#metaReducers" title="src/app/store/reducers/index.ts" ><b>metaReducers</b>&nbsp;&nbsp;&nbsp;(src/.../index.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#modules" title="src/app/shared/material.module.ts" ><b>modules</b>&nbsp;&nbsp;&nbsp;(src/.../material.module.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#modules" title="src/app/shared/shared.module.ts" ><b>modules</b>&nbsp;&nbsp;&nbsp;(src/.../shared.module.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ngrxModules" title="src/app/app.module.ts" ><b>ngrxModules</b>&nbsp;&nbsp;&nbsp;(src/.../app.module.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#NonHydrated" title="src/app/admin/users/components/user-list/users.stories.ts" ><b>NonHydrated</b>&nbsp;&nbsp;&nbsp;(src/.../users.stories.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Primary" title="src/stories/Button.stories.ts" ><b>Primary</b>&nbsp;&nbsp;&nbsp;(src/.../Button.stories.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#reducer" title="src/app/cart/state/cart.reducer.ts" ><b>reducer</b>&nbsp;&nbsp;&nbsp;(src/.../cart.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#reducer" title="src/app/admin/users/store/users.reducer.ts" ><b>reducer</b>&nbsp;&nbsp;&nbsp;(src/.../users.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#reducer" title="src/app/products/store/labels/labels.reducer.ts" ><b>reducer</b>&nbsp;&nbsp;&nbsp;(src/.../labels.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#reducer" title="src/app/products/store/products/products.reducer.ts" ><b>reducer</b>&nbsp;&nbsp;&nbsp;(src/.../products.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#reducer" title="src/app/products/store/units/units.reducer.ts" ><b>reducer</b>&nbsp;&nbsp;&nbsp;(src/.../units.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#reducer" title="src/app/admin/roles-permissions/store/permissions/permissions.reducer.ts" ><b>reducer</b>&nbsp;&nbsp;&nbsp;(src/.../permissions.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#reducer" title="src/app/admin/roles-permissions/store/roles/roles.reducer.ts" ><b>reducer</b>&nbsp;&nbsp;&nbsp;(src/.../roles.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#reducers" title="src/app/products/store/feature.reducer.ts" ><b>reducers</b>&nbsp;&nbsp;&nbsp;(src/.../feature.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#reducers" title="src/app/store/reducers/index.ts" ><b>reducers</b>&nbsp;&nbsp;&nbsp;(src/.../index.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#reducers" title="src/app/admin/roles-permissions/store/feature.reducer.ts" ><b>reducers</b>&nbsp;&nbsp;&nbsp;(src/.../feature.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#removeProduct" title="src/app/products/store/products/products.actions.ts" ><b>removeProduct</b>&nbsp;&nbsp;&nbsp;(src/.../products.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#removeProductToCart" title="src/app/cart/state/cart.actions.ts" ><b>removeProductToCart</b>&nbsp;&nbsp;&nbsp;(src/.../cart.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#removeUser" title="src/app/admin/users/store/users.actions.ts" ><b>removeUser</b>&nbsp;&nbsp;&nbsp;(src/.../users.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#require" title="src/test.ts" ><b>require</b>&nbsp;&nbsp;&nbsp;(src/.../test.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Secondary" title="src/stories/Button.stories.ts" ><b>Secondary</b>&nbsp;&nbsp;&nbsp;(src/.../Button.stories.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectAllLabels" title="src/app/products/store/labels/labels.selectors.ts" ><b>selectAllLabels</b>&nbsp;&nbsp;&nbsp;(src/.../labels.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectAllPermissions" title="src/app/admin/roles-permissions/store/permissions/permissions.selectors.ts" ><b>selectAllPermissions</b>&nbsp;&nbsp;&nbsp;(src/.../permissions.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectAllProducts" title="src/app/products/store/products/products.selectors.ts" ><b>selectAllProducts</b>&nbsp;&nbsp;&nbsp;(src/.../products.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectAllRoles" title="src/app/admin/roles-permissions/store/roles/roles.selectors.ts" ><b>selectAllRoles</b>&nbsp;&nbsp;&nbsp;(src/.../roles.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectAllShoppingLists" title="src/app/shopping-lists/state/shopping-lists.selectors.ts" ><b>selectAllShoppingLists</b>&nbsp;&nbsp;&nbsp;(src/.../shopping-lists.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectAllUnits" title="src/app/products/store/units/units.selectors.ts" ><b>selectAllUnits</b>&nbsp;&nbsp;&nbsp;(src/.../units.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectAllUsers" title="src/app/admin/users/store/users.selectors.ts" ><b>selectAllUsers</b>&nbsp;&nbsp;&nbsp;(src/.../users.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectAuthState" title="src/app/auth/state/auth.selectors.ts" ><b>selectAuthState</b>&nbsp;&nbsp;&nbsp;(src/.../auth.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectCart" title="src/app/cart/state/cart.selectors.ts" ><b>selectCart</b>&nbsp;&nbsp;&nbsp;(src/.../cart.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectCartLoading" title="src/app/cart/state/cart.selectors.ts" ><b>selectCartLoading</b>&nbsp;&nbsp;&nbsp;(src/.../cart.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectCartState" title="src/app/cart/state/cart.selectors.ts" ><b>selectCartState</b>&nbsp;&nbsp;&nbsp;(src/.../cart.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectFeatureState" title="src/app/products/store/feature.selectors.ts" ><b>selectFeatureState</b>&nbsp;&nbsp;&nbsp;(src/.../feature.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectFeatureState" title="src/app/admin/roles-permissions/store/feature.selectors.ts" ><b>selectFeatureState</b>&nbsp;&nbsp;&nbsp;(src/.../feature.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectLabelState" title="src/app/products/store/feature.selectors.ts" ><b>selectLabelState</b>&nbsp;&nbsp;&nbsp;(src/.../feature.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectPermissionState" title="src/app/admin/roles-permissions/store/feature.selectors.ts" ><b>selectPermissionState</b>&nbsp;&nbsp;&nbsp;(src/.../feature.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectProductState" title="src/app/products/store/feature.selectors.ts" ><b>selectProductState</b>&nbsp;&nbsp;&nbsp;(src/.../feature.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectRoleState" title="src/app/admin/roles-permissions/store/feature.selectors.ts" ><b>selectRoleState</b>&nbsp;&nbsp;&nbsp;(src/.../feature.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectShoppingListById" title="src/app/shopping-lists/state/shopping-lists.selectors.ts" ><b>selectShoppingListById</b>&nbsp;&nbsp;&nbsp;(src/.../shopping-lists.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectShoppingListsState" title="src/app/shopping-lists/state/shopping-lists.selectors.ts" ><b>selectShoppingListsState</b>&nbsp;&nbsp;&nbsp;(src/.../shopping-lists.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectUnitState" title="src/app/products/store/feature.selectors.ts" ><b>selectUnitState</b>&nbsp;&nbsp;&nbsp;(src/.../feature.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectUserState" title="src/app/admin/users/store/users.selectors.ts" ><b>selectUserState</b>&nbsp;&nbsp;&nbsp;(src/.../users.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#services" title="src/app/shared/shared.module.ts" ><b>services</b>&nbsp;&nbsp;&nbsp;(src/.../shared.module.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#shoppingListsReducer" title="src/app/shopping-lists/state/shopping-lists.reducers.ts" ><b>shoppingListsReducer</b>&nbsp;&nbsp;&nbsp;(src/.../shopping-lists.reducers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Small" title="src/stories/Button.stories.ts" ><b>Small</b>&nbsp;&nbsp;&nbsp;(src/.../Button.stories.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Template" title="src/stories/Button.stories.ts" ><b>Template</b>&nbsp;&nbsp;&nbsp;(src/.../Button.stories.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Template" title="src/stories/Header.stories.ts" ><b>Template</b>&nbsp;&nbsp;&nbsp;(src/.../Header.stories.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Template" title="src/stories/Page.stories.ts" ><b>Template</b>&nbsp;&nbsp;&nbsp;(src/.../Page.stories.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#" title="src/app/cart/state/cart.reducer.ts" ><b></b>&nbsp;&nbsp;&nbsp;(src/.../cart.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#updateShoppingList" title="src/app/shopping-lists/state/shopping-lists.actions.ts" ><b>updateShoppingList</b>&nbsp;&nbsp;&nbsp;(src/.../shopping-lists.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#" title="src/app/shopping-lists/state/shopping-lists.reducers.ts" ><b></b>&nbsp;&nbsp;&nbsp;(src/.../shopping-lists.reducers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#updateUser" title="src/app/admin/users/store/users.actions.ts" ><b>updateUser</b>&nbsp;&nbsp;&nbsp;(src/.../users.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#updateUserSuccess" title="src/app/admin/users/store/users.actions.ts" ><b>updateUserSuccess</b>&nbsp;&nbsp;&nbsp;(src/.../users.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#" title="src/app/admin/users/store/users.reducer.ts" ><b></b>&nbsp;&nbsp;&nbsp;(src/.../users.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#" title="src/app/products/store/labels/labels.reducer.ts" ><b></b>&nbsp;&nbsp;&nbsp;(src/.../labels.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#updateProduct" title="src/app/products/store/products/products.actions.ts" ><b>updateProduct</b>&nbsp;&nbsp;&nbsp;(src/.../products.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#updateProductSuccess" title="src/app/products/store/products/products.actions.ts" ><b>updateProductSuccess</b>&nbsp;&nbsp;&nbsp;(src/.../products.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#" title="src/app/products/store/products/products.reducer.ts" ><b></b>&nbsp;&nbsp;&nbsp;(src/.../products.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#" title="src/app/products/store/units/units.reducer.ts" ><b></b>&nbsp;&nbsp;&nbsp;(src/.../units.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#updatePermissionFailure" title="src/app/admin/roles-permissions/store/permissions/permissions.actions.ts" ><b>updatePermissionFailure</b>&nbsp;&nbsp;&nbsp;(src/.../permissions.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#updatePermissionSuccess" title="src/app/admin/roles-permissions/store/permissions/permissions.actions.ts" ><b>updatePermissionSuccess</b>&nbsp;&nbsp;&nbsp;(src/.../permissions.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#updateProduct" title="src/app/admin/roles-permissions/store/permissions/permissions.actions.ts" ><b>updateProduct</b>&nbsp;&nbsp;&nbsp;(src/.../permissions.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#" title="src/app/admin/roles-permissions/store/permissions/permissions.reducer.ts" ><b></b>&nbsp;&nbsp;&nbsp;(src/.../permissions.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#updateProduct" title="src/app/admin/roles-permissions/store/roles/roles.actions.ts" ><b>updateProduct</b>&nbsp;&nbsp;&nbsp;(src/.../roles.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#updateRoleFailure" title="src/app/admin/roles-permissions/store/roles/roles.actions.ts" ><b>updateRoleFailure</b>&nbsp;&nbsp;&nbsp;(src/.../roles.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#updateRoleSuccess" title="src/app/admin/roles-permissions/store/roles/roles.actions.ts" ><b>updateRoleSuccess</b>&nbsp;&nbsp;&nbsp;(src/.../roles.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#user" title="src/app/auth/state/auth.selectors.ts" ><b>user</b>&nbsp;&nbsp;&nbsp;(src/.../auth.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#" title="src/app/admin/roles-permissions/store/roles/roles.reducer.ts" ><b></b>&nbsp;&nbsp;&nbsp;(src/.../roles.reducer.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>src/app/cart/state/cart.reducer.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="adapter"></a>
+                    <span class="name">
+                        <span ><b>adapter</b></span>
+                        <a href="#adapter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEntityAdapter&lt;ProductInList&gt;({
+  selectId: (productInList: ProductInList) &#x3D;&gt; {
+    return productInList.product.id
+  }
+})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initialCartState"></a>
+                    <span class="name">
+                        <span ><b>initialCartState</b></span>
+                        <a href="#initialCartState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>adapter.getInitialState({
+  isLoading: false,
+})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="reducer"></a>
+                    <span class="name">
+                        <span ><b>reducer</b></span>
+                        <a href="#reducer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createReducer(
+  initialCartState,
+  on(CartActions.addProductToCart, (state, { product }) &#x3D;&gt;
+    adapter.addOne(product, state)
+  ),
+  on(CartActions.removeProductToCart, (state, { productId }) &#x3D;&gt; adapter.removeOne(productId, state))
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name=""></a>
+                    <span class="name">
+                        <span ><b></b></span>
+                        <a href="#"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>adapter.getSelectors()</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/shopping-lists/state/shopping-lists.reducers.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="adapter"></a>
+                    <span class="name">
+                        <span ><b>adapter</b></span>
+                        <a href="#adapter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEntityAdapter&lt;ShoppingList&gt;()</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initialShoppingListsState"></a>
+                    <span class="name">
+                        <span ><b>initialShoppingListsState</b></span>
+                        <a href="#initialShoppingListsState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ShoppingListsState.html" target="_self" >ShoppingListsState</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>adapter.getInitialState({
+    allShoppingListsLoaded : false
+})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="shoppingListsReducer"></a>
+                    <span class="name">
+                        <span ><b>shoppingListsReducer</b></span>
+                        <a href="#shoppingListsReducer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createReducer(
+    initialShoppingListsState,
+    on(ShoppingListsActions.allShoppingListsLoaded, (state, action) &#x3D;&gt; adapter.setAll(action.shoppingLists, {...state, allShoppingListsLoaded: true})),
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name=""></a>
+                    <span class="name">
+                        <span ><b></b></span>
+                        <a href="#"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>adapter.getSelectors()</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/admin/users/store/users.reducer.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="adapter"></a>
+                    <span class="name">
+                        <span ><b>adapter</b></span>
+                        <a href="#adapter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEntityAdapter&lt;User&gt;({
+    selectId: (user: User) &#x3D;&gt; {
+      return user.id
+    }
+  })</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="reducer"></a>
+                    <span class="name">
+                        <span ><b>reducer</b></span>
+                        <a href="#reducer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createReducer(
+    adapter.getInitialState({
+        isLoading: false,
+    }),
+    on(UsersActions.loadAllUsers, (state) &#x3D;&gt; ({...state, isLoading : true})),
+    on(UsersActions.loadAllUsersSuccess, (state, { users }) &#x3D;&gt;
+      adapter.setAll(users, {...state, isLoading : false})
+    ),
+  )</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name=""></a>
+                    <span class="name">
+                        <span ><b></b></span>
+                        <a href="#"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>adapter.getSelectors()</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/products/store/labels/labels.reducer.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="adapter"></a>
+                    <span class="name">
+                        <span ><b>adapter</b></span>
+                        <a href="#adapter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEntityAdapter&lt;Label&gt;()</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="reducer"></a>
+                    <span class="name">
+                        <span ><b>reducer</b></span>
+                        <a href="#reducer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createReducer(
+  adapter.getInitialState({
+    isLoading: false,
+  }),
+  on(loadAllLabelsSuccess, (state, { labels }) &#x3D;&gt; adapter.setAll(labels, {...state,isLoading: true})),
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name=""></a>
+                    <span class="name">
+                        <span ><b></b></span>
+                        <a href="#"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>adapter.getSelectors()</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/products/store/products/products.reducer.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="adapter"></a>
+                    <span class="name">
+                        <span ><b>adapter</b></span>
+                        <a href="#adapter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEntityAdapter&lt;Product&gt;({
+  sortComparer: compareProducts
+})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="reducer"></a>
+                    <span class="name">
+                        <span ><b>reducer</b></span>
+                        <a href="#reducer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createReducer(
+  adapter.getInitialState({
+    isLoading: false,
+  }),
+  on(ProductActions.allProductsLoaded, (state, {products}) &#x3D;&gt; adapter.setAll(products, { ...state, allProductsLoaded: true })),
+  on(ProductActions.createProductSuccess, (state, { product }) &#x3D;&gt; adapter.addOne(product, state),),
+  on(ProductActions.updateProductSuccess, (state, { product }) &#x3D;&gt; adapter.updateOne(product, state)),
+  
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name=""></a>
+                    <span class="name">
+                        <span ><b></b></span>
+                        <a href="#"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>adapter.getSelectors()</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/products/store/units/units.reducer.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="adapter"></a>
+                    <span class="name">
+                        <span ><b>adapter</b></span>
+                        <a href="#adapter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEntityAdapter&lt;Unit&gt;()</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initialState"></a>
+                    <span class="name">
+                        <span ><b>initialState</b></span>
+                        <a href="#initialState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/State.html" target="_self" >State</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>adapter.getInitialState({
+  isLoading: false,
+})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="reducer"></a>
+                    <span class="name">
+                        <span ><b>reducer</b></span>
+                        <a href="#reducer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createReducer(
+  initialState,
+  on(loadAllUnits, (state) &#x3D;&gt;
+    adapter.setAll([], { ...state, isLoading: true })
+  ),
+  on(loadAllUnitsSuccess, (state, { units }) &#x3D;&gt;
+    adapter.setAll(units, { ...state, isLoading: false })
+  ),
+  on(loadAllUnitsFailure, (state) &#x3D;&gt;
+    adapter.setAll([], { ...state, isLoading: false })
+  )
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name=""></a>
+                    <span class="name">
+                        <span ><b></b></span>
+                        <a href="#"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>adapter.getSelectors()</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/admin/roles-permissions/store/permissions/permissions.reducer.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="adapter"></a>
+                    <span class="name">
+                        <span ><b>adapter</b></span>
+                        <a href="#adapter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEntityAdapter&lt;Permission&gt;()</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="reducer"></a>
+                    <span class="name">
+                        <span ><b>reducer</b></span>
+                        <a href="#reducer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createReducer(
+  adapter.getInitialState({
+    isLoading: false,
+  }),
+  on(PermissionsActions.loadAllPermissions, (state) &#x3D;&gt; ({...state, isLoading: true})),
+  on(PermissionsActions.loadAllPermissionsSuccess, (state, { permissions }) &#x3D;&gt; adapter.setAll(permissions, {...state, isLoading: true}),),
+  
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name=""></a>
+                    <span class="name">
+                        <span ><b></b></span>
+                        <a href="#"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>adapter.getSelectors()</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/admin/roles-permissions/store/roles/roles.reducer.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="adapter"></a>
+                    <span class="name">
+                        <span ><b>adapter</b></span>
+                        <a href="#adapter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEntityAdapter&lt;Role&gt;()</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="reducer"></a>
+                    <span class="name">
+                        <span ><b>reducer</b></span>
+                        <a href="#reducer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createReducer(
+  adapter.getInitialState({
+    isLoading: false,
+  }),
+  on(RolesActions.loadAllRoles, (state) &#x3D;&gt; ({...state, isLoading: true})),
+  on(RolesActions.loadAllRolesSuccess, (state, { roles }) &#x3D;&gt; adapter.setAll(roles, {...state, isLoading: true}),),
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name=""></a>
+                    <span class="name">
+                        <span ><b></b></span>
+                        <a href="#"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>adapter.getSelectors()</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/cart/state/cart.actions.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addProductToCart"></a>
+                    <span class="name">
+                        <span ><b>addProductToCart</b></span>
+                        <a href="#addProductToCart"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Cart] Add Product to list&#x27;, props&lt;{ product: ProductInList }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkOutCart"></a>
+                    <span class="name">
+                        <span ><b>checkOutCart</b></span>
+                        <a href="#checkOutCart"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Cart] CheckOut List&#x27;, props&lt;{ products: ProductInList[] }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkOutCartSuccess"></a>
+                    <span class="name">
+                        <span ><b>checkOutCartSuccess</b></span>
+                        <a href="#checkOutCartSuccess"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Cart] CheckOut List Success&#x27;, props&lt;{ products: ProductInList[] }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeProductToCart"></a>
+                    <span class="name">
+                        <span ><b>removeProductToCart</b></span>
+                        <a href="#removeProductToCart"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Cart] Remove Product from list&#x27;, props&lt;{ productId: string }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/products/store/products/products.actions.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="allProductsLoaded"></a>
+                    <span class="name">
+                        <span ><b>allProductsLoaded</b></span>
+                        <a href="#allProductsLoaded"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Load Products Effects] All Products Loaded&#x27;, props&lt;{ products: Array&lt;Product&gt; }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createProduct"></a>
+                    <span class="name">
+                        <span ><b>createProduct</b></span>
+                        <a href="#createProduct"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Products] Create Product&#x27;, props&lt;{ product: Product }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createProductSuccess"></a>
+                    <span class="name">
+                        <span ><b>createProductSuccess</b></span>
+                        <a href="#createProductSuccess"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Products] Create Product Success&#x27;, props&lt;{ product: Product }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterProducts"></a>
+                    <span class="name">
+                        <span ><b>filterProducts</b></span>
+                        <a href="#filterProducts"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Products] Filter Products&#x27;, props&lt;{ filter: string }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadAllProducts"></a>
+                    <span class="name">
+                        <span ><b>loadAllProducts</b></span>
+                        <a href="#loadAllProducts"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Courses Resolver] Load All Products&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeProduct"></a>
+                    <span class="name">
+                        <span ><b>removeProduct</b></span>
+                        <a href="#removeProduct"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Products] Remove Product&#x27;, props&lt;{ productId: string }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateProduct"></a>
+                    <span class="name">
+                        <span ><b>updateProduct</b></span>
+                        <a href="#updateProduct"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Products] Update Product&#x27;, props&lt;{ product: Product }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateProductSuccess"></a>
+                    <span class="name">
+                        <span ><b>updateProductSuccess</b></span>
+                        <a href="#updateProductSuccess"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Products] Update Product Success&#x27;,  props&lt;{ product: Update&lt;Product&gt; }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/shopping-lists/state/shopping-lists.actions.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="allShoppingListsLoaded"></a>
+                    <span class="name">
+                        <span ><b>allShoppingListsLoaded</b></span>
+                        <a href="#allShoppingListsLoaded"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Shopping Lists] Load All Shopping Lists Success&#x27;, props&lt;{ shoppingLists: ShoppingList[] }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="allShoppingListsLoadError"></a>
+                    <span class="name">
+                        <span ><b>allShoppingListsLoadError</b></span>
+                        <a href="#allShoppingListsLoadError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Shopping Lists] Load All Shopping Lists Error&#x27;, props&lt;{ shoppingLists: ShoppingList[] }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadAllShoppingLists"></a>
+                    <span class="name">
+                        <span ><b>loadAllShoppingLists</b></span>
+                        <a href="#loadAllShoppingLists"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Shopping Lists] Load All Shopping Lists&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateShoppingList"></a>
+                    <span class="name">
+                        <span ><b>updateShoppingList</b></span>
+                        <a href="#updateShoppingList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Shopping Lists] Update Shopping List&#x27;, props&lt;{ shoppingList: Update&lt;ProductInList&gt; }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/shopping-lists/state/shopping-lists.selectors.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="areAllShoppingListsLoaded"></a>
+                    <span class="name">
+                        <span ><b>areAllShoppingListsLoaded</b></span>
+                        <a href="#areAllShoppingListsLoaded"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(
+    selectShoppingListsState,
+    state &#x3D;&gt; state.allShoppingListsLoaded
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectAllShoppingLists"></a>
+                    <span class="name">
+                        <span ><b>selectAllShoppingLists</b></span>
+                        <a href="#selectAllShoppingLists"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(
+    selectShoppingListsState,
+    fromShoppingLists.selectAll
+  )</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectShoppingListById"></a>
+                    <span class="name">
+                        <span ><b>selectShoppingListById</b></span>
+                        <a href="#selectShoppingListById"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(id: string) &#x3D;&gt; createSelector(
+  selectAllShoppingLists,
+  (shoppingLists) &#x3D;&gt; shoppingLists.find(shoppingList &#x3D;&gt; shoppingList.id &#x3D;&#x3D;&#x3D; id)
+
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectShoppingListsState"></a>
+                    <span class="name">
+                        <span ><b>selectShoppingListsState</b></span>
+                        <a href="#selectShoppingListsState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createFeatureSelector&lt;ShoppingListsState&gt;(&#x27;shoppingLists&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/products/store/labels/labels.selectors.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="areLabelsLoaded"></a>
+                    <span class="name">
+                        <span ><b>areLabelsLoaded</b></span>
+                        <a href="#areLabelsLoaded"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(
+    selectLabelState,
+    (state) &#x3D;&gt; state.isLoading
+  )</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectAllLabels"></a>
+                    <span class="name">
+                        <span ><b>selectAllLabels</b></span>
+                        <a href="#selectAllLabels"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(selectLabelState, (state) &#x3D;&gt;
+    fromLabels.selectAll(state)
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/admin/users/store/users.selectors.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="areProductsLoaded"></a>
+                    <span class="name">
+                        <span ><b>areProductsLoaded</b></span>
+                        <a href="#areProductsLoaded"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(
+    selectUserState,
+  (state) &#x3D;&gt; state.isLoading
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectAllUsers"></a>
+                    <span class="name">
+                        <span ><b>selectAllUsers</b></span>
+                        <a href="#selectAllUsers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(selectUserState, fromUsers.selectAll)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectUserState"></a>
+                    <span class="name">
+                        <span ><b>selectUserState</b></span>
+                        <a href="#selectUserState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createFeatureSelector&lt;fromUsers.State&gt; (&#x27;users&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/products/store/products/products.selectors.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="areProductsLoaded"></a>
+                    <span class="name">
+                        <span ><b>areProductsLoaded</b></span>
+                        <a href="#areProductsLoaded"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(
+  selectProductState,
+  (state) &#x3D;&gt; state.isLoading
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectAllProducts"></a>
+                    <span class="name">
+                        <span ><b>selectAllProducts</b></span>
+                        <a href="#selectAllProducts"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(selectProductState, (state) &#x3D;&gt;
+  fromProducts.selectAll(state)
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/admin/roles-permissions/store/permissions/permissions.selectors.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="areProductsLoaded"></a>
+                    <span class="name">
+                        <span ><b>areProductsLoaded</b></span>
+                        <a href="#areProductsLoaded"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(
+  selectPermissionState,
+  (state) &#x3D;&gt; state.isLoading
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectAllPermissions"></a>
+                    <span class="name">
+                        <span ><b>selectAllPermissions</b></span>
+                        <a href="#selectAllPermissions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(
+  selectPermissionState,
+  fromRoles.selectAll
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/admin/roles-permissions/store/roles/roles.selectors.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="areProductsLoaded"></a>
+                    <span class="name">
+                        <span ><b>areProductsLoaded</b></span>
+                        <a href="#areProductsLoaded"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(
+  selectRoleState,
+  (state) &#x3D;&gt; state.isLoading
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectAllRoles"></a>
+                    <span class="name">
+                        <span ><b>selectAllRoles</b></span>
+                        <a href="#selectAllRoles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(
+  selectRoleState,
+  fromRoles.selectAll
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/products/store/units/units.selectors.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="areUnitsLoaded"></a>
+                    <span class="name">
+                        <span ><b>areUnitsLoaded</b></span>
+                        <a href="#areUnitsLoaded"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(
+  selectUnitState,
+  (state) &#x3D;&gt; state.isLoading
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectAllUnits"></a>
+                    <span class="name">
+                        <span ><b>selectAllUnits</b></span>
+                        <a href="#selectAllUnits"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(selectUnitState, (state) &#x3D;&gt;
+  fromUnits.selectAll(state)
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/auth/state/auth.reducer.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="authReducer"></a>
+                    <span class="name">
+                        <span ><b>authReducer</b></span>
+                        <a href="#authReducer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createReducer(
+    initialAuthState,
+    on(AuthActions.LogInSuccess, (state, { user }) &#x3D;&gt; (
+        {   ...state,
+            user: user,
+        })),
+    on(LogInFailure, (state, { error }) &#x3D;&gt; ({...state,errorMessage: error})),
+    on(LogOut, (state,action) &#x3D;&gt; {
+        return {...state, user: null }
+    } )
+  )</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initialAuthState"></a>
+                    <span class="name">
+                        <span ><b>initialAuthState</b></span>
+                        <a href="#initialAuthState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/AuthState.html" target="_self" >AuthState</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    user: undefined,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/shared/shared.module.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="components"></a>
+                    <span class="name">
+                        <span ><b>components</b></span>
+                        <a href="#components"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  AddInCartModalComponent,
+  FileUploadComponent,
+  ErrorModalComponent
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modules"></a>
+                    <span class="name">
+                        <span ><b>modules</b></span>
+                        <a href="#modules"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  CommonModule,
+  CustomMaterialModule,
+  FormsModule,
+  ReactiveFormsModule,
+  HttpClientModule,
+  NgxJsonViewerModule,
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="services"></a>
+                    <span class="name">
+                        <span ><b>services</b></span>
+                        <a href="#services"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  { provide: HTTP_INTERCEPTORS, useClass: SecurityInterceptor, multi: true }
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/test.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="context"></a>
+                    <span class="name">
+                        <span ><b>context</b></span>
+                        <a href="#context"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>require.context(&#x27;./&#x27;, true, /\.spec\.ts$/)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="require"></a>
+                    <span class="name">
+                        <span ><b>require</b></span>
+                        <a href="#require"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/admin/roles-permissions/store/permissions/permissions.actions.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createPermission"></a>
+                    <span class="name">
+                        <span ><b>createPermission</b></span>
+                        <a href="#createPermission"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Permissions] Create Permission&#x27;, props&lt;{ permission: Permission }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createPermissionFailure"></a>
+                    <span class="name">
+                        <span ><b>createPermissionFailure</b></span>
+                        <a href="#createPermissionFailure"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Permissions] Create Permission (Failure)&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createPermissionSuccess"></a>
+                    <span class="name">
+                        <span ><b>createPermissionSuccess</b></span>
+                        <a href="#createPermissionSuccess"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Permissions] Create Permission (Success)&#x27;, props&lt;{ permission: Permission }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deletePermission"></a>
+                    <span class="name">
+                        <span ><b>deletePermission</b></span>
+                        <a href="#deletePermission"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Permissions] Remove Permissions&#x27;, props&lt;{ permissionId: number }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deletePermissionFailure"></a>
+                    <span class="name">
+                        <span ><b>deletePermissionFailure</b></span>
+                        <a href="#deletePermissionFailure"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Permissions] Remove Permissions (Failure)&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deletePermissionSuccess"></a>
+                    <span class="name">
+                        <span ><b>deletePermissionSuccess</b></span>
+                        <a href="#deletePermissionSuccess"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Permissions] Remove Permissions (Success)&#x27;, props&lt;{ permissionId: number }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterPermissions"></a>
+                    <span class="name">
+                        <span ><b>filterPermissions</b></span>
+                        <a href="#filterPermissions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Permissions] Filter Permissions&#x27;, props&lt;{ filter: string }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadAllPermissions"></a>
+                    <span class="name">
+                        <span ><b>loadAllPermissions</b></span>
+                        <a href="#loadAllPermissions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Permissions] Load All Permissions&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadAllPermissionsFailure"></a>
+                    <span class="name">
+                        <span ><b>loadAllPermissionsFailure</b></span>
+                        <a href="#loadAllPermissionsFailure"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Permissions] All Permissions Loaded (Failure)&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadAllPermissionsSuccess"></a>
+                    <span class="name">
+                        <span ><b>loadAllPermissionsSuccess</b></span>
+                        <a href="#loadAllPermissionsSuccess"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Permissions] All Permissions Loaded (Success)&#x27;, props&lt;{ permissions: Array&lt;Permission&gt; }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updatePermissionFailure"></a>
+                    <span class="name">
+                        <span ><b>updatePermissionFailure</b></span>
+                        <a href="#updatePermissionFailure"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Permissions] Update Permissions (Failure)&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updatePermissionSuccess"></a>
+                    <span class="name">
+                        <span ><b>updatePermissionSuccess</b></span>
+                        <a href="#updatePermissionSuccess"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Permissions] Update Permissions (Success)&#x27;,  props&lt;{ permission: Update&lt;Permission&gt; }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateProduct"></a>
+                    <span class="name">
+                        <span ><b>updateProduct</b></span>
+                        <a href="#updateProduct"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Permissions] Update Permissions&#x27;, props&lt;{ permission: Permission }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/admin/roles-permissions/store/roles/roles.actions.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createRole"></a>
+                    <span class="name">
+                        <span ><b>createRole</b></span>
+                        <a href="#createRole"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Roles] Create Role&#x27;, props&lt;{ role: Role }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createRoleFailure"></a>
+                    <span class="name">
+                        <span ><b>createRoleFailure</b></span>
+                        <a href="#createRoleFailure"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Roles] Create Product (Failure)&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createRoleSuccess"></a>
+                    <span class="name">
+                        <span ><b>createRoleSuccess</b></span>
+                        <a href="#createRoleSuccess"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Roles] Create Product (Success)&#x27;, props&lt;{ role: Role }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteRole"></a>
+                    <span class="name">
+                        <span ><b>deleteRole</b></span>
+                        <a href="#deleteRole"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Roles] Remove Product&#x27;, props&lt;{ roleId: number }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteRoleFailure"></a>
+                    <span class="name">
+                        <span ><b>deleteRoleFailure</b></span>
+                        <a href="#deleteRoleFailure"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Roles] Remove Product (Failure)&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteRoleSuccess"></a>
+                    <span class="name">
+                        <span ><b>deleteRoleSuccess</b></span>
+                        <a href="#deleteRoleSuccess"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Roles] Remove Product (Success)&#x27;, props&lt;{ roleId: number }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterRoles"></a>
+                    <span class="name">
+                        <span ><b>filterRoles</b></span>
+                        <a href="#filterRoles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Roles] Filter Roles&#x27;, props&lt;{ filter: string }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadAllRoles"></a>
+                    <span class="name">
+                        <span ><b>loadAllRoles</b></span>
+                        <a href="#loadAllRoles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Roles] Load All Roles&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadAllRolesFailure"></a>
+                    <span class="name">
+                        <span ><b>loadAllRolesFailure</b></span>
+                        <a href="#loadAllRolesFailure"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Roles] All Roles Loaded (Failure)&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadAllRolesSuccess"></a>
+                    <span class="name">
+                        <span ><b>loadAllRolesSuccess</b></span>
+                        <a href="#loadAllRolesSuccess"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Roles] All Roles Loaded (Success)&#x27;, props&lt;{ roles: Array&lt;Role&gt; }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateProduct"></a>
+                    <span class="name">
+                        <span ><b>updateProduct</b></span>
+                        <a href="#updateProduct"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Roles] Update Product&#x27;, props&lt;{ role: Role }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateRoleFailure"></a>
+                    <span class="name">
+                        <span ><b>updateRoleFailure</b></span>
+                        <a href="#updateRoleFailure"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Roles] Update Product (Failure)&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateRoleSuccess"></a>
+                    <span class="name">
+                        <span ><b>updateRoleSuccess</b></span>
+                        <a href="#updateRoleSuccess"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Roles] Update Product (Success)&#x27;,  props&lt;{ role: Update&lt;Role&gt; }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/admin/users/store/users.actions.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createUser"></a>
+                    <span class="name">
+                        <span ><b>createUser</b></span>
+                        <a href="#createUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(
+  &#x27;[Users] Create User&#x27;,
+  props&lt;{ user: User }&gt;()
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createUserSuccess"></a>
+                    <span class="name">
+                        <span ><b>createUserSuccess</b></span>
+                        <a href="#createUserSuccess"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(
+  &#x27;[Users] Create User Success&#x27;,
+  props&lt;{ user: User }&gt;()
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterUsers"></a>
+                    <span class="name">
+                        <span ><b>filterUsers</b></span>
+                        <a href="#filterUsers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(
+  &#x27;[Users] Filter Users&#x27;,
+  props&lt;{ filter: string }&gt;()
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadAllUsers"></a>
+                    <span class="name">
+                        <span ><b>loadAllUsers</b></span>
+                        <a href="#loadAllUsers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Users] Load All Users&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadAllUsersFailure"></a>
+                    <span class="name">
+                        <span ><b>loadAllUsersFailure</b></span>
+                        <a href="#loadAllUsersFailure"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(
+  &#x27;[Users] Load All Users Failure&#x27;
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadAllUsersSuccess"></a>
+                    <span class="name">
+                        <span ><b>loadAllUsersSuccess</b></span>
+                        <a href="#loadAllUsersSuccess"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(
+  &#x27;[Users Load All Users Success&#x27;,
+  props&lt;{ users: Array&lt;User&gt; }&gt;()
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeUser"></a>
+                    <span class="name">
+                        <span ><b>removeUser</b></span>
+                        <a href="#removeUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(
+  &#x27;[Users] Remove User&#x27;,
+  props&lt;{ userId: string }&gt;()
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateUser"></a>
+                    <span class="name">
+                        <span ><b>updateUser</b></span>
+                        <a href="#updateUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(
+  &#x27;[Users] Update User&#x27;,
+  props&lt;{ user: User }&gt;()
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateUserSuccess"></a>
+                    <span class="name">
+                        <span ><b>updateUserSuccess</b></span>
+                        <a href="#updateUserSuccess"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(
+  &#x27;[Users] Update User Success&#x27;,
+  props&lt;{ uUser: Update&lt;User&gt; }&gt;()
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/environments/environment.prod.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="environment"></a>
+                    <span class="name">
+                        <span ><b>environment</b></span>
+                        <a href="#environment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  production: true
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/environments/environment.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="environment"></a>
+                    <span class="name">
+                        <span ><b>environment</b></span>
+                        <a href="#environment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  production: false,
+  api : &#x27;http://localhost:3000/api&#x27;,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/admin/users/components/user-list/users.stories.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fakeActivatedRoute"></a>
+                    <span class="name">
+                        <span ><b>fakeActivatedRoute</b></span>
+                        <a href="#fakeActivatedRoute"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    snapshot : { data : { 
+        users : [
+            {
+                &quot;id&quot;: 1,
+                &quot;email&quot;: &quot;alice@prisma.io&quot;,
+                &quot;first_name&quot;: &quot;Steve&quot;,
+                &quot;last_name&quot;: &quot;Monahan&quot;,
+                &quot;language&quot;: &quot;en-US&quot;,
+                &quot;description&quot;: null,
+                &quot;title&quot;: null,
+                &quot;status&quot;: &quot;inactive&quot;,
+                &quot;role&quot;: {
+                    &quot;name&quot;: &quot;admin&quot;,
+                    &quot;permissions&quot;: []
+                }
+            },
+            {
+                &quot;id&quot;: 2,
+                &quot;email&quot;: &quot;bob@prisma.io&quot;,
+                &quot;first_name&quot;: &quot;Waylon&quot;,
+                &quot;last_name&quot;: &quot;Mitchell&quot;,
+                &quot;language&quot;: &quot;en-US&quot;,
+                &quot;description&quot;: null,
+                &quot;title&quot;: null,
+                &quot;status&quot;: &quot;active&quot;,
+                &quot;role&quot;: {
+                    &quot;name&quot;: &quot;admin&quot;,
+                    &quot;permissions&quot;: []
+                }
+            },
+            {
+                &quot;id&quot;: 4,
+                &quot;email&quot;: &quot;admin@home-stock.io&quot;,
+                &quot;first_name&quot;: &quot;Chasity&quot;,
+                &quot;last_name&quot;: &quot;Hauck&quot;,
+                &quot;language&quot;: &quot;en-US&quot;,
+                &quot;description&quot;: null,
+                &quot;title&quot;: null,
+                &quot;status&quot;: &quot;active&quot;,
+                &quot;role&quot;: {
+                    &quot;name&quot;: &quot;admin&quot;,
+                    &quot;permissions&quot;: []
+                }
+            }
+        ]
+    } }
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Hydrated"></a>
+                    <span class="name">
+                        <span ><b>Hydrated</b></span>
+                        <a href="#Hydrated"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/User.html" target="_self" >Story&lt;UserListComponent&gt;</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>() &#x3D;&gt; ({
+})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="NonHydrated"></a>
+                    <span class="name">
+                        <span ><b>NonHydrated</b></span>
+                        <a href="#NonHydrated"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/User.html" target="_self" >Story&lt;UserListComponent&gt;</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(...args) &#x3D;&gt; ({
+    props: {
+        users: []
+    }
+})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/app.module.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="featuresModules"></a>
+                    <span class="name">
+                        <span ><b>featuresModules</b></span>
+                        <a href="#featuresModules"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  ToastrModule.forRoot({
+    positionClass: &#x27;toast-bottom-full-width&#x27;,
+    closeButton: true,
+  }),
+  AuthModule.forRoot(),
+  CartModule,
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngrxModules"></a>
+                    <span class="name">
+                        <span ><b>ngrxModules</b></span>
+                        <a href="#ngrxModules"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  StoreModule.forRoot(reducers, {
+    metaReducers,
+    runtimeChecks: {
+      strictStateImmutability: true,
+      strictActionImmutability: true,
+      strictStateSerializability: true,
+      strictActionSerializability: true,
+    },
+  }),
+  EffectsModule.forRoot([]),
+  StoreDevtoolsModule.instrument({
+    name: &#x27;Home-Stock App&#x27;,
+    logOnly: !environment.production,
+  }),
+  StoreRouterConnectingModule.forRoot({
+    stateKey: &#x27;router&#x27;,
+    routerState: RouterState.Minimal,
+  }),
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/auth/state/auth.selectors.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isAdmin"></a>
+                    <span class="name">
+                        <span ><b>isAdmin</b></span>
+                        <a href="#isAdmin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(
+    selectAuthState,
+    auth &#x3D;&gt; true //auth.user.role.name &#x3D;&#x3D;&#x3D; &#x27;Administrator&#x27;
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLoggedIn"></a>
+                    <span class="name">
+                        <span ><b>isLoggedIn</b></span>
+                        <a href="#isLoggedIn"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(
+    selectAuthState,
+    auth &#x3D;&gt; !!auth.user
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLoggedOut"></a>
+                    <span class="name">
+                        <span ><b>isLoggedOut</b></span>
+                        <a href="#isLoggedOut"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(
+    selectAuthState,
+    auth &#x3D;&gt; !auth.user
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectAuthState"></a>
+                    <span class="name">
+                        <span ><b>selectAuthState</b></span>
+                        <a href="#selectAuthState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createFeatureSelector&lt;AuthState&gt;(&#x27;auth&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="user"></a>
+                    <span class="name">
+                        <span ><b>user</b></span>
+                        <a href="#user"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(
+    selectAuthState,
+    auth &#x3D;&gt; auth.user
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/stories/Button.stories.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Large"></a>
+                    <span class="name">
+                        <span ><b>Large</b></span>
+                        <a href="#Large"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>Template.bind({})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Primary"></a>
+                    <span class="name">
+                        <span ><b>Primary</b></span>
+                        <a href="#Primary"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>Template.bind({})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Secondary"></a>
+                    <span class="name">
+                        <span ><b>Secondary</b></span>
+                        <a href="#Secondary"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>Template.bind({})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Small"></a>
+                    <span class="name">
+                        <span ><b>Small</b></span>
+                        <a href="#Small"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>Template.bind({})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Template"></a>
+                    <span class="name">
+                        <span ><b>Template</b></span>
+                        <a href="#Template"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Story&lt;Button&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(args: Button) &#x3D;&gt; ({
+  props: args,
+})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/products/store/labels/labels.actions.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadAllLabels"></a>
+                    <span class="name">
+                        <span ><b>loadAllLabels</b></span>
+                        <a href="#loadAllLabels"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Labels] Fetch All&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadAllLabelsFailure"></a>
+                    <span class="name">
+                        <span ><b>loadAllLabelsFailure</b></span>
+                        <a href="#loadAllLabelsFailure"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Labels Effect] Fetch All Failure&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadAllLabelsSuccess"></a>
+                    <span class="name">
+                        <span ><b>loadAllLabelsSuccess</b></span>
+                        <a href="#loadAllLabelsSuccess"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction( &#x27;[Labels Effect] Fetch All Success&#x27;, props&lt;{ labels: Array&lt;Label&gt; }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/products/store/units/units.actions.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadAllUnits"></a>
+                    <span class="name">
+                        <span ><b>loadAllUnits</b></span>
+                        <a href="#loadAllUnits"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&quot;[Units] Fetch All&quot;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadAllUnitsFailure"></a>
+                    <span class="name">
+                        <span ><b>loadAllUnitsFailure</b></span>
+                        <a href="#loadAllUnitsFailure"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&quot;[Units Effect] Fetch All Failure&quot;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadAllUnitsSuccess"></a>
+                    <span class="name">
+                        <span ><b>loadAllUnitsSuccess</b></span>
+                        <a href="#loadAllUnitsSuccess"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&quot;[Units Effect] Fetch All Success&quot;, props&lt;{ units: Array&lt;Unit&gt; }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/stories/Header.stories.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="LoggedIn"></a>
+                    <span class="name">
+                        <span ><b>LoggedIn</b></span>
+                        <a href="#LoggedIn"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>Template.bind({})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="LoggedOut"></a>
+                    <span class="name">
+                        <span ><b>LoggedOut</b></span>
+                        <a href="#LoggedOut"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>Template.bind({})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Template"></a>
+                    <span class="name">
+                        <span ><b>Template</b></span>
+                        <a href="#Template"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Story&lt;Header&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(args: Header) &#x3D;&gt; ({
+  props: args,
+})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/stories/Page.stories.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="LoggedIn"></a>
+                    <span class="name">
+                        <span ><b>LoggedIn</b></span>
+                        <a href="#LoggedIn"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>Template.bind({})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="LoggedOut"></a>
+                    <span class="name">
+                        <span ><b>LoggedOut</b></span>
+                        <a href="#LoggedOut"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>Template.bind({})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Template"></a>
+                    <span class="name">
+                        <span ><b>Template</b></span>
+                        <a href="#Template"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Story&lt;Page&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(args: Page) &#x3D;&gt; ({
+  props: args,
+})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/auth/state/auth.actions.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="LogIn"></a>
+                    <span class="name">
+                        <span ><b>LogIn</b></span>
+                        <a href="#LogIn"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&quot;[Auth Form] Login&quot;, props&lt;{ email: string , password : string }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="LogInFailure"></a>
+                    <span class="name">
+                        <span ><b>LogInFailure</b></span>
+                        <a href="#LogInFailure"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&quot;[Auth Effect] Login Failure&quot;, props&lt;{ error: string  }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="LogInSuccess"></a>
+                    <span class="name">
+                        <span ><b>LogInSuccess</b></span>
+                        <a href="#LogInSuccess"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&quot;[Auth Effect] Login Success&quot;, props&lt;{ user: User }&gt;())</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="LogOut"></a>
+                    <span class="name">
+                        <span ><b>LogOut</b></span>
+                        <a href="#LogOut"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&quot;[App] Logout&quot;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/store/reducers/index.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="metaReducers"></a>
+                    <span class="name">
+                        <span ><b>metaReducers</b></span>
+                        <a href="#metaReducers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MetaReducer[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>!!environment.production ? [logger]
+  : []</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="reducers"></a>
+                    <span class="name">
+                        <span ><b>reducers</b></span>
+                        <a href="#reducers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ActionReducerMap&lt;AppState&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  router: routerReducer,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/shared/material.module.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modules"></a>
+                    <span class="name">
+                        <span ><b>modules</b></span>
+                        <a href="#modules"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  CommonModule,
+  CdkTreeModule,
+  MatCheckboxModule,
+  MatPaginatorModule,
+  MatGridListModule,
+  MatTooltipModule,
+  MatTabsModule,
+  MatSelectModule,
+  MatRadioModule,
+  MatSidenavModule,
+  MatListModule,
+  MatToolbarModule,
+  MatButtonModule,
+  MatCardModule,
+  MatInputModule,
+  MatDialogModule,
+  MatTableModule,
+  MatMenuModule,
+  MatIconModule,
+  MatProgressSpinnerModule,
+  MatExpansionModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatSortModule,
+  MatSlideToggleModule,
+  MatAutocompleteModule,
+  MatBadgeModule,
+  MatStepperModule,
+  MatProgressBarModule,
+  MatChipsModule,
+  MatTreeModule,
+  DragDropModule,
+  MatFormFieldModule
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/products/store/feature.reducer.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="reducers"></a>
+                    <span class="name">
+                        <span ><b>reducers</b></span>
+                        <a href="#reducers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>combineReducers({
+    products: fromProducts.reducer,
+    labels: fromLabels.reducer,
+    units : fromUnits.reducer
+})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/admin/roles-permissions/store/feature.reducer.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="reducers"></a>
+                    <span class="name">
+                        <span ><b>reducers</b></span>
+                        <a href="#reducers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>combineReducers({
+    roles: fromRoles.reducer,
+    permissions: fromPermissions.reducer,
+})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/cart/state/cart.selectors.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectCart"></a>
+                    <span class="name">
+                        <span ><b>selectCart</b></span>
+                        <a href="#selectCart"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(
+    selectCartState,
+    fromCart.selectAll
+  )</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectCartLoading"></a>
+                    <span class="name">
+                        <span ><b>selectCartLoading</b></span>
+                        <a href="#selectCartLoading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(
+    selectCartState,
+    (state) &#x3D;&gt; state.isLoading
+  )</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectCartState"></a>
+                    <span class="name">
+                        <span ><b>selectCartState</b></span>
+                        <a href="#selectCartState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createFeatureSelector&lt;fromCart.State&gt;(&#x27;cart&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/products/store/feature.selectors.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectFeatureState"></a>
+                    <span class="name">
+                        <span ><b>selectFeatureState</b></span>
+                        <a href="#selectFeatureState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createFeatureSelector&lt;FeatureState&gt;(&#x27;products&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectLabelState"></a>
+                    <span class="name">
+                        <span ><b>selectLabelState</b></span>
+                        <a href="#selectLabelState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(selectFeatureState, (featureState) &#x3D;&gt; featureState.labels)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectProductState"></a>
+                    <span class="name">
+                        <span ><b>selectProductState</b></span>
+                        <a href="#selectProductState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(selectFeatureState, (featureState) &#x3D;&gt; featureState.products)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectUnitState"></a>
+                    <span class="name">
+                        <span ><b>selectUnitState</b></span>
+                        <a href="#selectUnitState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(selectFeatureState, (featureState) &#x3D;&gt; featureState.units)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/admin/roles-permissions/store/feature.selectors.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectFeatureState"></a>
+                    <span class="name">
+                        <span ><b>selectFeatureState</b></span>
+                        <a href="#selectFeatureState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createFeatureSelector&lt;FeatureState&gt;(&#x27;security&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectPermissionState"></a>
+                    <span class="name">
+                        <span ><b>selectPermissionState</b></span>
+                        <a href="#selectPermissionState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(selectFeatureState, (featureState) &#x3D;&gt; featureState.permissions)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectRoleState"></a>
+                    <span class="name">
+                        <span ><b>selectRoleState</b></span>
+                        <a href="#selectRoleState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(selectFeatureState, (featureState) &#x3D;&gt; featureState.roles)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-variables';
+            var COMPODOC_CURRENT_PAGE_URL = 'variables.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

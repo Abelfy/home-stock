@@ -7,39 +7,42 @@ import { EMPTY, of } from 'rxjs';
 
 import { catchError, map, switchMap, tap } from 'rxjs/operators';
 
-import { AppState } from '../../state/app.state';
-import { User } from '../../state/models/user.model';
+import { AppState } from '../../store/app.state';
+import { User } from '../../store/models/user.model';
 import { AuthService } from '../services/auth.service';
-import { AuthActions } from './action-types';
+import { AuthActions } from '.';
 import { LogIn, LogInFailure, LogInSuccess } from './auth.actions';
 
 @Injectable()
 export class AuthEffects {
-
-  logIn$ = createEffect(
-    () => this._actions$.pipe(
+  logIn$ = createEffect(() =>
+    this._actions$.pipe(
       ofType(AuthActions.LogIn),
-      switchMap(({ email, password }) => 
+      switchMap(({ email, password }) =>
         this._authService.login(email, password).pipe(
-          map(data => {
+          map((data) => {
             localStorage.setItem('access_token', data.access_token);
             localStorage.setItem('expires', data.expires);
             localStorage.setItem('refresh_token', data.refresh_token);
           }),
-          switchMap(noop => this._authService.me().pipe(
-              tap(user => localStorage.setItem('user', JSON.stringify(user))),
-              map(user => LogInSuccess({ user : user }) 
-                )),
-            ),
-            catchError(error => {
-              error.error.errors.forEach(error => {
-                this._toastr.error(error.message, 'Erreur');
+          switchMap((noop) =>
+            this._authService.me().pipe(
+              tap((user) => localStorage.setItem('user', JSON.stringify(user))),
+              map((user) => {
+                return LogInSuccess({ user: user })}),
+              catchError((error) => {
+                debugger;
+                error.errors.forEach((error) => {
+                  this._toastr.error(error.message, 'Erreur');
+                });
+                return of(LogInFailure({ error }));
               })
-              return of(LogInFailure({ error }))
-            })
-          )
+            )
+          ),
+          
         )
       )
+    )
   );
 
   logInSuccess$ = createEffect(
@@ -47,7 +50,6 @@ export class AuthEffects {
       this._actions$.pipe(
         ofType(AuthActions.LogInSuccess),
         map((action) => {
-
           this._router.navigate(['/']);
         })
       ),
@@ -78,7 +80,6 @@ export class AuthEffects {
   constructor(
     private _actions$: Actions,
     private _authService: AuthService,
-    private _store: Store<AppState>,
     private _router: Router,
     private _toastr: ToastrService
   ) {}

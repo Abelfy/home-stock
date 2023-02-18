@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { Product } from 'src/app/state/models/product.model';
+import { Product } from 'src/app/store/models/product.model';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -23,7 +23,6 @@ export class ProductsService {
   }
 
   updateProduct(product: any) : Observable<Product> {
-    console.log(product)
     return this.http.patch<Product>(`${environment.api}/items/products/${product.id}`, product)
     .pipe(map((envelope: any) => envelope.data));
   }

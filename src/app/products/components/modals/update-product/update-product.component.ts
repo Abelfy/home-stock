@@ -6,10 +6,10 @@ import { Store } from '@ngrx/store';
 import { ToastrService } from 'ngx-toastr';
 import { catchError, EMPTY, map } from 'rxjs';
 import { FileUploadService } from 'src/app/products/services/file-upload.service';
-import { ProductSelectors } from 'src/app/products/state/actions-types';
-import { AppState } from 'src/app/reducers';
-import { Product } from 'src/app/state/models/product.model';
+import { AppState } from 'src/app/store/reducers';
+import { Product } from 'src/app/store/models/product.model';
 
+import * as LabelsSelectors from 'src/app/products/store/labels/labels.selectors';
 @Component({
   selector: 'app-update-product',
   templateUrl: './update-product.component.html',
@@ -17,7 +17,7 @@ import { Product } from 'src/app/state/models/product.model';
 })
 export class UpdateProductComponent implements OnInit {
 
-  labels$ = this._store.select(ProductSelectors.selectAllLabels);
+  labels$ = this._store.select(LabelsSelectors.selectAllLabels);
 
   form : FormGroup;
 

@@ -22,7 +22,7 @@ export class SecurityInterceptor implements HttpInterceptor {
     constructor(private authSrv: AuthService, private _router: Router) { }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        if(!req.url.includes('login') && !req.url.includes('logout') && !req.url.includes('refresh')){
+        if(!req.url.includes('login') && !req.url.includes('logout')){
             req = this.addAuthenticationToken(req);
         }
 
@@ -63,8 +63,13 @@ export class SecurityInterceptor implements HttpInterceptor {
     }
 
     private addAuthenticationToken(req: HttpRequest<any>): HttpRequest<any> {
-        const jwtToken = localStorage.getItem('access_token');
-        //console.log(`Using access token: ${jwtToken}`);
+        let jwtToken;
+        if(req.url.includes('refresh')){
+            jwtToken = localStorage.getItem('refresh_token');
+        } else {
+            jwtToken = localStorage.getItem('access_token');
+        }
+         
         if (jwtToken) {
             const cloned = req.clone({
                 headers: req.headers.set(this.AUTH_HEADER, 'Bearer ' + jwtToken)

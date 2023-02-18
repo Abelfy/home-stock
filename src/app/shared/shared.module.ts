@@ -7,10 +7,12 @@ import { SecurityInterceptor } from './interceptors/SecurityInterceptor';
 import { AddInCartModalComponent } from '../products/components/modals/add-in-cart-modal/add-in-cart-modal.component';
 import { FileUploadComponent } from './components/file-upload/file-upload.component';
 import { NgxJsonViewerModule } from 'ngx-json-viewer';
+import { ErrorModalComponent } from './components/error-modal/error-modal.component';
 
 const components = [
   AddInCartModalComponent,
-  FileUploadComponent
+  FileUploadComponent,
+  ErrorModalComponent
 ]
 
 const modules = [
@@ -27,7 +29,8 @@ const services = [
 ]
 @NgModule({
   declarations: [
-    ...components
+    ...components,
+    
   ],
   imports: [
     ...modules

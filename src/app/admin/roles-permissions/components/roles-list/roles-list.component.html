@@ -1,0 +1,122 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <h1>Roles disponibles.</h1>
+      </mat-card-title>
+      <mat-card-subtitle>
+        <h2>{{  roles.length }} roles.</h2>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions align="end">
+      <mat-form-field appearance="fill">
+        <mat-label>Rechercher un produit : </mat-label>
+        <input matInput (input)="onFilterValueChanged($event)" />
+      </mat-form-field>
+      <button mat-mini-fab color="primary" (click)="addUser()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </mat-card-actions>
+    <mat-card-content>
+      <table
+        mat-table
+        [dataSource]="roles"
+        multiTemplateDataRows
+        class="mat-elevation-z8"
+      >
+      <ng-container matColumnDef="expand">
+        <th mat-header-cell *matHeaderCellDef aria-label="row actions">&nbsp;</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button aria-label="expand row" (click)="(expandedElement = expandedElement === element ? null : element); $event.stopPropagation()">
+            <mat-icon *ngIf="expandedElement !== element">keyboard_arrow_down</mat-icon>
+            <mat-icon *ngIf="expandedElement === element">keyboard_arrow_right</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+        <ng-container matColumnDef="icon">
+          <th mat-header-cell *matHeaderCellDef>Icon</th>
+          <td mat-cell *matCellDef="let role">
+            <mat-icon>role.icon</mat-icon>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Nom</th>
+          <td mat-cell *matCellDef="let role">{{ role.name }}</td>
+        </ng-container>
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef>Description</th>
+          <td mat-cell *matCellDef="let role">{{ role.description }}</td>
+        </ng-container>
+        <ng-container matColumnDef="ip_access">
+            <th mat-header-cell *matHeaderCellDef>Accès IP</th>
+              <td mat-cell *matCellDef="let role">
+                {{ role.ip_access }}
+            </td>
+          </ng-container>
+          
+          <ng-container matColumnDef="admin_access">
+            <th mat-header-cell *matHeaderCellDef>Accès Admin</th>
+              <td mat-cell *matCellDef="let role">
+                <mat-checkbox [(ngModel)]="role.admin_access" [disabled]="true"></mat-checkbox>
+            </td>
+          </ng-container>
+          
+          <ng-container matColumnDef="app_access">
+            <th mat-header-cell *matHeaderCellDef>Accès Application</th>
+              <td mat-cell *matCellDef="let role">
+                <mat-checkbox [(ngModel)]="role.app_access" [disabled]="true"></mat-checkbox>
+              </td>
+          </ng-container>
+
+          <ng-container matColumnDef="enforce_tfa">
+            <th mat-header-cell *matHeaderCellDef>Enforce TFA</th>
+              <td mat-cell *matCellDef="let role">
+                <mat-checkbox [(ngModel)] ="role.enforce_tfa" [disabled]="true"></mat-checkbox>
+              </td>
+          </ng-container>
+  
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>Action</th>
+          <td mat-cell *matCellDef="let role">
+            <button
+              mat-icon-button
+              color="primary"
+              aria-label="Visualiser les détails"
+              (click)="viewUserDetails(role)"
+            >
+              <mat-icon>details</mat-icon>
+            </button>
+            <ng-container>
+              <button
+                mat-icon-button
+                color="primary"
+                aria-label="Editer l'utilisateur"
+                (click)="updateUser(role)"
+              >
+                <mat-icon>edit</mat-icon>
+              </button>
+            </ng-container>
+          </td>
+        </ng-container>
+
+         <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+    <ng-container matColumnDef="expandedDetail">
+      <td mat-cell *matCellDef="let role" [attr.colspan]="displayedColumns.length">
+        <div class="element-detail"
+            [@detailExpand]="role == expandedElement ? 'expanded' : 'collapsed'">
+          <app-role-permissions-assignment 
+          [permissions]="permissions" 
+          [assignedPermissions]="Array.from(role.permissions)">
+          </app-role-permissions-assignment>
+        </div>
+      </td>
+    </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns" class="element-row"
+        [class.expanded-row]="expandedElement === row"
+        (click)="expandedElement = expandedElement === row ? null : row"></tr>
+        <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="detail-row"></tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
+  

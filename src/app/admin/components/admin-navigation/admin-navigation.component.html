@@ -1,0 +1,8 @@
+<nav mat-tab-nav-bar [backgroundColor]="background" [tabPanel]="tabPanel">
+    <a mat-tab-link *ngFor="let link of links"
+       (click)="changeActiveLink(link)"
+       [active]="link.isActive"
+       [routerLink]="link.path"
+       [disabled]="link.isDisabled"> {{link.label}} </a>
+  </nav>
+  <mat-tab-nav-panel #tabPanel><router-outlet></router-outlet></mat-tab-nav-panel>

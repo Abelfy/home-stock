@@ -1,12 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatSelectionListChange } from '@angular/material/list';
-import { Update } from '@ngrx/entity';
-import { Store } from '@ngrx/store';
-import { ShoppingListActions } from 'src/app/products/cart/state/action-types';
-import { AppState } from 'src/app/reducers';
-import { ProductInList } from 'src/app/state/models/product-in-cart.model';
-import { environment } from 'src/environments/environment';
-import { ShoppingListsActions } from '../../state/action-types';
+
+import { ProductInList } from 'src/app/store/models/product-in-cart.model';
 import { ShoppingList } from '../../state/shopping-list';
 
 @Component({

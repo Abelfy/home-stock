@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { User } from "../../state/models/user.model";
+import { User } from "../../store/models/user.model";
 
 export const LogIn = createAction("[Auth Form] Login", props<{ email: string , password : string }>());
 export const LogInSuccess = createAction("[Auth Effect] Login Success", props<{ user: User }>());

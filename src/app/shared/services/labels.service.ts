@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { Label } from 'src/app/state/models/label.model';
+import { Label } from 'src/app/store/models/label.model';
 import { environment } from 'src/environments/environment';
 
 @Injectable({

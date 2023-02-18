@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
-import { authReducer } from '../../state/auth.reducers';
+import { authReducer } from '../../state/auth.reducer';
 
 import { LoginFormComponent } from './login-form.component';
 

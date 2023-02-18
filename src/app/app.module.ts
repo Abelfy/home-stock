@@ -1,7 +1,6 @@
-import { NgModule, LOCALE_ID} from '@angular/core';
+import { NgModule, LOCALE_ID, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
@@ -19,42 +18,55 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
 import { AuthModule } from './auth/auth.module';
 import { RouterState, StoreRouterConnectingModule } from '@ngrx/router-store';
-import { reducers, metaReducers } from './reducers';
-import { NgxJsonViewerModule } from 'ngx-json-viewer';
+import { reducers, metaReducers } from './store/reducers';
+import { MyErrorHandler } from './utils/error-handler.utils';
+import { CartModule } from './cart/cart.module';
+
+const featuresModules = [
+  ToastrModule.forRoot({
+    positionClass: 'toast-bottom-full-width',
+    closeButton: true,
+  }),
+  AuthModule.forRoot(),
+  CartModule,
+];
+
+const ngrxModules = [
+  StoreModule.forRoot(reducers, {
+    metaReducers,
+    runtimeChecks: {
+      strictStateImmutability: true,
+      strictActionImmutability: true,
+      strictStateSerializability: true,
+      strictActionSerializability: true,
+    },
+  }),
+  EffectsModule.forRoot([]),
+  StoreDevtoolsModule.instrument({
+    name: 'Home-Stock App',
+    logOnly: !environment.production,
+  }),
+  StoreRouterConnectingModule.forRoot({
+    stateKey: 'router',
+    routerState: RouterState.Minimal,
+  }),
+];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-  ],
+  declarations: [AppComponent, HomeComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     SharedModule,
     HttpClientModule,
-    ToastrModule.forRoot({positionClass : 'toast-bottom-full-width', closeButton : true}),
-    AuthModule.forRoot(),
-    StoreModule.forRoot( reducers , { metaReducers,
-      runtimeChecks: {
-        strictStateImmutability: true,
-        strictActionImmutability: true,
-        strictStateSerializability: true,
-        strictActionSerializability: true,
-       }
-    }),
-    EffectsModule.forRoot([]),
-    StoreDevtoolsModule.instrument({
-      name: "Home-Stock App",
-      logOnly : !environment.production
-    }),
-    StoreRouterConnectingModule.forRoot({
-      stateKey : 'router',
-      routerState: RouterState.Minimal,
-      
-    })
+    ...ngrxModules,
+    ...featuresModules,
   ],
-  providers: [ { provide: LOCALE_ID, useValue: "fr-FR" }],
-  bootstrap: [AppComponent]
+  providers: [
+    { provide: LOCALE_ID, useValue: 'fr-FR' },
+    { provide: ErrorHandler, useClass: MyErrorHandler },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
